@@ -8,7 +8,7 @@ class Info extends React.Component {
 
     render() {
         return <div>
-
+                sssss
         </div>
     }
 }

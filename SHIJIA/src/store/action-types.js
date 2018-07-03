@@ -1,0 +1,1 @@
+export const QUERY_BANNER='QUERY_BANNER';
