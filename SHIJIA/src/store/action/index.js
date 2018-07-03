@@ -1,5 +1,8 @@
 import person from './person'
-
-let action = {person}
+import furniture from './furniture'
+let action = {
+    person,
+    furniture
+};
 
 export default action;

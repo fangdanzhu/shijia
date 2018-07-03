@@ -1,5 +1,6 @@
-import * as TYPE from '../action-types'
+import * as TYPES from '../action-types'
 
 export default function person(state={},action){
+
 	return  state;
 }
