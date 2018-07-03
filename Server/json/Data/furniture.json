@@ -1,0 +1,115 @@
+[
+    {
+        "id": 1,
+        "name": "沙发",
+        "data":[
+            {
+                "id":1,
+                "name":"Sofa-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"sofa"
+            },
+            {
+                "id":2,
+                "name":"Sofa-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"sofa"
+
+            },
+            {
+                "id":3,
+                "name":"Sofa-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":4,
+                "name":"Sofa-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"sofa"
+            }
+        ],
+        "type": "sofa"
+    },
+    {
+        "id": 2,
+        "name": "桌几",
+        "data":[
+            {
+                "id":1,
+                "name":"Table-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"table"
+            },
+            {
+                "id":2,
+                "name":"Table-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"table"
+            },
+            {
+                "id":3,
+                "name":"Table-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"table"
+            }
+        ],
+        "type": "table"
+    },
+    {
+        "id": 3,
+        "name": "板凳",
+        "data":[
+            {
+                "id":1,
+                "name":"stool-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type"  :1,
+                "category":"stool"
+            },
+            {
+                "id":2,
+                "name":"Table-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"stool"
+
+            },
+            {
+                "id":3,
+                "name":"Table-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"stool"
+            }
+        ],
+        "type": "stool"
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "地毯",
+        "data":[
+            {
+                "id":1,
+                "name":"carpet-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"carpet"
+            },
+            {
+                "id":2,
+                "name":"carpet-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"carpet"
+
+            },
+            {
+                "id":3,
+                "name":"carpet-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"carpet"
+
+            }
+        ],
+        "type": "carpet"
+    },
+    {
+        "id": 2,
+        "name": "抱枕",
+        "data":[
+            {
+                "id":1,
+                "name":"pillow-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"pillow"
+
+            },
+            {
+                "id":2,
+                "name":"pillow-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"pillow"
+
+            },
+            {
+                "id":3,
+                "name":"pillow-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"pillow"
+
+            }
+        ],
+        "type": "pillow"
+    },
+    {
+        "id": 3,
+        "name": "盖毯",
+        "data":[
+            {
+                "id":1,
+                "name":"blanket-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"blanket"
+
+            },
+            {
+                "id":2,
+                "name":"blanket-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"blanket"
+
+            },
+            {
+                "id":3,
+                "name":"blanket-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"blanket"
+
+            }
+        ],
+        "type": "blanket"
+    }
+]

@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "name": "地灯",
+        "data":[
+            {
+                "id":1,
+                "name":"groundLamp-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"groundLamp"
+            },
+            {
+                "id":2,
+                "name":"groundLamp-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"groundLamp"
+
+            },
+            {
+                "id":3,
+                "name":"groundLamp-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"groundLamp"
+
+            }
+        ],
+        "type": "groundLamp"
+    },
+    {
+        "id": 2,
+        "name": "台灯",
+        "data":[
+            {
+                "id":1,
+                "name":"deskLamp-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"deskLamp"
+
+            },
+            {
+                "id":2,
+                "name":"deskLamp-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"deskLamp"
+
+            },
+            {
+                "id":3,
+                "name":"deskLamp-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"deskLamp"
+
+            }
+        ],
+        "type": "deskLamp"
+    },
+    {
+        "id": 3,
+        "name": "吊灯",
+        "data":[
+            {
+                "id":1,
+                "name":"chandelier-A",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":1,
+                "category":"chandelier"
+
+            },
+            {
+                "id":2,
+                "name":"chandelier-B",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":2,
+                "category":"chandelier"
+
+            },
+            {
+                "id":3,
+                "name":"chandelier-C",
+                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":288,
+                "type":3,
+                "category":"chandelier"
+            }
+        ],
+        "type": "chandelier"
+    }
+]

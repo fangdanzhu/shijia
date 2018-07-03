@@ -1,0 +1,254 @@
+[首页数据]
+1. 轮播图
+地址：/course/banner
+方式：get
+参数：--
+返回：{
+//三个数据
+   code:0,  //=>0 获取轮播图成功   1 失败
+   msg:'xxx'，
+   data:[ { id: 1,
+            name: 'stool-A',
+            pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+            dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+            price: 288,
+            type: 1 } X 3
+ ]
+}
+---------
+2.今日推荐
+地址：/course/tuijian
+方式：get
+参数：--
+返回：{
+//三个数据
+   code:0,  //=>0 获取轮播图成功   1 失败
+   msg:'xxx'，
+   data:[ { id: 1,
+            name: 'stool-A',
+            pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+            dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+            price: 288,
+            type: 1 } X 4
+ ]
+}
+
+----------
+3 获取商品列表
+地址 /course/info
+方式get
+参数: id,category,model
+id:商品的id
+category:商品的一级类别
+model:商品的二级类别
+````
+【家具】
+- category:sofa:沙发
+- - model:1 单人沙发
+- - model:2 双人沙发
+- - model:3 双人沙发
+- category：table:桌几
+- - model:1 欧式
+- - model:2 日式
+- - model:3 现代简约
+- category：stool:板凳
+- - model:1 实木
+- - model:2 日式
+- - model:3 现代简约
+
+。。。【灯饰】
+- category:groundLamp:地灯
+- - model:1 单人沙发
+- - model:2 双人沙发
+- - model:3 双人沙发
+- category：deskLamp:台灯
+- - model:1 欧式
+- - model:2 日式
+- - model:3 现代简约
+- category：chandelier:吊灯
+- - model:1 实木
+- - model:2 日式
+- - model:3 现代简约
+
+。。。【家纺】
+- category:carpet:毛毯
+- - model:1 单人沙发
+- - model:2 双人沙发
+- - model:3 双人沙发
+- category：pillow:抱枕
+- - model:1 欧式
+- - model:2 日式
+- - model:3 现代简约
+- category：blanket:盖毯
+- - model:1 实木
+- - model:2 日式
+- - model:3 现代简约
+```
+返回：
+```
+参数：
+?id=xx&&category=xxx  获取单个商品的详细信息
+返回 {
+{ id: 1,
+            name: 'stool-A',
+            pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+            dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+            price: 288,
+            type: 1 }
+                                    }
+
+?category=xxx 获取一级类别的所有商品 比如 所有的沙发
+返回 ： [
+        { id: 1,
+                    name: 'stool-A',
+                    pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+                    dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+                    price: 288,
+                    type: 1 },
+         { id: 1,
+                     name: 'stool-B',
+                     pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+                     dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+                     price: 288,
+                     type: 2 }
+        ]
+
+?category=xxx&&model=x  获取一类别下 对应的所有二级类别商品
+返回 ： [
+        { id: 1,
+                    name: 'stool-A',
+                    pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+                    dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+                    price: 288,
+                    type: 1 },
+         { id: 1,
+                     name: 'stool-B',
+                     pic: 'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',
+                     dec: 'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+                     price: 288,
+                     type: 2 }
+        ]
+
+```
+-----------
+4 用户注册
+地址:/person/register
+方式:post
+参数:
+```
+        userName: '',
+        phone: '',
+        passWord: ''
+```
+返回:{
+            code:0/1,
+            msg:'ok/no'
+        }
+-----------------
+5 用户登录
+地址:/person/login
+方式:post
+参数:
+```
+        userName,
+        passWord
+```
+返回:{
+            code: 0/1, msg: 'OK/no!'
+        }
+
+- - - - -
+6校验是否登录
+地址:/person/register
+方式:get
+参数:
+```
+```
+返回:{
+        code: 0/1, msg: 'OK/no!'
+        }
+
+
+-------
+7 获取个人信息
+地址:/person/info
+方式:get
+参数:---
+```
+```
+返回:{
+        {code: 0, msg: 'OK!', data: {
+
+                    "id":1,
+                    "userName":"lsq",
+                    "passWord":"123456",
+                    "address":["北京市昌平区珠峰培训3楼快递存放处"],
+                    "phone":18232366809
+
+        }}
+        }
+
+ -------
+8 退出登录
+地址:/person/out
+方式:get
+参数:--
+```
+```
+返回:{
+        {code: 0, msg: 'OK!'}
+        }
+
+
+
+-----------------------------------------------------------------------------------------------
+【购物车】
+9 增加购物车信息
+地址:/store/add
+方式:post
+参数:?personID=xxx&&category=xxx
+```
+```
+返回:{
+        {code: 0/1, msg: 'OK/no!'}
+        }
+
+10 移除购物车商品信息
+地址:/store/remove
+方式:post
+参数:?personID=xxx&&category=xxx
+```
+```
+返回:{
+        {code: 0/1, msg: 'OK/no!'}
+        }
+-----------------------------------------------------------------------------------
+11 获取购物车商品信息
+地址:/store/info
+方式:get
+参数:state  0  未支付 1 已支付  2 已收货
+返回:{
+        code: 0,
+        msg: 'OK!',
+        data:[
+        {
+         "id":1,
+          "name":"Table-A",
+          "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+          "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+          "price":288,
+          "type":1,
+          "category":"table"
+        }
+        ]
+}
+-------------------------------------------------------------------------------------
+12.支付某个商品
+地址:/store/pay
+方式:post
+参数: {
+        storeID
+        }
+返回 {
+{code: 1, msg: 'NO LOGIN/ok!'}
+        }
