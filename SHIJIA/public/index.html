@@ -3,25 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-    <title>SHIJIA</title>
+    <title>珠峰培训-REACT</title>
 </head>
 <body>
-<script>
-    ;(function anonymous() {
-        function computed() {
-            let HTML=document.documentElement,
-                winW=HTML.clientWidth,
-                denW=750;
-            if(winW>=denW){
-                HTML.style.fontSize='100px';
-                return
-            }
-            HTML.style.fontSize=winW/750*100+'px'
-        }
-        computed();
-        window.addEventListener('resize',computed,false)
-    })()
-</script>
 <div id="root"></div>
+<!--计算rem放到BODY头部，目的是为了保证CSS导入后才执行这段JS-->
+<script>
+ ~function(){
+ 	function computed(){
+ 		let HTML = document.documentElement;
+		let winW = HTML.clientWidth;
+		let desW = 750;
+		if(winW>=desW){
+			HTML.style.fontSize = '100px';
+			return;
+		}
+		HTML.style.fontSize = winW/750*100+'px';
+ 	}
+ 	computed();
+ 	window.addEventListener('resize',computed,false)
+ }()
+</script>
 </body>
 </html>

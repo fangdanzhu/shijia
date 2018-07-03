@@ -1,18 +1,23 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
+import {Switch,Route,Redirect} from 'react-router-dom'
 
-class Person extends React.Component {
-    constructor(props, context) {
-        super(props, context)
-    }
+import Login from './person/Login'
+import Register from './person/Register'
+import Info from './person/Info'
 
-    render() {
-        return <div>
-
-        </div>
-    }
+ export default  class Person extends React.Component{
+	constructor(props,context){
+		super(props,context)
+	}
+	render(){
+		return <section className="personBox">
+				<Switch>
+					<Route path='/person' exact component={Info} />
+					<Route path='/person/login'  component={Login} />
+					<Route path='/person/register'  component={Register} />
+				</Switch>
+		      </section>
+	}
 }
 
-export default connect()(Person)
+
