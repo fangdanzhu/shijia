@@ -92,6 +92,8 @@ route.get('/info',(req,res)=>{
 //搜索关键字返回数据
 route.get('/search',(req,res)=>{
     let {cont}=req.query;
+    console.log(req.query);
+    console.log(cont);
     let reg =new RegExp(cont);
     let data=[];
     req.courseDATAF.forEach(item=>{
