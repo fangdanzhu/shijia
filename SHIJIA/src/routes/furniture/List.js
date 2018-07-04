@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Carousel, Icon,} from 'antd';
 import {Link} from 'react-router-dom';
+import action from '../../store/action/index'
+
 
 class List extends React.Component {
     constructor(props, context) {
@@ -9,14 +11,25 @@ class List extends React.Component {
     }
 
     render() {
+        let {bannerData,history}=this.props;
+
+        console.log(bannerData,history);
         return <div>
             <Carousel autoplay>
+                {bannerData && bannerData.length !== 0 ? (<Carousel autoplay>
+                    {bannerData.map((item, index) => {
+                        let {name, pic} = item;
+                        return <div key={index}>
+                            <img src={pic} alt={name}/>
+                        </div>;
+                    })}
+                </Carousel>) : ''}
                 <div><a href="">1</a></div>
                 <div><a href="">2</a></div>
                 <div><a href="">3</a></div>
             </Carousel>
             <ul className="nav clearfix">
-                <li><img src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
+                <li onClick={()=>history.push('/furniture/suite')}><img src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
                 <li><img src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
                 <li><img src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
                 <li><img src={require('../../static/images/软装饰品.png')} alt=""/><p>装饰</p></li>
@@ -60,4 +73,4 @@ class List extends React.Component {
 
 }
 
-export default connect()(List);
+export default connect(state=>({...state.furniture},action.furniture))(List);
