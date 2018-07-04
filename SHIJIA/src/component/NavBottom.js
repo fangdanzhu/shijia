@@ -10,7 +10,7 @@ const Search = Input.Search;
     }
     render() {
         return ( <footer className="footerNavBox">
-                <NavLink to="/furniture"><Icon type="home" /><span>首页</span></NavLink>
+                <NavLink to="/"><Icon type="home" /><span>首页</span></NavLink>
                 <NavLink to="/hotsale"><Icon type="rocket" /><span>热度</span></NavLink>
                 <NavLink to="/publish"><Icon type="rocket" /><span>发布</span></NavLink>
                 <NavLink to="/shopcart"><Icon type="shopping-cart" /><span>购物车</span></NavLink>
