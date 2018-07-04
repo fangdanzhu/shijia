@@ -1,1 +1,2 @@
 export const QUERY_BANNER='QUERY_BANNER';
+export const QUERY_TUIJIAN='QUERY_TUIJIAN';

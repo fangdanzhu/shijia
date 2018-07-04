@@ -1,16 +1,31 @@
 .furnitureBox{
   width: 100%;
   height: 100%;
-  /*轮播1*/
+  /*轮播*/
   .ant-carousel .slick-slide {
     text-align: center;
-    height: 160px;
-    line-height: 160px;
+    height: 4.3rem;
+    width:100%;
+    line-height: 4.3rem;
     background: #364d79;
     overflow: hidden;
+    img{
+      width: 100%;
+      height: 100%;
+    }
   }
-  .ant-carousel .slick-slide h3 {
-    color: #fff;
+  .slick-dots{
+    li{
+      button{
+        height: .25rem !important;
+        width: .25rem !important;
+        border-radius: 50% !important;
+      }
+      &.slick-active button{
+        background: darkred !important;
+      }
+    }
+
   }
   /*nav*/
   .nav{
@@ -67,26 +82,27 @@
     margin-top: .1rem;
   }
 }
+  /*走马灯*/
 .recommend{
+  background: #dddddd;
   overflow: hidden;
   width: 100%;
   height: 2.7rem;
   margin:.2rem 0;
-  ul{
-    width:5.2*5rem;
+
+  .el-carousel__container{
+    button{
+      margin-top:-1rem;
+    }
     li{
-      float: left;
-      width: 4rem;
-      height: 2.7rem;
-      margin:0 .1rem;
+      list-style: none !important;
       img{
-        height: 100%;
         width: 100%;
+        height: 100%;
       }
     }
   }
 }
-
   .recommend-body{
     width: 100%;
     padding:0 .4rem;
