@@ -19,6 +19,7 @@ import Person from './routes/Person'
 
 import {LocaleProvider} from 'antd'
 import  zh_CN from 'antd/lib/locale-provider/zh_CN'
+import 'element-theme-default'
 //=>css
 import './static/css/reset.min.css'
 import './static/css/common.less'

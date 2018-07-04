@@ -1,140 +1,178 @@
-@import url("~antd/dist/antd.css"); 
+@import url("~antd/dist/antd.css");
 
+.navTop {
+  background: orange;
+  opacity: .4;
+  height: 1rem;
 
-
-
-.navTop{background: orange; opacity: .4; 
-height:1rem;
-
- width: 100%;
+  width: 100%;
 }
-.navBottom{background: #fff;
-height: 1.5rem;
- width: 100%;
- position: fixed;
- bottom: 0;
-border-top: .01rem solid #000000;
+
+.navBottom {
+  background: #fff;
+  height: 1.5rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  border-top: .01rem solid #000000;
 }
+
 //个人中心
 
+html, body {
+  height: 100%;
+}
 
-html,body{height: 100%;}
-#root{height: 100%;
-;}
-.personBox{
-     width: 100%;
-     height: 100%;
-     background:url('../../static/images/person_bg.jpg') center no-repeat;
-     background-size:cover;
-     overflow: hidden;
-    // 登陆和注册页面
-    .mask{width: 100%;
-          height: 100%;
-            padding: .5rem;
-          background:#00000090;}
-    
-    .exit i{color: #fff;
-              font-size: .5rem;}       
-    .main{ padding: 1.12rem;
-            form{
-                div{width: 100%;
-                 border-bottom: .01rem solid #fff;
-                 color: #fff!important;
-                    i{font-size: .6rem;}
-                 }
-                
-                 input{background: transparent!important;
-                        border: none;
-                        width: 3.35rem;
-                        margin-left: .3rem;
-                        height: .85rem;
-                        margin-top: .2rem;
-                       outline: none;}    
-                    input::-webkit-input-placeholder{
-                            color:#fff;
-                        }   
-              input:-webkit-autofill {
-                 -webkit-box-shadow: 0 0 0 1000px white inset !important;
-                }
+#root {
+  height: 100%;;
+}
 
-               button{background: #f8d039;
-                      border-radius: .1rem;
-                      border: none;
-                      margin: .5rem 0;
-                      width: 100%;
-                      height: .68rem;
-                      color: #fff;
-                      font-weight: bold;}     
-            }        
-           
-            li{display: flex;
-               font-size: .24rem;
-                justify-content: space-between;
-                margin-bottom: .3rem;
-                h4{text-align: center;
-                     color: #fff;
-                     width: 100%;}
-                a{ color: #fff;
-                   font-weight: bold;}
-                
-                i{font-size: .6rem!important;color: #eee !important}
-        }  
-    }      
-    p{color: #fff;
-      margin-top: .5rem;
-      text-align: center;
-     b{color: #f8d039;}
+.personBox {
+  width: 100%;
+  height: 100%;
+  background: url('../../static/images/person_bg.jpg') center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  // 登陆和注册页面
+  .mask {
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    background: #00000090;
+  }
+
+  .exit i {
+    color: #fff;
+    font-size: .5rem;
+  }
+  .main {
+    padding: 1.12rem;
+    form {
+      div {
+        width: 100%;
+        border-bottom: .01rem solid #fff;
+        color: #fff !important;
+        i {
+          font-size: .6rem;
+        }
+      }
+
+      input {
+        background: transparent !important;
+        border: none;
+        width: 3.35rem;
+        margin-left: .3rem;
+        height: .85rem;
+        margin-top: .2rem;
+        outline: none;
+      }
+      input::-webkit-input-placeholder {
+        color: #fff;
+      }
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+      }
+
+      button {
+        background: #f8d039;
+        border-radius: .1rem;
+        border: none;
+        margin: .5rem 0;
+        width: 100%;
+        height: .68rem;
+        color: #fff;
+        font-weight: bold;
+      }
     }
-          
-    
-     
 
-    //info页面
-    
-    .info{background:url('../../static/images/person_info_bg.png') no-repeat #f6f5f5;
-         width: 100%;
-         height: 100%;
-         background-size: 100%;
-         box-sizing: border-box;
-         position: relative;
-         overflow: hidden;
-         .btn{margin-top: .4rem;}
-            button{margin-right: .2rem;}
-         }
-         .content{position: absolute;
-                   width: 120%;
-                   top: 2rem;
-                   height: 3rem;
-                   margin-top: -1rem;
-                   p{width: 1.5rem;
-                     height: 1.5rem;
-                     margin-left:2.8rem;
-                     margin-bottom:.5rem;
-                     border-radius: 50%;
-                     background: url('../../static/images/person_info_portrait.jpg') no-repeat;
-                     background-size: 100%;
-                     border: .01rem solid #ccc;}
-                    button{
-                     background: #fffs;
-                     margin-left: 2.8rem;}  
-                   
-                   }
-                  
-        .info-item{margin: 4rem .2rem 0;
-                   padding: 0 .5rem;
-                   line-height: 1rem;
-                   background: #fff;
-                   border-radius: .2rem;
-                 
-                   li{ 
-                       i{font-size: .4rem;
-                         margin: 0 0.3rem ;
-                         color: #e3bd00;
-                        }
-                        span{display: inline-block;
-                        border-bottom: .01rem dashed #aaa;
-                        width: 5rem;
-                        }
-                   }
-                   }
+    li {
+      display: flex;
+      font-size: .24rem;
+      justify-content: space-between;
+      margin-bottom: .3rem;
+      h4 {
+        text-align: center;
+        color: #fff;
+        width: 100%;
+      }
+      a {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      i {
+        font-size: .6rem !important;
+        color: #eee !important
+      }
+    }
+  }
+  p {
+    color: #fff;
+    margin-top: .5rem;
+    text-align: center;
+    b {
+      color: #f8d039;
+    }
+  }
+
+  //info页面
+
+  .info {
+    background: url('../../static/images/person_info_bg.png') no-repeat #f6f5f5;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    .btn {
+      margin-top: .4rem;
+    }
+    button {
+      margin-right: .2rem;
+    }
+  }
+  .content {
+    position: absolute;
+    width: 120%;
+    top: 2rem;
+    height: 3rem;
+    margin-top: -1rem;
+    p {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 2.8rem;
+      margin-bottom: .5rem;
+      border-radius: 50%;
+      background: url('../../static/images/person_info_portrait.jpg') no-repeat;
+      background-size: 100%;
+      border: .01rem solid #ccc;
+    }
+    button {
+      background: #fff;
+      margin-left: 2.8rem;
+    }
+
+  }
+
+  .info-item {
+    margin: 4rem .2rem 0;
+    padding: 0 .5rem;
+    line-height: 1rem;
+    background: #fff;
+    border-radius: .2rem;
+
+    li {
+      i {
+        font-size: .4rem;
+        margin: 0 0.3rem;
+        color: #e3bd00;
+      }
+      span {
+        display: inline-block;
+        border-bottom: .01rem dashed #aaa;
+        width: 5rem;
+      }
+    }
+  }
 }

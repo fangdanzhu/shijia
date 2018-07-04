@@ -1,16 +1,18 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
-class Suite extends React.Component {
+class Light extends React.Component {
     constructor(props, context) {
         super(props, context)
     }
 
     render() {
         return <div>
-            家具
+ 灯饰
         </div>
     }
 }
 
-export default connect()(Suite)
+export default connect()(Light)
