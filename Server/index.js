@@ -9,7 +9,7 @@ const CONFIG = require('./config'),
 const express = require('express'),
     path=require('path');
     multer  = require('multer'),
-    upload = multer({ dest: path.join(__dirname,'temp') }),
+    upload = multer({ dest: path.join(__dirname,'photoUpload') }),
 app = express();
 app.listen(CONFIG.PORT, () => {
     console.log(`THE WEB SERVICE IS CREATED SUCCESSFULLY AND IS LISTENING TO THE PORT：${CONFIG.PORT}`);

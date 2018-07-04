@@ -124,16 +124,17 @@ route.get('/search',(req,res)=>{
 route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
+        let file =req.file;
+        fs.rename(file.path,`${Math.random()*2+file.originalname}`);
 
+    // console.log(req.file);
 
-    console.log(req.file);
-    console.log(req.body);
 
     res.send("上传成功");
 });
 route.get('/photoUpload',(req,res)=>{
-
-
+    let form = fs.readFileSync('C:\\Users\\Administrator\\Desktop\\shijia\\Server\\photoUpload/1b05a12295165d97f9650c55ee858426.jpeg', {encoding: 'utf8'});
+    res.send(form);
 });
 
 module.exports = route;
