@@ -9,8 +9,7 @@ export default function course(state=INDE_STATE,action) {state=INDE_STATE,action
        case TYPES.PERSON_QUERY_BASE:
             let {result}=action;
             state.banner=parseFloat(result)
-
-                   break
+           break
    }
     return state
 }

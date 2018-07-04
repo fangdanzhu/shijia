@@ -4,21 +4,13 @@ import {HeadList} from '../../api/couser'
 let couse={
     queCate(){
         return async dispatch=>{
-            let result=await HeadList(category)
+            let result=await HeadList()
             dispatch({
-                type:PERSON_QUERY_BASE,
-                result
-            })
-        }
-    },
-    queModel(){
-        return async dispatch=>{
-            let result=await HeadList(model)
-            dispatch({
-                type:PERSON_QUERY_DSRT,
+                type:TYPES.PERSON_QUERY_BASE,
                 result
             })
         }
     }
+
 }
 export default couse
