@@ -27,17 +27,15 @@ import './static/css/component.less';
 render(<Provider store={store}>
     <LocaleProvider locale={zh_CN}>
         <HashRouter>
-            <div>
-                <Switch>
-                    <Route path='/' exact component={Home}/>
-                    <Route path='/furniture' component={Home}/>
-                    <Route path='/shopcart' component={Shopcart}/>
-                    <Route path='/person' component={Person}/>
-                    <Route path='/publish' component={Publish}/>
-                    <Route path='/hotsale' component={Hotsale}/>
-                    <Redirect to="/furniture"/>
-                </Switch>
-            </div>
+            <Switch>
+                <Route path='/' exact component={Home}/>
+                <Route path='/furniture' component={Home}/>
+                <Route path='/shopcart' component={Shopcart}/>
+                <Route path='/person' component={Person}/>
+                <Route path='/publish' component={Publish}/>
+                <Route path='/hotsale' component={Hotsale}/>
+                <Redirect to="/furniture"/>
+            </Switch>
         </HashRouter>
     </LocaleProvider>
 </Provider>, root);

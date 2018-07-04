@@ -10,14 +10,14 @@ import Light from './furniture/Light'
 import Textiles from './furniture/Textiles'
 import '../static/css/furniture.less';
 
-export default class Home extends React.Component{
-    constructor(props){
+export default class Home extends React.Component {
+    constructor(props) {
         super(props)
     }
-    render(){
-        return <section className="furnitureBox">
-            <div>
-                <NavTop/>
+    render() {
+        return <div>
+            <NavTop/>
+            <div className="furnitureBox">
                 <Switch>
                     <Route path="/" exact component={List}/>
                     <Route path='/home/furniture/suite' component={Suite}/>
@@ -25,9 +25,8 @@ export default class Home extends React.Component{
                     <Route path='/home/furniture/textiles' component={Textiles}/>
                     <Route path="/home/furniture/info" component={Info}/>
                 </Switch>
-                <NavBottom/>
             </div>
-
-        </section>
+            <NavBottom/>
+        </div>
     }
 }
