@@ -10,40 +10,44 @@ const Search = Input.Search;
 
     constructor(props, context) {
         super(props, context)
-             let {banner}=this.props;
 
         this.state={val:"",banner:[]}
 
     }
      handlChange= async (ev)=> {
-        if(ev.keyCode===13){
+
             let{banner}=this.state;
             let value = ev.target.value;
             if(value){
-               let result = await HeadList(`?search=${value}`)
-                console.log(result)
+               let result = await HeadList({cont:value});
+                if(result.code===0){
+                    if(result.searchData instanceof Array){
+                        console.log(result.searchData);
+                        this.setState({
+                            banner:result.searchData
+                        })
+                    }
+
+                }
             }
-            this.setState({val: value,banner})
-        }
 
-     }
+              }
 
-    render() {
 
+
+    render(){
         return <header className="headerNavBox clearfix">
             <div className='headerbox'>
                 <Icon type="minus-square-o" />
                 <Search
                     placeholder="input search text"
                     onSearch={value => console.log(value)}
-                    style={{ width: 200 }} onKeyUp={this.handlChange} valve={this.state.val}/>
+                    style={{ width: 200 }} onChange={this.handlChange} valve={this.state.val}/>
                 <Icon type="table" />
                 <ul className="list-rem">
-
                 {this.state.banner.map((item,index)=>{
-
-                    return  <li className={"list-up"} key={index}>{item}</li>
-                })}
+                    return  <li className="list-var" key={index}>{item.name}</li>
+                    })}
                 </ul>
             </div>
         </header>
