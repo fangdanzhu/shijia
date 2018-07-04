@@ -2,7 +2,8 @@ const express = require('express'),
     route = express.Router(),
     {writeFile} = require('../utils/promiseFS'),
     PERSONAL_PATH = './json/personal.json',
-    utils = require('../utils/utils');
+    utils = require('../utils/utils'),
+    fs=require('fs');
 
 //=>把临时存储在SESSION中的STORE信息，增加到JSON文件中（登录后）
 function add_temp_store(req, res) {
@@ -24,7 +25,8 @@ route.post('/register',(req,res)=>{
         userName: '',
         address:[],
         phone: '',
-        passWord: ''
+        passWord: '',
+        portrait:''
     };
     console.log(req.body);
     personInfo={...personInfo,...req.body};
@@ -92,6 +94,50 @@ route.get('/out', (req, res) => {
     //=>退出登录就是干掉SESSION
     req.session.personID = null;
     res.send({code: 0, msg: 'OK!'});
+});
+
+//上传头像 （必须先注册之后）
+route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
+    // req.file is the `avatar` file
+    // req.body will hold the text fields, if there were any
+    let file =req.file;
+    let photoUrl =file.destination+'/'+(Math.random()*1000).toFixed(0)+file.originalname;
+    fs.rename(file.path,`${photoUrl}`,(err)=>{
+        if(err){
+            res.send({
+                code:1,
+                msg:'上传头像失败'
+            });
+        }else {
+            req.personalDATA.forEach(item=>{
+                if(item.id===req.session.personID){
+                    item.photoUrl=photoUrl;
+                }
+            });
+            writeFile(PERSONAL_PATH,req.personalDATA).then(result=>{
+                console.log(result);
+                res.send({
+                    code:0,
+                    msg:'上传头像成功'
+                });
+            })
+
+        }
+    });
+
+    // console.log(req.file);
+});
+//获取用户头像 (用户必须注册或登录之后)
+route.get('/photoUpload',(req,res)=>{
+       let result= req.personalDATA.find(item=>{
+            return item.id=parseFloat(req.session.personID);
+        });
+       let portrait=result.portrait;
+       res.send({
+           code:0,
+           msg:'头像',
+           portrait
+       })
 });
 
 

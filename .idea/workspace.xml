@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="15bf6a01-5a86-43de-b50c-8103b6a6327a" name="Default" comment="">
 <<<<<<< HEAD
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/photoUpload/161da50b78506fa19da84c712f625a80" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/photoUpload/1b05a12295165d97f9650c55ee858426.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/photoUpload/2b5d5417e9ff621198371f10b59897a3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Server/photoUpload/d95c39a6c4b5660717170589d16a2a45" afterPath="" />
+=======
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/yarn.lock" afterPath="$PROJECT_DIR$/Server/yarn.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kakabo/src/compoent/NavTop.js" afterPath="$PROJECT_DIR$/kakabo/src/compoent/NavTop.js" />
@@ -10,12 +16,16 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/Server/temp/7db8b6f5a5b09ae97714965afd2c82c5" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Server/temp/df2e1dafd6f35ba6b9e273c55081ce15" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/Server/temp/1b05a12295165d97f9650c55ee858426" afterPath="$PROJECT_DIR$/Server/photoUpload/1b05a12295165d97f9650c55ee858426.jpeg" />
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHIJIA/src/index.js" afterPath="$PROJECT_DIR$/SHIJIA/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js" afterPath="$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/index.js" afterPath="$PROJECT_DIR$/Server/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/json/personal.json" afterPath="$PROJECT_DIR$/Server/json/personal.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/course.js" afterPath="$PROJECT_DIR$/Server/routes/course.js" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Server/routes/person.js" afterPath="$PROJECT_DIR$/Server/routes/person.js" />
+=======
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,26 +48,30 @@
               <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="course.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="course.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/routes/course.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="127" column="68" lean-forward="false" selection-start-line="127" selection-start-column="68" selection-end-line="127" selection-end-column="68" />
+            <state relative-caret-position="2875">
+              <caret line="125" column="5" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="125" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/package.json">
+      <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/routes/person.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="1060">
+              <caret line="138" column="19" lean-forward="true" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="personal.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/json/personal.json">
+=======
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,63 +89,62 @@
 =======
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/Home.js">
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="200" lean-forward="false" selection-start-line="0" selection-start-column="200" selection-end-line="0" selection-end-column="200" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="furniture.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/json/Data/furniture.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding>
+                <element signature="e#1#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="store.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/json/store.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="person.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/routes/person.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-805">
-              <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/Person.js">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/utils/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SHIJIA/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="38" />
+            <state relative-caret-position="598">
+              <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="请求api接口文档.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/请求api接口文档.txt">
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/routes/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="289" column="13" lean-forward="false" selection-start-line="289" selection-start-column="3" selection-end-line="289" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-500">
-              <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="1357">
+              <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -153,8 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Server/routes/person.js" />
-        <option value="$PROJECT_DIR$/Server/json/personal.json" />
         <option value="$PROJECT_DIR$/Server/utils/utils.js" />
         <option value="$PROJECT_DIR$/Server/routes/store.js" />
         <option value="$PROJECT_DIR$/Server/package.json" />
@@ -163,13 +174,18 @@
         <option value="$PROJECT_DIR$/Server/请求api接口文档.txt" />
         <option value="$PROJECT_DIR$/SHIJIA/src/index.js" />
         <option value="$PROJECT_DIR$/Server/routes/form.html" />
+        <option value="$PROJECT_DIR$/Server/json/personal.json" />
         <option value="$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js" />
         <option value="$PROJECT_DIR$/Server/routes/course.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Server/routes/person.js" />
+=======
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/Server/请求api接口文档.txt" />
         <option value="$PROJECT_DIR$/kakabo/src/compoent/NavTop.js" />
 =======
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
       </list>
     </option>
   </component>
@@ -198,12 +214,16 @@
   </component>
 <<<<<<< HEAD
   <component name="ProjectFrameBounds">
+=======
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
 =======
   <component name="ProjectFrameBounds" extendedState="1">
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     <option name="x" value="4" />
     <option name="width" value="1353" />
     <option name="height" value="735" />
@@ -243,6 +263,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
 <<<<<<< HEAD
       <pane id="Scope" />
       <pane id="Scratches" />
@@ -369,6 +392,7 @@
         </subPane>
       </pane>
 =======
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -386,7 +410,7 @@
               <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="shijia" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="photoUpload" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
@@ -397,14 +421,43 @@
             <path>
               <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="shijia" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shijia" type="462c0819:PsiDirectoryNode" />
               <item name="SHIJIA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shijia" type="462c0819:PsiDirectoryNode" />
+              <item name="SHIJIA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shijia" type="462c0819:PsiDirectoryNode" />
+              <item name="SHIJIA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shijia" type="462c0819:PsiDirectoryNode" />
+              <item name="SHIJIA" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
       <pane id="Scope" />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,15 +531,23 @@
       <workItem from="1530636544546" duration="1715000" />
       <workItem from="1530669342895" duration="11046000" />
 <<<<<<< HEAD
+      <workItem from="1530683404432" duration="8588000" />
+      <workItem from="1530692945892" duration="21000" />
+=======
+<<<<<<< HEAD
       <workItem from="1530690862902" duration="611000" />
       <workItem from="1530691603317" duration="17000" />
 =======
       <workItem from="1530683404432" duration="2735000" />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="29574000" />
+=======
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="21593000" />
   </component>
@@ -500,22 +561,29 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
 =======
     <option name="totallyTimeSpent" value="23700000" />
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="1353" height="735" extended-state="1" />
+    <frame x="4" y="0" width="1353" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18250951" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2803419" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
 <<<<<<< HEAD
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -526,6 +594,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
 =======
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,6 +608,8 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/Server/routes/course.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -552,6 +623,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -582,8 +654,11 @@
 =======
         <state relative-caret-position="1012">
           <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+<<<<<<< HEAD
+=======
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
         </state>
       </provider>
     </entry>
@@ -619,6 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -640,6 +716,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -668,6 +745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="67" lean-forward="false" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -729,6 +807,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/json/course.json" />
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/Server/json/Data/furniture.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -743,6 +823,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     <entry file="file://$PROJECT_DIR$/Server/json/create_course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -788,6 +869,8 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
     <entry file="file://$PROJECT_DIR$/Server/utils/utils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -802,6 +885,7 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
     <entry file="file://$PROJECT_DIR$/Server/utils/promiseFS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-552">
@@ -822,33 +906,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/temp/9c5f91c4957ac1e341267f2613b304a7" />
     <entry file="file://$PROJECT_DIR$/Server/temp/4ea60c3112c804ab5c006ceca4b04402" />
-    <entry file="file://$PROJECT_DIR$/Server/json/store.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/json/personal.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="67" lean-forward="false" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/请求api接口文档.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
           <caret line="289" column="13" lean-forward="false" selection-start-line="289" selection-start-column="3" selection-end-line="289" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/person.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-805">
-          <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,9 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -866,9 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,26 +931,67 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="29" column="38" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/form.html" />
+    <entry file="file://$PROJECT_DIR$/Server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/photoUpload/1b05a12295165d97f9650c55ee858426.jpeg" />
+    <entry file="file://$PROJECT_DIR$/Server/1.04646467854362167.jpg" />
+    <entry file="file://$PROJECT_DIR$/Server/photoUpload/6317.jpg" />
+    <entry file="file://$PROJECT_DIR$/Server/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/person/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="46" column="52" lean-forward="true" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes/form.html">
+    <entry file="file://$PROJECT_DIR$/Server/routes/store.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1357">
+          <caret line="59" column="19" lean-forward="false" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="67" lean-forward="false" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
 =======
         <state relative-caret-position="-293">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/index.js">
+    <entry file="file://$PROJECT_DIR$/Server/node_modules/express/lib/router/layer.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="125">
+          <caret line="94" column="4" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="-1292">
           <caret line="24" column="19" lean-forward="true" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
@@ -911,11 +1007,16 @@
           <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SHIJIA/src/routes/person/Login.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="115">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="145">
           <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
@@ -929,24 +1030,33 @@
 =======
         <state relative-caret-position="236">
           <caret line="106" column="10" lean-forward="true" selection-start-line="106" selection-start-column="10" selection-end-line="106" selection-end-column="10" />
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
           <folding>
             <element signature="e#1#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/photoUpload/1b05a12295165d97f9650c55ee858426.jpeg">
-      <provider editor-type-id="text-editor">
+    <entry file="file://$PROJECT_DIR$/Server/json/store.json">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
         </state>
       </provider>
-      <provider selected="true" editor-type-id="images">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/json/personal.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="200" lean-forward="false" selection-start-line="0" selection-start-column="200" selection-end-line="0" selection-end-column="200" />
+          <folding />
+        </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Server/json/Data/furniture.json">
+=======
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/kakabo/src/api/couser.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -961,9 +1071,10 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 =======
     <entry file="file://$PROJECT_DIR$/Server/package.json">
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="276">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="32" />
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
         </state>
@@ -971,6 +1082,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/routes/course.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2875">
+          <caret line="125" column="5" lean-forward="false" selection-start-line="121" selection-start-column="13" selection-end-line="125" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes/person.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1060">
+          <caret line="138" column="19" lean-forward="true" selection-start-line="138" selection-start-column="19" selection-end-line="138" selection-end-column="19" />
+=======
 <<<<<<< HEAD
         <state relative-caret-position="-106">
           <caret line="44" column="8" lean-forward="false" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
@@ -987,6 +1110,7 @@
 =======
         <state relative-caret-position="134">
           <caret line="127" column="68" lean-forward="false" selection-start-line="127" selection-start-column="68" selection-end-line="127" selection-end-column="68" />
+>>>>>>> 9440e7eb6f096e2007edac028489510019e61597
           <folding />
 >>>>>>> 5f75cc9c697c1d9528f8eae74972bee047b8ac12
         </state>
