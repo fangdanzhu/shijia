@@ -8,8 +8,7 @@ import store from './store'
 import axios from './api/index';
 import md5 from 'blueimp-md5';
 
-import NavTop from './component/NavTop'
-import NavBottom from './component/NavBottom'
+
 import Home from './routes/Home'
 import Hotsale from './routes/Hotsale'
 import Shopcart from './routes/Shopcart'
@@ -23,12 +22,13 @@ import 'element-theme-default'
 //=>css
 import './static/css/reset.min.css'
 import './static/css/common.less'
+import './static/css/component.less';
 
 render(<Provider store={store}>
     <LocaleProvider locale={zh_CN}>
         <HashRouter>
             <Switch>
-                <Route path='/'  exact component={Home}/>
+                <Route path='/' exact component={Home}/>
                 <Route path='/furniture' component={Home}/>
                 <Route path='/shopcart' component={Shopcart}/>
                 <Route path='/person' component={Person}/>

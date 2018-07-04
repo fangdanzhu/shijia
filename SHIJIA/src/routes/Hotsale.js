@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBottom from '../component/NavBottom'
 
 export default class Hotsale extends React.Component{
 	constructor(props,context){
@@ -6,6 +7,7 @@ export default class Hotsale extends React.Component{
 	}
 	render(){
 		return <section>
+			<NavBottom/>
 			热卖
 		</section>
 	}

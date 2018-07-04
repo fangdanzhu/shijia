@@ -9,7 +9,8 @@ const Search = Input.Search;
  class NavTop extends Component {
 
     constructor(props, context) {
-        super(props, context)
+        super(props, context);
+             let {banner}=this.props;
 
         this.state={val:"",banner:[]}
 
@@ -19,23 +20,16 @@ const Search = Input.Search;
             let{banner}=this.state;
             let value = ev.target.value;
             if(value){
-               let result = await HeadList({cont:value});
-                if(result.code===0){
-                    if(result.searchData instanceof Array){
-                        console.log(result.searchData);
-                        this.setState({
-                            banner:result.searchData
-                        })
-                    }
-
-                }
+               let result = await HeadList({cont:value})
+                console.log(result);
             }
-
-              }
-
+            this.setState({val: value,banner})
 
 
-    render(){
+     };
+
+    render() {
+
         return <header className="headerNavBox clearfix">
             <div className='headerbox'>
                 <Icon type="minus-square-o" />
@@ -45,9 +39,11 @@ const Search = Input.Search;
                     style={{ width: 200 }} onChange={this.handlChange} valve={this.state.val}/>
                 <Icon type="table" />
                 <ul className="list-rem">
+
                 {this.state.banner.map((item,index)=>{
-                    return  <li className="list-var" key={index}>{item.name}</li>
-                    })}
+
+                    return  <li className={"list-up"} key={index}>{item}</li>
+                })}
                 </ul>
             </div>
         </header>
