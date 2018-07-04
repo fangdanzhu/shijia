@@ -68,10 +68,10 @@ function beforeUpload(file) {
 					</div>
 					<div className="main">
 						<form>
+
 								<div><Icon type="user-add" /><input type="text"  placeholder="请输入手机号"/></div>
 								<div><Icon type="lock" /><input type="password" placeholder="请输入密码" /></div>
 								<button onClick={this.handle}>登陆</button>
-
 								</form>
 
 						<Upload
@@ -79,7 +79,7 @@ function beforeUpload(file) {
 							listType="picture-card"
 							className="avatar-uploader"
 							showUploadList={false}
-							action="http://localhost:8000/course/photoUpload"
+							action="http://localhost:8000/person/photoUpload"
 							beforeUpload={beforeUpload}
 							onChange={this.handleChange}
 						>
@@ -102,7 +102,7 @@ function beforeUpload(file) {
 		       </section>
 	}
      handle=ev=>{
-		axios.get('/course/photoUpload').then(result=>{
+		axios.get('/person/photoUpload').then(result=>{
             console.log(result);
         })
 	 }

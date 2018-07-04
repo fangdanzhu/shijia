@@ -1,0 +1,363 @@
+<!DOCTYPE html><html><head><title>适家项目请求接口文档</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="适家项目请求接口文档">适家项目请求接口文档</h1>
+
+<p><strong>[首页数据]</strong> <br>
+1.获取轮播图 <br>
+地址：/course/banner <br>
+方式：get <br>
+参数：– <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-` hljs less"><div class="hljs-line">{
+</div><div class="hljs-line">   <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,  <span class="hljs-comment">//=&gt;0 获取轮播图成功   1 失败</span>
+</div><div class="hljs-line">   <span class="hljs-attribute">msg</span>:<span class="hljs-string">'xxx'</span>，
+</div><div class="hljs-line">   <span class="hljs-attribute">data</span>:[ { <span class="hljs-attribute">id</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">name</span>: <span class="hljs-string">'stool-A'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">pic</span>: <span class="hljs-string">'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">dec</span>: <span class="hljs-string">'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">price</span>: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">type</span>: <span class="hljs-number">1</span> }
+</div><div class="hljs-line"> ]<span class="hljs-comment">//length=3</span>
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p>2.今日推荐商品数据 <br>
+地址：/course/tuijian <br>
+方式：get <br>
+参数：– <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line"><span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,  <span class="hljs-comment">//=&gt;0 获取轮播图成功   1 失败</span>
+</div><div class="hljs-line">   <span class="hljs-attribute">msg</span>:<span class="hljs-string">'xxx'</span>，
+</div><div class="hljs-line">   <span class="hljs-attribute">data</span>:[ { <span class="hljs-attribute">id</span>: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">name</span>: <span class="hljs-string">'stool-A'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">pic</span>: <span class="hljs-string">'https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">dec</span>: <span class="hljs-string">'luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米'</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">price</span>: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">            <span class="hljs-attribute">type</span>: <span class="hljs-number">1</span> } <span class="hljs-selector-tag">X</span> <span class="hljs-selector-tag">4</span>
+</div><div class="hljs-line"> ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<p>3 获取商品列表 <br>
+地址 /course/info <br>
+方式get <br>
+参数: id,category,model,limit,page <br>
+id:商品的id <br>
+category:商品的一级类别 <br>
+model:商品的二级类别 <br>
+limit:每页最多显示几条 <br>
+page：第几页</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-` hljs haml"><div class="hljs-line">【家具】
+</div><div class="hljs-line">-<span class="ruby"> <span class="hljs-symbol">category:</span><span class="hljs-symbol">sofa:</span>沙发
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 单人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 双人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 双人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">table:</span>桌几
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 欧式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 日式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 现代简约
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">stool:</span>板凳
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 实木
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 日式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 现代简约
+</span></div><div class="hljs-line">
+</div><div class="hljs-line">。。。【灯饰】
+</div><div class="hljs-line">-<span class="ruby"> <span class="hljs-symbol">category:</span><span class="hljs-symbol">groundLamp:</span>地灯
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 单人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 双人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 双人沙发
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">deskLamp:</span>台灯
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 欧式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 日式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 现代简约
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">chandelier:</span>吊灯
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 实木
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 日式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 现代简约
+</span></div><div class="hljs-line">
+</div><div class="hljs-line">。。。【家纺】
+</div><div class="hljs-line">-<span class="ruby"> <span class="hljs-symbol">category:</span><span class="hljs-symbol">carpet:</span>毛毯
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 珊瑚绒
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 法兰绒
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 蚕丝毯
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">pillow:</span>抱枕
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 欧式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 日式
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 现代简约
+</span></div><div class="hljs-line">-<span class="ruby"> category：<span class="hljs-symbol">blanket:</span>盖毯
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">1</span> 冰丝
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">2</span> 夏凉
+</span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 新古典</span>
+</div></code></pre>
+
+<pre class="prettyprint hljs-dark"><code class="hljs scala"><div class="hljs-line">参数：
+</div><div class="hljs-line">?id=xx&amp;&amp;category=xxx  获取单个商品的详细信息
+</div><div class="hljs-line">返回 {
+</div><div class="hljs-line">{ id: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">            name: <span class="hljs-symbol">'stool</span>-<span class="hljs-type">A</span>',
+</div><div class="hljs-line">            pic: <span class="hljs-symbol">'https</span>:<span class="hljs-comment">//img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',</span>
+</div><div class="hljs-line">            dec: <span class="hljs-symbol">'luckysac</span>懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+</div><div class="hljs-line">            price: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">            <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">1</span> }
+</div><div class="hljs-line">                                    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">?category=xxx 获取一级类别的所有商品 比如 所有的沙发
+</div><div class="hljs-line">返回 ： [
+</div><div class="hljs-line">        { id: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    name: <span class="hljs-symbol">'stool</span>-<span class="hljs-type">A</span>',
+</div><div class="hljs-line">                    pic: <span class="hljs-symbol">'https</span>:<span class="hljs-comment">//img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',</span>
+</div><div class="hljs-line">                    dec: <span class="hljs-symbol">'luckysac</span>懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+</div><div class="hljs-line">                    price: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">                    <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">1</span> },
+</div><div class="hljs-line">         { id: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                     name: <span class="hljs-symbol">'stool</span>-<span class="hljs-type">B</span>',
+</div><div class="hljs-line">                     pic: <span class="hljs-symbol">'https</span>:<span class="hljs-comment">//img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',</span>
+</div><div class="hljs-line">                     dec: <span class="hljs-symbol">'luckysac</span>懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+</div><div class="hljs-line">                     price: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">                     <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">2</span> }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">?category=xxx&amp;&amp;model=x  获取一类别下 对应的所有二级类别商品
+</div><div class="hljs-line">返回 ： [
+</div><div class="hljs-line">        { id: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    name: <span class="hljs-symbol">'stool</span>-<span class="hljs-type">A</span>',
+</div><div class="hljs-line">                    pic: <span class="hljs-symbol">'https</span>:<span class="hljs-comment">//img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',</span>
+</div><div class="hljs-line">                    dec: <span class="hljs-symbol">'luckysac</span>懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+</div><div class="hljs-line">                    price: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">                    <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">1</span> },
+</div><div class="hljs-line">         { id: <span class="hljs-number">1</span>,
+</div><div class="hljs-line">                     name: <span class="hljs-symbol">'stool</span>-<span class="hljs-type">B</span>',
+</div><div class="hljs-line">                     pic: <span class="hljs-symbol">'https</span>:<span class="hljs-comment">//img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg',</span>
+</div><div class="hljs-line">                     dec: <span class="hljs-symbol">'luckysac</span>懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米',
+</div><div class="hljs-line">                     price: <span class="hljs-number">288</span>,
+</div><div class="hljs-line">                     <span class="hljs-class"><span class="hljs-keyword">type</span></span>: <span class="hljs-number">2</span> }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line"><wbr>
+</div></code></pre>
+
+<hr>
+
+<p>4 用户注册 <br>
+地址:/person/register <br>
+方式:post</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><div class="hljs-line">参数:
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        userName: <span class="hljs-string">''</span>,
+</div><div class="hljs-line">        phone: <span class="hljs-string">''</span>,
+</div><div class="hljs-line">        passWord: <span class="hljs-string">''</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">返回:{
+</div><div class="hljs-line">            <span class="hljs-selector-tag">code</span>:<span class="hljs-number">0</span>/<span class="hljs-number">1</span>,
+</div><div class="hljs-line">            msg:<span class="hljs-string">'ok/no'</span>
+</div><div class="hljs-line">        }
+</div></code></pre>
+
+<hr>
+
+<p>5 用户登录 <br>
+地址:/person/login <br>
+方式:post</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">参数:
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        <span class="hljs-selector-tag">userName</span>,
+</div><div class="hljs-line">        <span class="hljs-selector-tag">passWord</span>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">返回:{
+</div><div class="hljs-line">            <span class="hljs-attribute">code</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, msg: <span class="hljs-string">'OK/no!'</span>
+</div><div class="hljs-line">        }
+</div></code></pre>
+
+<hr>
+
+<p>6校验是否登录 <br>
+地址:/person/login <br>
+方式:get <br>
+参数:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">返回:{
+</div><div class="hljs-line">        <span class="hljs-attribute">code</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, msg: <span class="hljs-string">'OK/no!'</span>
+</div><div class="hljs-line">     }
+</div><div class="hljs-line"><wbr>
+</div></code></pre>
+
+<hr>
+
+<p>7 获取个人信息 <br>
+地址:/person/info <br>
+方式:get <br>
+参数:—</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回:{
+</div><div class="hljs-line">        {<span class="hljs-string">code:</span> <span class="hljs-number">0</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'OK!'</span>, <span class="hljs-string">data:</span> {
+</div><div class="hljs-line">           <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"userName"</span>:<span class="hljs-string">"lsq"</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"passWord"</span>:<span class="hljs-string">"123456"</span>,
+</div><div class="hljs-line">           <span class="hljs-string">"address"</span>:[<span class="hljs-string">"北京市昌平区珠峰培训3楼快递存放处"</span>],
+</div><div class="hljs-line">          <span class="hljs-string">"phone"</span>:<span class="hljs-number">18232366809</span>
+</div><div class="hljs-line">        }}
+</div><div class="hljs-line">        }
+</div></code></pre>
+
+<hr>
+
+<p>8 退出登录 <br>
+地址:/person/out <br>
+方式:get <br>
+参数:–</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回:{
+</div><div class="hljs-line">        {<span class="hljs-string">code:</span> <span class="hljs-number">0</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'OK!'</span>}
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><wbr>
+</div></code></pre>
+
+<hr>
+
+<p><strong>【购物车】</strong> <br>
+9 增加购物车信息</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/add</span>
+</div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
+</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?personID=xxx&amp;&amp;category=xxx
+</div><div class="hljs-line">返回<span class="hljs-symbol">:</span>{
+</div><div class="hljs-line">        {<span class="hljs-symbol">code:</span> <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, <span class="hljs-symbol">msg:</span> <span class="hljs-string">'OK/no!'</span>}
+</div><div class="hljs-line">    }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><wbr>
+</div></code></pre>
+
+<p>10 移除购物车商品信息</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/remove</span>
+</div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
+</div><div class="hljs-line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?courseID=xxx&amp;&amp;category=xxx
+</div></code></pre>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs ruby"><div class="hljs-line">=======
+</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?personID=xxx&amp;&amp;category=xxx
+</div><div class="hljs-line"><span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt; f797cf5234a47babfaef7a51db02c6922ba164a8
+</div><div class="hljs-line">返回<span class="hljs-symbol">:</span>{
+</div><div class="hljs-line">        {<span class="hljs-symbol">code:</span> <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, <span class="hljs-symbol">msg:</span> <span class="hljs-string">'OK/no!'</span>}
+</div><div class="hljs-line">        }
+</div></code></pre>
+
+<hr>
+
+<p>11 获取购物车商品信息</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/info</span>
+</div><div class="hljs-line">方式<span class="hljs-symbol">:get</span>
+</div><div class="hljs-line">参数<span class="hljs-symbol">:state</span>  <span class="hljs-number">0</span>  未支付 <span class="hljs-number">1</span> 已支付  <span class="hljs-number">2</span> 已收货
+</div><div class="hljs-line">返回<span class="hljs-symbol">:</span>{
+</div><div class="hljs-line">        <span class="hljs-symbol">code:</span> <span class="hljs-number">0</span>,
+</div><div class="hljs-line">        <span class="hljs-symbol">msg:</span> <span class="hljs-string">'OK!'</span>,
+</div><div class="hljs-line">        <span class="hljs-symbol">data:</span>[
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">         <span class="hljs-string">"id"</span><span class="hljs-symbol">:</span><span class="hljs-number">1</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"name"</span><span class="hljs-symbol">:<span class="hljs-string">"Table-A"</span></span>,
+</div><div class="hljs-line">          <span class="hljs-string">"pic"</span><span class="hljs-symbol">:<span class="hljs-string">"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg"</span></span>,
+</div><div class="hljs-line">          <span class="hljs-string">"dec"</span><span class="hljs-symbol">:<span class="hljs-string">"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米"</span></span>,
+</div><div class="hljs-line">          <span class="hljs-string">"price"</span><span class="hljs-symbol">:</span><span class="hljs-number">288</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"type"</span><span class="hljs-symbol">:</span><span class="hljs-number">1</span>,
+</div><div class="hljs-line">          <span class="hljs-string">"category"</span><span class="hljs-symbol">:<span class="hljs-string">"table"</span></span>
+</div><div class="hljs-line">        }
+</div><div class="hljs-line">        ]
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<hr>
+
+<p>12.支付某个商品 <br>
+地址:/store/pay <br>
+方式:post <br>
+参数: { <br>
+        storeID <br>
+        }</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回 {
+</div><div class="hljs-line">{<span class="hljs-string">code:</span> <span class="hljs-number">1</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'NO LOGIN/ok!'</span>}
+</div><div class="hljs-line">        }
+</div></code></pre>
+
+<hr>
+
+<p>13 搜索关键字 <br>
+地址:/course/info <br>
+方式:get <br>
+参数?search=xxx <br>
+返回:</p>
+
+<pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">      {
+</div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">            msg:<span class="hljs-string">'暂无数据'</span>,
+</div><div class="hljs-line">        }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">        {
+</div><div class="hljs-line">        <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">        msg:<span class="hljs-string">'成功获取数据'</span>,
+</div><div class="hljs-line">        searchData
+</div><div class="hljs-line">    }
+</div></code></pre>
+
+<hr>
+
+<p>14 上传头像 （必须先注册之后） <br>
+地址:/person/photoUpload <br>
+方式:post <br>
+参数– <br>
+返回:</p>
+
+<pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">     {
+</div><div class="hljs-line">                <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">                msg:<span class="hljs-string">'上传头像失败'</span>
+</div><div class="hljs-line">            }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">       {
+</div><div class="hljs-line">                    <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">                    msg:<span class="hljs-string">'上传头像成功'</span>
+</div><div class="hljs-line">                }
+</div></code></pre>
+
+<p>15 获取用户头像  <strong>(用户必须注册或登录之后)</strong> <br>
+地址:/person/photoUpload <br>
+方式:get <br>
+参数– <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">         {
+</div><div class="hljs-line">           <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">           msg:<span class="hljs-string">'成功获取头像'</span>,
+</div><div class="hljs-line">           portrait
+</div><div class="hljs-line">       }
+</div></code></pre></div></body></html>
