@@ -102,13 +102,7 @@ function beforeUpload(file) {
 		       </section>
 	}
      handle=ev=>{
-		axios.get('/course/info',{
-		params:{
-
-            category:'table',
-			limit:2
-		}
-		}).then(result=>{
+		axios.get('/course/photoUpload').then(result=>{
             console.log(result);
         })
 	 }

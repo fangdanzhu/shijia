@@ -1,5 +1,6 @@
 import * as TYPES from '../action-types';
-import {queryBanner} from '../../api/furniture'
+import {queryBanner,queryTuiJian} from '../../api/furniture'
+
 
 let furniture= {
     queryBanner(){
@@ -9,6 +10,15 @@ let furniture= {
                 type: TYPES.QUERY_BANNER,
                 bannerData
             });
+        }
+    },
+    queryTuiJian(){
+        return async dispatch=>{
+            let tuijianData=await queryTuiJian();
+            dispatch({
+                type:TYPES.QUERY_TUIJIAN,
+                tuijianData
+            })
         }
     }
 };

@@ -19,6 +19,7 @@ import Person from './routes/Person'
 
 import {LocaleProvider} from 'antd'
 import  zh_CN from 'antd/lib/locale-provider/zh_CN'
+import 'element-theme-default'
 //=>css
 import './static/css/reset.min.css'
 import './static/css/common.less'
@@ -27,7 +28,7 @@ render(<Provider store={store}>
     <LocaleProvider locale={zh_CN}>
         <HashRouter>
             <Switch>
-                <Route path='/'  component={Home}/>
+                <Route path='/'  exact component={Home}/>
                 <Route path='/furniture' component={Home}/>
                 <Route path='/shopcart' component={Shopcart}/>
                 <Route path='/person' component={Person}/>

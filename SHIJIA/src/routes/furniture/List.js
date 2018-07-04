@@ -1,21 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Carousel, Icon,} from 'antd';
+import {Carousel as Carousel2} from 'element-react';
 import {Link} from 'react-router-dom';
 import action from '../../store/action/index'
-
 
 class List extends React.Component {
     constructor(props, context) {
         super(props, context);
     }
+  componentDidMount() {
+        let {queryBanner,queryTuiJian, bannerData,tuijianData} = this.props;
+        if (!bannerData||bannerData.length===0) {
+             queryBanner();
+        }
+        if(!tuijianData||tuijianData.length===0){
+            queryTuiJian();
+        }
+    }
 
     render() {
-        let {bannerData,history}=this.props;
-
-        console.log(bannerData,history);
+        let {bannerData,tuijianData, history} = this.props;
         return <div>
-            <Carousel autoplay>
                 {bannerData && bannerData.length !== 0 ? (<Carousel autoplay>
                     {bannerData.map((item, index) => {
                         let {name, pic} = item;
@@ -24,14 +30,13 @@ class List extends React.Component {
                         </div>;
                     })}
                 </Carousel>) : ''}
-                <div><a href="">1</a></div>
-                <div><a href="">2</a></div>
-                <div><a href="">3</a></div>
-            </Carousel>
             <ul className="nav clearfix">
-                <li onClick={()=>history.push('/furniture/suite')}><img src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
-                <li><img src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
-                <li><img src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
+                <li onClick={() => history.push('/home/furniture/suite')}><img
+                    src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
+                <li onClick={() => history.push('/home/furniture/light')}><img
+                    src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
+                <li onClick={() => history.push('/home/furniture/textiles')}><img
+                    src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
                 <li><img src={require('../../static/images/软装饰品.png')} alt=""/><p>装饰</p></li>
                 <li><img src={require('../../static/images/儿童.png')} alt=""/><p>儿童</p></li>
                 <li><img src={require('../../static/images/笔 (1).png')} alt=""/><p>设计师</p></li>
@@ -42,35 +47,41 @@ class List extends React.Component {
                 <span>夏季新品上新,优惠多多!</span>
                 <Icon type="right"/>
             </Link>
-            <div className="recommend">
-                <ul >
-                    <li><img src={require('../../static/images/tui1.jpg')} alt=""/></li>
-                    <li><img src={require('../../static/images/tui2.jpg')} alt=""/></li>
-                    <li><img src={require('../../static/images/tui3.jpg')} alt=""/></li>
-                    <li><img src={require('../../static/images/tui4.jpg')} alt=""/></li>
-                    <li><img src={require('../../static/images/tui5.jpg')} alt=""/></li>
-                </ul>
+            <div className="recommend" >
+                <div className="demo-4 medium">
+                    <Carousel2 interval="40000" type="card" height="5rem" indicatorPosition="none">
+                        {
+                            [1,2,3,4,5].map((item, index) => {
+                                return (
+                                    <Carousel2.Item key={index}>
+                                        <li><img src={require(`../../static/images/tui${item}.jpg`)} alt=""/></li>
+                                    </Carousel2.Item>
+                                )
+                            })
+                        }
+                    </Carousel2>
+                </div>
             </div>
             <h3 className="design-title"><i></i><span>今日推荐</span></h3>
             <ul className="recommend-body clearfix">
-                <li><img src={require('../../static/images/tui1.jpg')} alt=""/></li>
-                <li><img src={require('../../static/images/tui2.jpg')} alt=""/></li>
-                <li><img src={require('../../static/images/tui3.jpg')} alt=""/></li>
-                <li><img src={require('../../static/images/tui4.jpg')} alt=""/></li>
+                {tuijianData.map((item,index)=>{
+                        let {pic,name}=item;
+                   return <li key={index}>
+                       <img src={pic} alt={name}/>
+                   </li>
+                })}
+
             </ul>
             <h3 className="design-title"><i></i><span>设计前沿</span></h3>
             <div className="design-top">
                 <img src={require('../../static/images/she1.png')} alt=""/>
             </div>
-            <ul className="design-bot clearfix" >
+            <ul className="design-bot clearfix">
                 <li><img src={require('../../static/images/she2.png')} alt=""/></li>
                 <li><img src={require('../../static/images/she3.png')} alt=""/></li>
                 <li><img src={require('../../static/images/she4.png')} alt=""/></li>
             </ul>
         </div>
     }
-
-
 }
-
-export default connect(state=>({...state.furniture},action.furniture))(List);
+export default connect(state => ({...state.furniture}), action.furniture)(List);
