@@ -1,7 +1,8 @@
 const express = require('express'),
     route = express.Router(),
     {writeFile} = require('../utils/promiseFS'),
-    STORE_PATH = './json/store.json',
+    STORE_PATH = '../json/store.json',
+    COLLECTION_PATH = '../json/collection.json',
     utils = require('../utils/utils');
 
 //=>增加购物车信息
@@ -76,8 +77,6 @@ route.get('/info', (req, res) => {
             });
         }
     }
-
-    //=>根据上面查找到的课程ID（storeList），把每一个课程的详细信息获取到，返回给客户端
     let data = [];
     storeList.forEach(({courseID, storeID} = {}) => {
         let item = utils.queryItem(req,category).find(item => parseFloat(item.id) === courseID);
@@ -118,6 +117,113 @@ route.post('/pay', (req, res) => {
         return;
     }
     res.send({code: 1, msg: 'NO LOGIN!'});
+});
+
+//添加到我的收藏  post 请求    参数 商品id  courseId  商品分类  category
+route.post('./addClo',(req,res)=>{
+   let {courseId,category} =req.body,
+       userId=req.session.personID,
+       id=1;
+        if(req.collectionDATA.length<=0){
+            let collectionInfo={
+                id:1,
+                userId,
+                data:[
+                    {
+                        id,
+                        courseId,
+                        category,
+                        time:(new Date().toLocaleString())
+                    }
+                ]
+            };
+            req.collectionDATA.push(collectionInfo);
+            writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+                res.send({
+                    code:0,
+                    msg:"添加成功"
+                })
+            }).catch(()=>{
+                res.send({
+                    code:1,
+                    msg:"添加失败"
+                })
+            })
+        }else {
+            let cur=req.collectionDATA.find(item=>item.userId===userId);
+            if(cur){
+                id=cur.data[cur.data.length-1].id+1;
+                let index =req.collectionDATA.findIndex(item=>item.userId===userId);
+                let collectionInfo={
+                            id,
+                            courseId,
+                            category,
+                            time:(new Date().toLocaleString())
+                };
+                cur.push(collectionInfo);
+                req.collectionDATA.splice(index,1,cur);
+                writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+                    res.send({
+                        code:0,
+                        msg:"添加成功"
+                    })
+                }).catch(()=>{
+                    res.send({
+                        code:1,
+                        msg:"添加失败"
+                    })
+                })
+            }else {
+                    id=req.collectionDATA[req.collectionDATA.length-1].id+1;
+                let collectionInfo={
+                    id,
+                    userId,
+                    data:[
+                        {
+                            id:1,
+                            courseId,
+                            category,
+                            time:(new Date().toLocaleString())
+                        }
+                    ]
+                };
+                req.collectionDATA.push(collectionInfo);
+                writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+                    res.send({
+                        code:0,
+                        msg:"添加成功"
+                    })
+                }).catch(()=>{
+                    res.send({
+                        code:1,
+                        msg:"添加失败"
+                    })
+                })
+            }
+        }
+});
+
+//获取我的收藏
+route.get('./queryClo',(req,res)=>{
+   let userId =req.session.personID,
+       data=[];
+   req.collectionDATA.forEach(item=>{
+       if(item.userId===userId){
+           data=item.data;
+       }
+   });
+    if(data){
+        res.send({
+            code:0,
+            msg:'成功',
+            data
+        })
+    } else {
+        res.send({
+            code:1,
+            msg:'失败'
+        })
+    }
 });
 
 module.exports = route;

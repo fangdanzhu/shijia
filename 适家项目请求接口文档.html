@@ -103,6 +103,8 @@ page：第几页</p>
 </span></div><div class="hljs-line">-<span class="ruby"> - <span class="hljs-symbol">model:</span><span class="hljs-number">3</span> 新古典</span>
 </div></code></pre>
 
+
+
 <pre class="prettyprint hljs-dark"><code class="hljs scala"><div class="hljs-line">参数：
 </div><div class="hljs-line">?id=xx&amp;&amp;category=xxx  获取单个商品的详细信息
 </div><div class="hljs-line">返回 {
@@ -208,6 +210,8 @@ page：第几页</p>
 方式:get <br>
 参数:—</p>
 
+
+
 <pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回:{
 </div><div class="hljs-line">        {<span class="hljs-string">code:</span> <span class="hljs-number">0</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'OK!'</span>, <span class="hljs-string">data:</span> {
 </div><div class="hljs-line">           <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>,
@@ -226,6 +230,8 @@ page：第几页</p>
 方式:get <br>
 参数:–</p>
 
+
+
 <pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回:{
 </div><div class="hljs-line">        {<span class="hljs-string">code:</span> <span class="hljs-number">0</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'OK!'</span>}
 </div><div class="hljs-line">    }
@@ -238,6 +244,8 @@ page：第几页</p>
 <p><strong>【购物车】</strong> <br>
 9 增加购物车信息</p>
 
+
+
 <pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/add</span>
 </div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
 </div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?personID=xxx&amp;&amp;category=xxx
@@ -249,6 +257,8 @@ page：第几页</p>
 </div></code></pre>
 
 <p>10 移除购物车商品信息</p>
+
+
 
 <pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/remove</span>
 </div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
@@ -316,6 +326,8 @@ page：第几页</p>
 参数?search=xxx <br>
 返回:</p>
 
+
+
 <pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">      {
 </div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
 </div><div class="hljs-line">            msg:<span class="hljs-string">'暂无数据'</span>,
@@ -335,6 +347,8 @@ page：第几页</p>
 方式:post <br>
 参数– <br>
 返回:</p>
+
+
 
 <pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">     {
 </div><div class="hljs-line">                <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
@@ -360,4 +374,94 @@ page：第几页</p>
 </div><div class="hljs-line">           msg:<span class="hljs-string">'成功获取头像'</span>,
 </div><div class="hljs-line">           portrait
 </div><div class="hljs-line">       }
+</div></code></pre>
+
+<hr>
+
+<p>【发布】 <br>
+15 上传发布内容—图片 <br>
+（必须先注册之后） 不需要绑定事件 利用   action发送请求 <br>
+地址:/person/putPhoto</p>
+
+<p>16发布内容 <br>
+地址：/person/put <br>
+方式:post <br>
+参数: cont    (描述的内容) <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">{
+</div><div class="hljs-line">       <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">       msg:<span class="hljs-string">'上传成功'</span>
+</div><div class="hljs-line">   }
+</div></code></pre>
+
+<p>16 获取 觅me 列表 <br>
+方式:get <br>
+参数 limit每页的条数 page第几页  model=all 返回全部数据 <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">{
+</div><div class="hljs-line">           <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">           msg:<span class="hljs-string">'所有数据'</span>,
+</div><div class="hljs-line">           data:  {
+</div><div class="hljs-line">                    <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    <span class="hljs-string">"userId"</span>:<span class="hljs-number">1</span>
+</div><div class="hljs-line">                    <span class="hljs-string">"userName"</span>:<span class="hljs-string">"lsq"</span>,
+</div><div class="hljs-line">                    <span class="hljs-string">"dec"</span>:<span class="hljs-string">"帮帮哦"</span>,
+</div><div class="hljs-line">                    <span class="hljs-string">"showUrl"</span>:<span class="hljs-string">"图片显示地址"</span>,
+</div><div class="hljs-line">                    <span class="hljs-string">"time"</span>:<span class="hljs-string">"2018-7-4 am 4:00"</span>
+</div><div class="hljs-line">                      }
+</div><div class="hljs-line">       }
+</div></code></pre>
+
+<p>17 添加到我的收藏 <br>
+地址:/store/addClo <br>
+post 请求 <br>
+参数 : <br>
+                courseId:商品id <br>
+             category:商品分类 <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">         {
+</div><div class="hljs-line">                    <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">                    msg:<span class="hljs-string">"添加成功"</span>
+</div><div class="hljs-line">         }
+</div><div class="hljs-line">     {
+</div><div class="hljs-line">       <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">                    msg:<span class="hljs-string">"添加失败"</span>
+</div><div class="hljs-line">       }
+</div></code></pre>
+
+<p>18获取我的收藏列表 <br>
+地址:/store/queryClo <br>
+参数– <br>
+返回:</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">{
+</div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
+</div><div class="hljs-line">            msg:<span class="hljs-string">'成功'</span>,
+</div><div class="hljs-line">            data:[
+</div><div class="hljs-line">                      {
+</div><div class="hljs-line">                        <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">                        <span class="hljs-string">"courseId"</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">                        <span class="hljs-string">"category"</span>:<span class="hljs-string">"table"</span>,
+</div><div class="hljs-line">                        <span class="hljs-string">"time"</span>:<span class="hljs-string">"2018-8-22"</span>
+</div><div class="hljs-line">                      }
+</div><div class="hljs-line">                    ]
+</div><div class="hljs-line">        }
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line"><wbr>
+</div><div class="hljs-line">{
+</div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
+</div><div class="hljs-line">            msg:<span class="hljs-string">'失败'</span>
+</div><div class="hljs-line">        }
 </div></code></pre></div></body></html>

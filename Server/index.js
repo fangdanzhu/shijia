@@ -3,7 +3,9 @@ const CONFIG = require('./config'),
     COURSE_PATH_FURNITURE = './json/Data/furniture.json',
     COURSE_PATH_LIGHTING = './json/Data/lighting.json',
     COURSE_PATH_TEXTILES = './json/Data/textiles.json',
-    STORE_PATH = './json/store.json';
+    STORE_PATH = './json/store.json',
+    SHOW_PATH='./json/show.json',
+    COLLECTION_PATH='./json/collection.json';
 
 /*-CREATE SERVER-*/
 const express = require('express'),
@@ -43,6 +45,8 @@ app.use(async (req, res, next) => {
     req.courseDATAL = JSON.parse(await readFile(COURSE_PATH_LIGHTING));
     req.courseDATAT = JSON.parse(await readFile(COURSE_PATH_TEXTILES));
     req.storeDATA = JSON.parse(await readFile(STORE_PATH));
+    req.showDATA = JSON.parse(await readFile(SHOW_PATH));
+    req.collectionDATA = JSON.parse(await readFile(COLLECTION_PATH));
     next();
 });
 /*-ROUTE-*/
@@ -50,6 +54,7 @@ app.use(async (req, res, next) => {
 app.use('/course', require('./routes/course'));
 app.use('/person', require('./routes/person'));
 app.use('/store', require('./routes/store'));
+app.use('/show', require('./routes/show'));
 app.use((req, res, next) => {
     res.status(404);
     res.send('NOT FOUND!');

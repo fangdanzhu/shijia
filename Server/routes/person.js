@@ -100,7 +100,17 @@ route.get('/out', (req, res) => {
 route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
+    console.log(req.session.personID);
+    if(typeof req.session.personID==='undefined'){
+        return;
+    }
     let file =req.file;
+    console.log(file);
+
+    if (typeof file ==='undefined'){
+        res.send('no');
+        return;
+    }
     let photoUrl =file.destination+'/'+(Math.random()*1000).toFixed(0)+file.originalname;
     fs.rename(file.path,`${photoUrl}`,(err)=>{
         if(err){
@@ -129,6 +139,13 @@ route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
 });
 //获取用户头像 (用户必须注册或登录之后)
 route.get('/photoUpload',(req,res)=>{
+   if(!req.session.personID){
+       res.send({
+           code:1,
+           msg:'获取头像失败'
+       });
+       return;
+   }
        let result= req.personalDATA.find(item=>{
             return item.id=parseFloat(req.session.personID);
         });

@@ -1,1 +1,20 @@
-[{"id":1,"userName":"lsq","passWord":"123456","address":["北京市昌平区珠峰培训3楼快递存放处"],"phone":18232366809,"portrait":""},{"id":2,"userName":"qqq","address":[],"phone":"123","passWord":"123445","portrait":""}]
+[
+  {
+    "id": 1,
+    "userName": "lsq",
+    "passWord": "123456",
+    "address": [
+      "北京市昌平区珠峰培训3楼快递存放处"
+    ],
+    "phone": 18232366809,
+    "portrait": ""
+  },
+  {
+    "id": 2,
+    "userName": "qqq",
+    "address": [],
+    "phone": "123",
+    "passWord": "123445",
+    "portrait": ""
+  }
+]
