@@ -27,7 +27,7 @@ render(<Provider store={store}>
     <LocaleProvider locale={zh_CN}>
         <HashRouter>
             <Switch>
-                <Route path='/'  component={Home}/>
+                <Route path='/'  exact component={Home}/>
                 <Route path='/furniture' component={Home}/>
                 <Route path='/shopcart' component={Shopcart}/>
                 <Route path='/person' component={Person}/>
