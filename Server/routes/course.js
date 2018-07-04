@@ -1,5 +1,7 @@
 const express = require('express'),
     route = express.Router();
+
+let fs =require('fs');
 //获取轮播图
 route.get('/banner', (req, res) => {
     //=>我就是把所有课程中的最后三条数据做为轮播图展示
@@ -25,11 +27,13 @@ route.get('/tuijian',(req,res)=>{
 
 //获取商品详情信息
 route.get('/info',(req,res)=>{
-   let {id,category,model} = req.query;
+   let {id,category,model,page=1,limit=10} = req.query;
    let regF=/^(sofa|table|stool)$/,
        regL=/^(deskLamp|groundLamp|chandelier)$/,
        regT=/^(blanket|pillow|carpet)$/;
    let Data=[];
+   page=parseFloat(page);
+   limit=parseFloat(limit);
    Data=regF.test(category)?req.courseDATAF:(regL.test(category)?req.courseDATAL:regT.test(category)?req.courseDATAT:null);
    //获取所有的 对应类的所有商品信息 参数  category
    function queryAll(category) {
@@ -45,17 +49,18 @@ route.get('/info',(req,res)=>{
    //获取对应分类的系分类
     //如果只传入 大分类 id 和 model 没传 返回 对应大分类的所有商品信息
     if(typeof id==="undefined"&&typeof model==='undefined'&&category){
-        data=queryAll(category);
+        data=queryAll(category).slice((page-1)*limit,page*limit);
         res.send({
             code:0,
-            msg:'ok',
+            msg:'所有数据',
+            limit,
             data
         });
         return;
     }
     //如果传入了 category 和model 那么返回大分类中的小分类的所有商品信息
     if(typeof id==="undefined"&&typeof model!=='undefined'&&typeof category!=='undefined' ){
-        data=queryAll(category).filter(item=>parseFloat(item.type)===parseFloat(model));
+        data=queryAll(category).filter(item=>parseFloat(item.type)===parseFloat(model)).slice((page-1)*limit,page*limit);
         res.send({
             code:0,
                 msg:'ok',
@@ -86,7 +91,49 @@ route.get('/info',(req,res)=>{
 
 //搜索关键字返回数据
 route.get('/search',(req,res)=>{
-    let {con}=req.query;
+    let {cont}=req.query;
+    let reg =new RegExp(cont);
+    let data=[];
+    req.courseDATAF.forEach(item=>{
+        item.data.forEach(val=>{
+            data.push(val)
+        })
+    });
+    req.courseDATAL.forEach(item=>{
+        item.data.forEach(val=>{
+            data.push(val)
+        })
+    });
+    req.courseDATAT.forEach(item=>{
+        item.data.forEach(val=>{
+            data.push(val)
+        })
+    });
+    let searchData=[];
+    data.forEach(item=>{
+        if(reg.test(item.name)&&searchData.length<=4){
+            searchData.push(item)
+        }
+    });
+    res.send({
+        searchData
+    })
+
+});
+//获取头像
+route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
+    // req.file is the `avatar` file
+    // req.body will hold the text fields, if there were any
+
+
+    console.log(req.file);
+    console.log(req.body);
+
+    res.send("上传成功");
+});
+route.get('/photoUpload',(req,res)=>{
+
+
 });
 
 module.exports = route;

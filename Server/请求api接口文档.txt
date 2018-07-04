@@ -37,10 +37,12 @@
 3 获取商品列表
 地址 /course/info
 方式get
-参数: id,category,model
+参数: id,category,model,limit,page
 id:商品的id
 category:商品的一级类别
 model:商品的二级类别
+limit:每页最多显示几条
+page：第几页
 ````
 【家具】
 - category:sofa:沙发
@@ -159,7 +161,7 @@ model:商品的二级类别
 
 - - - - -
 6校验是否登录
-地址:/person/register
+地址:/person/login
 方式:get
 参数:
 ```
@@ -212,11 +214,11 @@ model:商品的二级类别
 返回:{
         {code: 0/1, msg: 'OK/no!'}
         }
-
+7/
 10 移除购物车商品信息
 地址:/store/remove
 方式:post
-参数:?personID=xxx&&category=xxx
+参数:?courseID=xxx&&category=xxx
 ```
 ```
 返回:{
@@ -224,7 +226,7 @@ model:商品的二级类别
         }
 -----------------------------------------------------------------------------------
 11 获取购物车商品信息
-地址:/store/info
+地址:/store/info[
 方式:get
 参数:state  0  未支付 1 已支付  2 已收货
 返回:{
@@ -252,3 +254,11 @@ model:商品的二级类别
 返回 {
 {code: 1, msg: 'NO LOGIN/ok!'}
         }
+
+
+-----------------------
+13 搜索关键字
+地址:/course/info
+方式:get
+参数?search=xxx
+返回:searchData,数组

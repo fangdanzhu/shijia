@@ -26,6 +26,7 @@ route.post('/register',(req,res)=>{
         phone: '',
         passWord: ''
     };
+    console.log(req.body);
     personInfo={...personInfo,...req.body};
     req.personalDATA.push(personInfo);
     writeFile(PERSONAL_PATH,req.personalDATA).then(()=>{
