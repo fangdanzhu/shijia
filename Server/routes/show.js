@@ -87,10 +87,4 @@ route.get('./showList',(req,res)=>{
        data
    })
 });
-
-
-
-
-
-
 module.exports = route;

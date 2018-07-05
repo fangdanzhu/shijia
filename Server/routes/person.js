@@ -4,7 +4,7 @@ const express = require('express'),
     PERSONAL_PATH = './json/personal.json',
     utils = require('../utils/utils'),
     fs=require('fs');
-
+let csId=null;
 //=>把临时存储在SESSION中的STORE信息，增加到JSON文件中（登录后）
 function add_temp_store(req, res) {
     let storeList = req.session.storeList || [];
@@ -17,7 +17,6 @@ function add_temp_store(req, res) {
     });
     req.session.storeList = [];
 }
-
 //用户注册
 route.post('/register',(req,res)=>{
     let personInfo = {
@@ -46,7 +45,7 @@ route.post('/register',(req,res)=>{
     req.personalDATA.push(personInfo);
     writeFile(PERSONAL_PATH,req.personalDATA).then(()=>{
         //=>注册成功也代表登录成功，所以需要记录SESSION
-        req.session.personID = parseFloat(personInfo.id);
+        csId=req.session.personID = parseFloat(personInfo.id);
         add_temp_store(req, res);//=>把存储到SESSION中的购物信息写入到JSON文件中
         res.send({
             code:0,
@@ -67,10 +66,9 @@ route.post('/login', (req, res) => {
         //=>支持用户名传递：姓名、邮箱、电话
         return (item.userName === userName  || item.phone === userName) && item.passWord === passWord;
     });
-
     if (item) {
         //=>登录成功：把当前登录用户的ID存储到SESSION上（如果SESSION上有用户信息就代表登录成功，反之没有登录）
-        req.session.personID = parseFloat(item.id);
+        csId= req.session.personID = parseFloat(item.id);
         add_temp_store(req, res);//=>把存储到SESSION中的购物信息写入到JSON文件中
         res.send({code: 0, msg: 'OK!'});
         return;
@@ -106,18 +104,18 @@ route.get('/info', (req, res) => {
 route.get('/out', (req, res) => {
     //=>退出登录就是干掉SESSION
     req.session.personID = null;
+    csId=null;
     res.send({code: 0, msg: 'OK!'});
 });
-
 //上传头像 （必须先注册之后）
 route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
-    console.log(req.session.personID);
     let file =req.file;
     console.log(file);
     if(typeof req.session.personID==='undefined'){
-        return;
+        console.log("AAA");
+        // return;
     }
     if (typeof file ==='undefined'){
         res.send('no');
@@ -132,7 +130,7 @@ route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
             });
         }else {
             req.personalDATA.forEach(item=>{
-                if(item.id===req.session.personID){
+                if(item.id===csId){
                     item.photoUrl=photoUrl;
                 }
             });

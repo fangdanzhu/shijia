@@ -1,1 +1,10 @@
-[{"id":3,"courseID":2,"personID":1,"state":1,"time":1530528230517},{"id":4,"courseID":5,"personID":1,"state":1,"time":1530528308118},{"id":5,"courseID":3,"personID":1,"state":1,"time":1530528538781},{"id":7,"courseID":4,"personID":1,"state":1,"time":1530528810492},{"id":9,"courseID":10,"personID":1,"state":1,"time":1530528981605},{"id":10,"courseID":14,"personID":1,"state":1,"time":1530529404482},{"id":11,"courseID":7,"personID":1,"state":1,"time":1530544713588},{"id":12,"courseID":null,"personID":1,"category":"table","state":0,"time":1530633757314},{"id":13,"courseID":1,"personID":21,"category":"stool","state":0,"time":1530784931490},{"id":14,"courseID":1,"personID":21,"category":"chandelier","state":0,"time":1530784940881},{"id":15,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530784995372},{"id":16,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530785014311},{"id":17,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530785021924},{"id":18,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530785037064},{"id":19,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530785049531},{"id":20,"courseID":1,"personID":22,"category":"stool","state":0,"time":1530785138673},{"id":21,"courseID":1,"personID":27,"category":"stool","state":0,"time":1530787146257}]
+[
+  {
+    "id": 3,
+    "courseID": 2,
+    "personID": 1,
+    "state": 1,
+    "time": 1530528230517
+  }
+
+]
