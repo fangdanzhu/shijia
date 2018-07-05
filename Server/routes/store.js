@@ -1,8 +1,8 @@
 const express = require('express'),
     route = express.Router(),
     {writeFile} = require('../utils/promiseFS'),
-    STORE_PATH = '../json/store.json',
-    COLLECTION_PATH = '../json/collection.json',
+    STORE_PATH = './json/store.json',
+    COLLECTION_PATH = './json/collection.json',
     utils = require('../utils/utils');
 
 //=>增加购物车信息
@@ -120,11 +120,14 @@ route.post('/pay', (req, res) => {
 });
 
 //添加到我的收藏  post 请求    参数 商品id  courseId  商品分类  category
-route.post('./addClo',(req,res)=>{
+route.post('/addClo',(req,res)=>{
    let {courseId,category} =req.body,
        userId=req.session.personID,
        id=1;
-        if(req.collectionDATA.length<=0){
+    console.log(courseId, category);
+    console.log(userId);
+    console.log(req.collectionDATA);
+    if(req.collectionDATA.length<=0){
             let collectionInfo={
                 id:1,
                 userId,
@@ -189,11 +192,13 @@ route.post('./addClo',(req,res)=>{
                 };
                 req.collectionDATA.push(collectionInfo);
                 writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+                    console.log('A');
                     res.send({
                         code:0,
                         msg:"添加成功"
                     })
                 }).catch(()=>{
+                    console.log("B");
                     res.send({
                         code:1,
                         msg:"添加失败"

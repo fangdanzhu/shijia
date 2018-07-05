@@ -4,8 +4,8 @@ const CONFIG = require('./config'),
     COURSE_PATH_LIGHTING = './json/Data/lighting.json',
     COURSE_PATH_TEXTILES = './json/Data/textiles.json',
     STORE_PATH = './json/store.json',
-    SHOW_PATH='./json/show.json',
-    COLLECTION_PATH='./json/collection.json';
+    COLLECTION_PATH = './json/collection.json',
+    SHOW_PATH = './json/show.json';
 
 /*-CREATE SERVER-*/
 const express = require('express'),
@@ -45,8 +45,8 @@ app.use(async (req, res, next) => {
     req.courseDATAL = JSON.parse(await readFile(COURSE_PATH_LIGHTING));
     req.courseDATAT = JSON.parse(await readFile(COURSE_PATH_TEXTILES));
     req.storeDATA = JSON.parse(await readFile(STORE_PATH));
-    req.showDATA = JSON.parse(await readFile(SHOW_PATH));
     req.collectionDATA = JSON.parse(await readFile(COLLECTION_PATH));
+    req.showDATA = JSON.parse(await readFile(SHOW_PATH));
     next();
 });
 /*-ROUTE-*/
