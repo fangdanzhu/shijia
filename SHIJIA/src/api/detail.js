@@ -12,3 +12,15 @@ export function queryDetail(data) {
 export function queryTextiels(data) {
      return axios.get(`/course/info?category=${data}`)
 }
+export function isLogin() {
+    return axios.get('/person/login ')
+}
+export function queryShopCart() {
+    return axios.get('/store/info?state=0')
+}
+export function addShopCart(data) {
+    return axios.post('/store/add',data)
+}
+export function removeShopCart(data) {
+    return axios.post('/store/remove',data)
+}

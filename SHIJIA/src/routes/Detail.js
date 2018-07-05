@@ -1,36 +1,116 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Icon} from 'antd'
-import {Link,withRouter} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import Qs from 'qs'
-import{queryDetail} from '../api/detail'
-
+import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin} from '../api/detail'
 
 class Detail extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.state={
-            data:null,
+        this.state = {
+            data: null,
+            isCollect: false,
+            isShopcart: false,
+            isLogining: false,
         }
     }
 
-   async componentDidMount() {
-        let {location:{search}} = this.props,
-            {ID=0,category=''}=Qs.parse(search.substr(1))||{};
-            this.ID=ID;
-       let result=await queryDetail({ID,category});
-       if (parseFloat(result.code) === 0){
-           this.setState({
-               data:result.data[0]
-           });
-       }
-   }
+    async componentDidMount() {
+        let {location: {search}} = this.props,
+            {ID = 0, category = ''} = Qs.parse(search.substr(1)) || {};
+        let result = await queryDetail({ID, category});
+        this.ID = ID;
+        if (parseFloat(result.code) === 0) {
+            this.setState({
+                data: result.data[0]
+            });
+        }
+        result = await isLogin();
+        if (parseFloat(result.code) === 0) {
+            this.setState({
+                isLogining: true
+            })
+        }
+        result = await queryShopCart();
+        if (parseFloat(result.code) === 0) {
+            let flag = result.data.find(item => parseFloat(item.id) === 0);
+            if (flag) {
+                this.setState({
+                    isShopcart: true
+                })
+            }
+        }
+
+    }
+
+//收藏
+    collect = () => {
+        let {isCollect} = this.state;
+        isCollect = !isCollect;
+        this.setState({
+            isCollect
+        })
+    };
+    handleCart = async () => {
+        let {isShopcart, data, isLogining} = this.state;
+        if (!isLogining) {
+            this.props.history.push('/person/login');
+            return
+        }
+        let result = await queryShopCart();
+        if (parseFloat(result.code) !== 0)return;
+        let flag = result.data.find(item => parseFloat(item.id) === 0);
+        //加入购物车
+        if (!flag && !isShopcart) {
+            result = await addShopCart({
+                courseID: data.id,
+                category: data.category
+            });
+            if (parseFloat(result.code) === 0) {
+                this.setState({
+                    isShopcart: true
+                });
+            }
+            return
+        }
+        //移出购物车
+        if (flag && isShopcart) {
+            result = await removeShopCart({
+                courseID: data.id,
+                category: data.category
+            });
+            if (parseFloat(result.code) === 0) {
+                this.setState({
+                    isShopcart: true
+                });
+            }
+        }
+    };
+    //去支付
+    goToPay = async () => {
+        let {isShopcart, isLogining, data} = this.state;
+        let {history} = this.props;
+        if (isLogining) {
+            if (!isShopcart) {
+                let result = await addShopCart({
+                    courseID: data.id,
+                    category: data.category
+                });
+                if (parseFloat(result.code) !== 0)return
+            }
+            history.push('/shopcart/pay');
+            return
+        }
+        history.push('/person/login')
+    };
 
     render() {
         let {history} = this.props,
-            {data}=this.state;
-        if(!data)return'';
-      let  {name,pic,dec,id,price}=data;
+            {data, isCollect, isShopcart} = this.state;
+        console.log(data);
+        if (!data)return '没有这件商品！';
+        let {name, pic, dec, id, price} = data;
         return <div className="detailBox">
             <div className="header">
                 <Icon type="left" onClick={() => {
@@ -48,8 +128,8 @@ class Detail extends React.Component {
                         <b>￥ {price}</b>
                     </div>
                     <div className="right">
-                        <Icon type="star"/>
-                        <span>收藏</span>
+                        <Icon type="star" style={isCollect ? {color: 'orange'} : null} onClick={this.collect}/>
+                        <span>{isCollect ? '已经收藏' : '加入收藏'}</span>
                     </div>
                 </div>
             </div>
@@ -68,13 +148,16 @@ class Detail extends React.Component {
                 </div>
             </div>
             <ul className="pay-bot">
-                <li className="kefu"><Icon type="customer-service"/><p>客服</p></li>
-                <li className="car"> <Link to='/shopcart'><Icon type="shopping-cart"/><p>购物车</p></Link></li>
-                <li className="pay">立即购买</li>
-                <li className="add">加入购物车</li>
+                <li className="kefu"><Icon type="customer-service" style={{fontSize: '.4rem', color: 'red'}}/><p>客服</p>
+                </li>
+                <li className="car"><Link to='/shopcart'><Icon type="shopping-cart"
+                                                               style={{fontSize: '.4rem', color: 'red'}}/><p>购物车</p>
+                </Link></li>
+                <li className="pay" onClick={this.goToPay}>立即购买</li>
+                <li className={isShopcart ? 'remove' : 'add'}
+                    onClick={this.handleCart}>{isShopcart ? '移出购物车' : '加入购物车'}</li>
             </ul>
         </div>
     }
 }
-
 export default connect()(Detail)
