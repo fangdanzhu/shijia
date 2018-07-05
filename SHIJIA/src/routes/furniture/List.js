@@ -38,7 +38,7 @@ class List extends React.Component {
                 </Carousel>) : ''}
             <ul className="nav clearfix">
                 <li onClick={() => history.push('/home/suite')}><img
-                    src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
+                    src={require('../../static/images/家居.png')} alt=""/><p>沙发</p></li>
                 <li onClick={() => history.push('/home/light')}><img
                     src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
                 <li onClick={() => history.push('/home/textiles')}><img

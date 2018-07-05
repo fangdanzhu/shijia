@@ -108,7 +108,6 @@ class Detail extends React.Component {
     render() {
         let {history} = this.props,
             {data, isCollect, isShopcart} = this.state;
-        console.log(data);
         if (!data)return '没有这件商品！';
         let {name, pic, dec, id, price} = data;
         return <div className="detailBox">

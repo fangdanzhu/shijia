@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Tabs} from 'antd';
-import {queryTextiels} from '../../api/detail'
+import {queryTextiels, queryMore} from '../../api/detail'
 
 class Suite extends React.Component {
     constructor(props, context) {
@@ -28,19 +28,28 @@ class Suite extends React.Component {
                 }
                 break;
             case '2':
-                data = await queryTextiels('table');
+                data = await queryMore({
+                    category: 'sofa',
+                    model: 1
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
                 break;
             case '3':
-                data = await queryTextiels('stool');
+                data = await queryMore({
+                    category: 'sofa',
+                    model: 2
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
                 break;
             case '4':
-                data = await queryTextiels('sofa');
+                data = await queryMore({
+                    category: 'sofa',
+                    model: 3
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
@@ -55,10 +64,10 @@ class Suite extends React.Component {
         let TabPane = Tabs.TabPane;
         let data = this.state.dataItem;
         return <div className="textilesBox">
-            <h3>家居</h3>
+            <h3>沙发</h3>
             <img src={require('../../static/images/jiafang.png')} alt="家纺" className="mainImg"/>
             <Tabs defaultActiveKey="1" onChange={this.callback}>
-                <TabPane tab="沙发" key="1">
+                <TabPane tab="全部" key="1">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -77,7 +86,7 @@ class Suite extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="桌几" key="2">
+                <TabPane tab="单人" key="2">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -96,7 +105,7 @@ class Suite extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="椅子凳子" key="3">
+                <TabPane tab="双人沙发" key="3">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -115,7 +124,7 @@ class Suite extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="柜架" key="4">
+                <TabPane tab="多人" key="4">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;

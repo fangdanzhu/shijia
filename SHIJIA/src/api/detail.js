@@ -12,6 +12,10 @@ export function queryDetail(data) {
 export function queryTextiels(data) {
      return axios.get(`/course/info?category=${data}`)
 }
+export function queryMore(data) {
+    let  {category, model}=data;
+    return axios.get(`/course/info?category=${category}&&model=${model}`)
+}
 export function isLogin() {
     return axios.get('/person/login ')
 }
