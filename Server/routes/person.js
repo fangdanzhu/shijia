@@ -113,7 +113,7 @@ route.get('/out', (req, res) => {
 route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
-    console.log(req.session.personID);
+    console.log(req.session);
     let file =req.file;
     console.log(file);
     if(typeof req.session.personID==='undefined'){
