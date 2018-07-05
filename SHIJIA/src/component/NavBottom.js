@@ -12,7 +12,7 @@ const Search = Input.Search;
         return ( <footer className="footerNavBox">
                 <NavLink to="/"><Icon type="home" /><span>首页</span></NavLink>
                 <NavLink to="/hotsale"><Icon type="rocket" /><span>热度</span></NavLink>
-            <NavLink to="/hotsale" className="sd"><Icon type="plus-circle-o" /></NavLink>
+            <NavLink to="/hotsale" className="sd"><Icon type="plus-circle-o"  style={{ fontSize: 46, color: '#818181' }}/></NavLink>
                 <NavLink to="/shopcart"><Icon type="shopping-cart" /><span>购物车</span></NavLink>
                 <NavLink to="/person"><Icon type="user" /><span>我的</span></NavLink>
             </footer>

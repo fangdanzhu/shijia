@@ -37,6 +37,7 @@ render(<Provider store={store}>
                 <Redirect to="/furniture"/>
             </Switch>
         </HashRouter>
+
     </LocaleProvider>
 </Provider>, root);
 
