@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Navhead from '../component/NavHead'
 import {Icon} from 'antd'
-import {Link} from 'react-router-dom'
+import {Link,withRouter} from 'react-router-dom'
 import Qs from 'qs'
 import{queryDetail} from '../api/detail'
+
 
 class Detail extends React.Component {
     constructor(props, context) {
@@ -69,7 +69,7 @@ class Detail extends React.Component {
             </div>
             <ul className="pay-bot">
                 <li className="kefu"><Icon type="customer-service"/><p>客服</p></li>
-                <li className="car"><Icon type="shopping-cart"/><p>购物车</p></li>
+                <li className="car"> <Link to='/shopcart'><Icon type="shopping-cart"/><p>购物车</p></Link></li>
                 <li className="pay">立即购买</li>
                 <li className="add">加入购物车</li>
             </ul>

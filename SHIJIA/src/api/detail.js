@@ -9,3 +9,6 @@ export function queryDetail(data) {
         }
     })
 }
+export function queryTextiels(data) {
+     return axios.get(`/course/info?category=${data}`)
+}
