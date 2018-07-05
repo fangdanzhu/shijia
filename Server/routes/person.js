@@ -28,7 +28,20 @@ route.post('/register',(req,res)=>{
         passWord: '',
         portrait:''
     };
-    console.log(req.body);
+    let Xname =req.body.userName,
+        isCK=false;
+    req.personalDATA.forEach(item=>{
+       if(item.userName===Xname){
+                    isCK=true;
+       }
+    });
+    if(isCK){
+        res.send({
+            code:2,
+            msg:'用户名冲突'
+        });
+        return;
+    }
     personInfo={...personInfo,...req.body};
     req.personalDATA.push(personInfo);
     writeFile(PERSONAL_PATH,req.personalDATA).then(()=>{
@@ -101,12 +114,11 @@ route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
     console.log(req.session.personID);
+    let file =req.file;
+    console.log(file);
     if(typeof req.session.personID==='undefined'){
         return;
     }
-    let file =req.file;
-    console.log(file);
-
     if (typeof file ==='undefined'){
         res.send('no');
         return;
