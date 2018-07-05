@@ -1,8 +1,8 @@
 const express = require('express'),
     route = express.Router(),
     {writeFile} = require('../utils/promiseFS'),
-    STORE_PATH = '../json/store.json',
-    COLLECTION_PATH = '../json/collection.json',
+    STORE_PATH = './json/store.json',
+    COLLECTION_PATH = './json/collection.json',
     utils = require('../utils/utils');
 
 //=>增加购物车信息

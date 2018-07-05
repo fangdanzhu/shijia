@@ -1,7 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
+
 
 class Light extends React.Component {
     constructor(props, context) {
@@ -9,8 +8,10 @@ class Light extends React.Component {
     }
 
     render() {
-        return <div>
- 灯饰
+        return <div className="textilesBox">
+               <h3>家纺</h3>
+            <img src={require('../../static/images/jiafang.png')} alt="家纺" className="mainImg"/>
+
         </div>
     }
 }
