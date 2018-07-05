@@ -4,7 +4,7 @@ import {Carousel, Icon,} from 'antd';
 import {Carousel as Carousel2} from 'element-react';
 import {Link} from 'react-router-dom';
 import action from '../../store/action/index'
-
+import NavTop from '../../component/NavTop';
 class List extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -22,20 +22,26 @@ class List extends React.Component {
     render() {
         let {bannerData,tuijianData, history} = this.props;
         return <div>
+            <NavTop/>
                 {bannerData && bannerData.length !== 0 ? (<Carousel autoplay>
                     {bannerData.map((item, index) => {
-                        let {name, pic} = item;
+                        let {name, pic,id,category} = item;
                         return <div key={index}>
+                            <Link to={{
+                                pathname:'/detail',
+                                search: `?ID=${id}&category=${category}`
+                            }}>
                             <img src={pic} alt={name}/>
-                        </div>;
+                            </Link>
+                        </div>
                     })}
                 </Carousel>) : ''}
             <ul className="nav clearfix">
-                <li onClick={() => history.push('/home/furniture/suite')}><img
-                    src={require('../../static/images/家居.png')} alt=""/><p>家具</p></li>
-                <li onClick={() => history.push('/home/furniture/light')}><img
+                <li onClick={() => history.push('/home/suite')}><img
+                    src={require('../../static/images/家居.png')} alt=""/><p>沙发</p></li>
+                <li onClick={() => history.push('/home/light')}><img
                     src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
-                <li onClick={() => history.push('/home/furniture/textiles')}><img
+                <li onClick={() => history.push('/home/textiles')}><img
                     src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
                 <li><img src={require('../../static/images/软装饰品.png')} alt=""/><p>装饰</p></li>
                 <li><img src={require('../../static/images/儿童.png')} alt=""/><p>儿童</p></li>
@@ -49,16 +55,12 @@ class List extends React.Component {
             </Link>
             <div className="recommend" >
                 <div className="demo-4 medium">
-                    <Carousel2 interval="40000" type="card" height="5rem" indicatorPosition="none">
-                        {
-                            [1,2,3,4,5].map((item, index) => {
-                                return (
-                                    <Carousel2.Item key={index}>
+                    <Carousel2 interval="40000" type="card" height="5rem" >
+                        {[1,2,3,4,5].map((item, index) => {
+                                return (<Carousel2.Item key={index}>
                                         <li><img src={require(`../../static/images/tui${item}.jpg`)} alt=""/></li>
                                     </Carousel2.Item>
-                                )
-                            })
-                        }
+                                )})}
                     </Carousel2>
                 </div>
             </div>

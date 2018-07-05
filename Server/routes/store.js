@@ -209,7 +209,7 @@ route.post('/addClo',(req,res)=>{
 });
 
 //获取我的收藏
-route.get('./queryClo',(req,res)=>{
+route.get('/queryClo',(req,res)=>{
    let userId =req.session.personID,
        data=[];
    req.collectionDATA.forEach(item=>{

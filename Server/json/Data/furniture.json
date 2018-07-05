@@ -5,39 +5,165 @@
         "data":[
             {
                 "id":1,
-                "name":"Sofa-A",
-                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "name":"单人沙发Sofa-A",
+                "pic":"http://g.search2.alicdn.com/img/i2/95396869/TB28i8.i7omBKNjSZFqXXXtqVXa_!!0-saturn_solar.jpg_260x260.jpg",
                 "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
-                "price":288,
+                "price":2848,
                 "type":1,
                 "category":"sofa"
             },
             {
                 "id":2,
-                "name":"Sofa-B",
-                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "name":"单人沙发Sofa-B",
+                "pic":"http://g.search3.alicdn.com/img/i3/43585838/TB2NASJm3oQMeJjy0FpXXcTxpXa_!!0-saturn_solar.jpg_260x260.jpg",
                 "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
-                "price":288,
-                "type":2,
+                "price":88,
+                "type":1,
                 "category":"sofa"
 
             },
             {
                 "id":3,
-                "name":"Sofa-C",
-                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "name":"单人沙发Sofa-C",
+                "pic":"http://g.search2.alicdn.com/img/i2/26052156/TB2y4ZHXogQMeJjy0FfXXbddXXa_!!0-saturn_solar.jpg_260x260.jpg",
                 "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
                 "price":288,
-                "type":3,
+                "type":1,
                 "category":"sofa"
             },
             {
                 "id":4,
-                "name":"Sofa-A",
-                "pic":"https://img.alicdn.com/imgextra/i2/2289469223/TB2pu20y4SYBuNjSsphXXbGvVXa_!!2289469223-0-item_pic.jpg_60x60q90.jpg",
+                "name":"单人沙发Sofa-A",
+                "pic":"http://g.search2.alicdn.com/img/i2/T1UVufXahoXXbxEWoZ_031309.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":678,
+                "type":1,
+                "category":"sofa"
+            },
+            {
+                "id":5,
+                "name":"单人沙发Sofa-9",
+                "pic":"http://g.search1.alicdn.com/img/i1/31073258/TB2UHyAxuySBuNjy1zdXXXPxFXa_!!0-saturn_solar.jpg_260x260.jpg",
                 "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
                 "price":288,
                 "type":1,
+                "category":"sofa"
+            },
+            {
+                "id":6,
+                "name":"单人沙发Sofa-8",
+                "pic":"http://g.search3.alicdn.com/img/i3/119431624/TB2KaF_mDlYBeNjSszcXXbwhFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":998,
+                "type":1,
+                "category":"sofa"
+            },
+            {
+                "id":7,
+                "name":"双人沙发Sofa-7",
+                "pic":"http://g.search2.alicdn.com/img/i2/40279083/TB2yGZucv6H8KJjSspmXXb2WXXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":28,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":8,
+                "name":"双人沙发Sofa-6",
+                "pic":"http://g.search1.alicdn.com/img/i1/1811706088814235176/TB2xpekXHMlyKJjSZFlXXbMoFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":2880,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":9,
+                "name":"双人沙发Sofa-A4",
+                "pic":"http://g.search2.alicdn.com/img/i2/14682811/TB2.GoNmJbJ8KJjy1zjXXaqapXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":999,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":10,
+                "name":"双人沙发Sofa-A3",
+                "pic":"http://g.search.alicdn.com/img/i4/1158906065145720639/TB2dzv4tB8lpuFjy0FnXXcZyXXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":768,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":11,
+                "name":"双人沙发Sofa-A1",
+                "pic":"http://g.search2.alicdn.com/img/i2/16692935/TB2N3jRaKySBuNjy1zdXXXPxFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":90,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":12,
+                "name":"双人沙发Sofa-A2",
+                "pic":"http://g.search2.alicdn.com/img/i2/16692935/TB2N3jRaKySBuNjy1zdXXXPxFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":5500,
+                "type":2,
+                "category":"sofa"
+            },
+            {
+                "id":13,
+                "name":"多人沙发Sofa-TT1",
+                "pic":"http://g.search1.alicdn.com/img/i1/84065364/TB2c9F2kASWBuNjSszdXXbeSpXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":550,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":14,
+                "name":"多人沙发Sofa-TT5",
+                "pic":"http://g.search.alicdn.com/img/i4/98913083/TB2pVg2k0nJ8KJjSszdXXaxuFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":500,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":15,
+                "name":"多人沙发Sofa-TT4",
+                "pic":"http://g.search.alicdn.com/img/i4/1158906065145720639/TB2dzv4tB8lpuFjy0FnXXcZyXXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":5500,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":16,
+                "name":"多人沙发Sofa-TT6",
+                "pic":"http://g.search2.alicdn.com/img/i2/43294063/TB2gtUip4uTBuNkHFNRXXc9qpXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":10000,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":17,
+                "name":"多人沙发Sofa-TT8",
+                "pic":"http://g.search2.alicdn.com/img/i2/111170448/TB2EApInACWBuNjy0FaXXXUlXXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":990,
+                "type":3,
+                "category":"sofa"
+            },
+            {
+                "id":18,
+                "name":"多人沙发Sofa-TT9",
+                "pic":"http://g.search3.alicdn.com/img/i3/32953221/TB2QXw9r25TBuNjSspcXXbnGFXa_!!0-saturn_solar.jpg_260x260.jpg",
+                "dec":"luckysac懒人沙发豆袋创意单人沙发卧室客厅小户型懒人椅子榻榻米",
+                "price":5500,
+                "type":3,
                 "category":"sofa"
             }
         ],
