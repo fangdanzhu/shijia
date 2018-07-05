@@ -7,7 +7,13 @@ export function HeadList(payload){
 }
 
 export function Category(category) {
+<<<<<<< HEAD
        return axios.get('/course/info',{
            params:category
        })
+=======
+    return axios.get('/course/info',{
+        params:category
+    })
+>>>>>>> 5f1f6f9dcee748906f7190f797b8b9991f73e9b6
 }

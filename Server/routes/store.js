@@ -56,16 +56,15 @@ route.post('/remove', (req, res) => {
 route.get('/info', (req, res) => {
     let state = parseFloat(req.query.state) || 0,
         personID = req.session.personID,
-        category = req.session.category,
         storeList = [];
+    console.log(state, personID);
     if (personID) {
         //=>登录状态下是从JSON文件中获取：在STORE.JSON中找到所有personID和登录用户相同的(服务器从SESSION中可以获取用户ID的)
         req.storeDATA.forEach(item => {
-            if (parseFloat(item.personID) === personID && parseFloat(item.state) === state&&item.category===category) {
+            if (parseFloat(item.personID) === personID && parseFloat(item.state) === state) {
                 storeList.push({
                     courseID: parseFloat(item.courseID),
-                    storeID: parseFloat(item.id),
-                    category
+                    category:item.category
                 });
             }
         });
@@ -78,9 +77,8 @@ route.get('/info', (req, res) => {
         }
     }
     let data = [];
-    storeList.forEach(({courseID, storeID} = {}) => {
+    storeList.forEach(({courseID, category} = {}) => {
         let item = utils.queryItem(req,category).find(item => parseFloat(item.id) === courseID);
-        item.storeID = storeID;
         data.push(item);
     });
     res.send({
