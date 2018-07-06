@@ -1,7 +1,9 @@
 import React from 'react'
 import NavBottom from '../../component/NavBottom'
+import action from '../../store/action'
+import {connect} from 'react-redux'
 
-export default class ShopcartPay extends React.Component{
+class ShopcartPay extends React.Component{
 	constructor(props,context){
 		super(props,context)
 	}
@@ -14,3 +16,4 @@ export default class ShopcartPay extends React.Component{
 }
 
 
+export default connect(state=>({...state.shopcart}),action.shopcart)(ShopcartPay)
