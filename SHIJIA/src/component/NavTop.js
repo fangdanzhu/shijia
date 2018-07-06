@@ -10,21 +10,16 @@ class NavTop extends Component {
 
     constructor(props, context) {
         super(props, context)
-
         this.state = {val: "", banner: []}
 
     }
-
     handlChange = async (ev) => {
-
         let {banner} = this.state;
         let value = ev.target.value;
         value.length==0?this.setState({banner:[]}):null;
         if (value) {
             let result = await HeadList({cont: value});
-
             if (result.code === 0) {
-                console.log(result.searchData);
                 if (result.searchData instanceof Array) {
                     this.setState({
                         banner: result.searchData
@@ -32,7 +27,6 @@ class NavTop extends Component {
                 }
             }
         }
-
     };
     handLeave = (ev) => {
         this.setState({
@@ -43,7 +37,6 @@ class NavTop extends Component {
             banner: []
         }) : null;
     };
-
 
     render() {
         return <header className="headerNavBox clearfix">

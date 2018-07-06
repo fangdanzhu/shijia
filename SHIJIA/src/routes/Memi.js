@@ -5,8 +5,10 @@ import NavBottom from '../component/NavBottom';
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 import { Card, Icon, Avatar ,Button} from 'antd';
-import {queryIn} from "../api/push"
+import {queryIn} from "../api/push";
+import "../static/css/publish.less";
 const { Meta } = Card;
+
 class Memi extends React.Component {
     constructor(props, context) {
         super(props, context);

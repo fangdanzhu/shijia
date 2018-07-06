@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Tabs} from 'antd';
-import {queryTextiels} from '../../api/detail'
+import {queryTextiels, queryMore} from '../../api/detail'
 
 class Light extends React.Component {
     constructor(props, context) {
@@ -12,7 +12,7 @@ class Light extends React.Component {
     }
 
     async componentDidMount() {
-        let data = await queryTextiels('carpet');
+        let data = await queryTextiels('deskLamp');
         if (parseFloat(data.code) === 0) {
             this.setState({dataItem: data.data})
         }
@@ -22,25 +22,34 @@ class Light extends React.Component {
         let data = [];
         switch (key) {
             case '1':
-                data = await queryTextiels('groundLamp');
+                data = await queryTextiels('deskLamp ');
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
                 break;
             case '2':
-                data = await queryTextiels('deskLamp');
+                data = await queryMore({
+                    category: 'deskLamp',
+                    model: 3
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
                 break;
             case '3':
-                data = await queryTextiels('chandelier');
+                data = await queryMore({
+                    category: 'deskLamp',
+                    model: 2
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
                 break;
             case '4':
-                data = await queryTextiels('groundLamp');
+                data = await queryMore({
+                    category: 'deskLamp',
+                    model: 1
+                });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
                 }
@@ -58,7 +67,7 @@ class Light extends React.Component {
             <h3>灯饰</h3>
             <img src={require('../../static/images/jiafang.png')} alt="家纺" className="mainImg"/>
             <Tabs defaultActiveKey="1" onChange={this.callback}>
-                <TabPane tab="台灯" key="1">
+                <TabPane tab="全部" key="1">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -77,7 +86,7 @@ class Light extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="地灯" key="2">
+                <TabPane tab="吊灯" key="2">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -96,7 +105,7 @@ class Light extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="吊灯" key="3">
+                <TabPane tab="地灯" key="3">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -115,7 +124,7 @@ class Light extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="夜灯" key="4">
+                <TabPane tab="台灯" key="4">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -134,7 +143,7 @@ class Light extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="更多" key="5">
+                <TabPane tab='更多' key="5">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;

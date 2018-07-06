@@ -12,7 +12,7 @@ class Suite extends React.Component {
     }
 
     async componentDidMount() {
-        let data = await queryTextiels('carpet');
+        let data = await queryTextiels('sofa');
         if (parseFloat(data.code) === 0) {
             this.setState({dataItem: data.data})
         }
@@ -30,7 +30,7 @@ class Suite extends React.Component {
             case '2':
                 data = await queryMore({
                     category: 'sofa',
-                    model: 1
+                    model: 3
                 });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
@@ -48,7 +48,7 @@ class Suite extends React.Component {
             case '4':
                 data = await queryMore({
                     category: 'sofa',
-                    model: 3
+                    model: 1
                 });
                 if (parseFloat(data.code) === 0) {
                     this.setState({dataItem: data.data})
@@ -86,7 +86,7 @@ class Suite extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="单人" key="2">
+                <TabPane tab="多人" key="2">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;
@@ -124,7 +124,7 @@ class Suite extends React.Component {
                         }) : ''}
                     </ul>
                 </TabPane>
-                <TabPane tab="多人" key="4">
+                <TabPane tab="单人" key="4">
                     <ul>
                         {data ? data.map((item, index) => {
                             let {name, id, pic, price, category} = item;

@@ -1,6 +1,8 @@
 import React from 'react'
 import NavBottom from '../component/NavBottom'
 import {Category} from "../api/couser"
+
+
 import {Link, NavLink} from "react-router-dom"
 import {Icon} from 'antd';
 
@@ -8,7 +10,6 @@ export default class Hotsale extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {song: [], page: 10, flag: false};
-
     }
 
     async componentWillMount() {
@@ -22,27 +23,19 @@ export default class Hotsale extends React.Component {
         this.setState({
             song: songa
         });
-        console.log(songa);
-
     }
 
     render() {
-
         let itre = this.state.song.map((item, index) => {
             return item
         });
-        console.log(itre);
         return <section>
-            <div className="heardHot">
-                <div className="uty"><p>陶家头条</p></div>
-
+            <div className="heardHot clearfix">
+                <div className="uty"><p>适家头条</p></div>
                 <NavLink to='/'><Icon type="left" style={{fontSize: 36, color: '#818181'}}/> </NavLink>
-
-                <ul className="Hotstyle">
-                    {
-                        itre.map((item, index) => {
+                <ul className="Hotstyle clearfix">
+                    {itre.map((item, index) => {
                             let {id, name, pic, dec, price, category} = item;
-
                             return <li className="heartLing" key={index}>
                                 <Link to={{
                                     pathname: '/detail',
@@ -51,7 +44,7 @@ export default class Hotsale extends React.Component {
                                     <div className="Hty">
                                         <img src={pic} alt=""/>
                                         <span className="Htt">{name}</span>
-                                        <span className="Htr">{price}</span>
+                                        <span className="Htr">￥{price}元</span>
                                         <p>{dec}</p>
                                     </div>
                                 </Link>
@@ -63,7 +56,6 @@ export default class Hotsale extends React.Component {
             <NavBottom/>
         </section>
     }
-
 }
 
 

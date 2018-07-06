@@ -29,18 +29,7 @@ const warning = () => {
 
 const confirm = Modal.confirm;
 
-// function showConfirm() {
-//     confirm({
-//         title: 'Do you Want to delete these items?',
-//         content: 'Some descriptions',
-//         onOk() {
-//             console.log('OK');
-//         },
-//         onCancel() {
-//             console.log('Cancel');
-//         },
-//     });
-// }
+
 
 
 
@@ -119,7 +108,7 @@ export default class Hotsale extends React.Component{
                     beforeUpload={beforeUpload}
                     onChange={this.handleChange}
                 >
-                    {imageUrl ? <img src={imageUrl} alt="avatar" className='ImgBox' /> : uploadButton}
+                    {imageUrl ? <img src={imageUrl} alt="avatar" className='ImgBox' style={{maxWidth:300,maxHeight:200}} /> : uploadButton}
                 </Upload>
 
             </Card>
