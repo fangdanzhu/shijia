@@ -1,31 +1,177 @@
 @import url("~antd/dist/antd.css");
 
-.navTop {
-  background: orange;
-  opacity: .4;
-  height: 1.2rem;
-  width: 100%;
+html{
+  font-size: 100px;
 }
-
-.navBottom {
-  background: #fff;
-  height: 1.6rem;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  border-top: .01rem solid #000000;
-}
-
-//个人中心
-
-html, body {
-  height: 100%;
-}
-
 #root {
-  height: 100%;;
+  margin: 0 auto;
+  max-width: 750px;
 }
 
+//头部
+.headerNavBox {
+  @BG: #e1c058;
+  opacity: .7;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: .88rem;
+  line-height: 2.12rem;
+  text-align: center;
+  background: @BG;
+  color: #FFF;
+
+  .headerbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .list-rem {
+      position: absolute;
+      background: #ffffff;
+      width: 67%;
+      top: 0.7rem;
+      color: black;
+      .list-var {
+        line-height: .4rem;
+        width: 100%;
+        //border-bottom:1px solid #e1c058;
+        left: 0;
+        margin-bottom: .3rem;
+        height: .4rem;
+      }
+
+    }
+  }
+  .headerbox i:nth-of-type(1) {
+    flex: 1;
+    font-size: 0.4rem;
+  }
+  .headerbox > span {
+    flex: 4;
+  }
+  .headerbox i:nth-of-type(2) {
+    flex: 1;
+    font-size: 0.4rem;
+  }
+
+}
+//底部
+.footerNavBox {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 1.06rem;
+  line-height: 1.06rem;
+  border-top: .02rem solid #D5D5D5;
+  background: #FFF;
+
+  display: flex;
+  .sd {
+    display: block;
+    margin-top: 0;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+  a {
+    flex: 1;
+    text-align: center;
+    color: #000;
+
+    i {
+      display: block;
+      margin-top: .12rem;
+      font-size: .4rem;
+    }
+
+    span {
+      display: block;
+      height: .3rem;
+      line-height: .33rem;
+      font-size: .27rem;
+      margin-top: .15rem;
+
+    }
+
+    &.active {
+      color: #9D0800;
+      font-weight: bold;
+    }
+  }
+}
+//适家头条
+.heardHot{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .uty{
+    position: absolute;
+    left:2.7rem;
+    font-size: .5rem;
+    top:.5rem;
+    p{
+      margin-bottom: .5rem;
+    }
+  }
+  i{
+    position: absolute;
+    left: .2rem;
+    top:.5rem
+  }
+  .Hotstyle {
+    position: absolute;
+    top:1.5rem;
+    width: 7rem;
+    left: .3rem;
+    background: #00000010;
+    padding-bottom: 1.2rem;
+    .heartLing {
+      //float: left;
+      //margin: .2rem .2rem;
+      //width: 3.1rem;
+      margin-top: .5rem;
+      //border:4px solid #00ffff;
+      float: left;
+      margin-right: .2rem;
+      margin-left: .2rem;
+      background: #fff;
+      width: 3.1rem;
+      img {
+        width: 100%;
+        text-align: center;
+      }
+      .Htt{
+        float: left;
+        margin-left: .1rem;
+        margin-top: .1rem;
+        color: #000;
+        font-size: .3rem;
+      }
+      .Htr{
+        margin-right: .2rem;
+        float: right;
+        color: #f99000;
+        border-radius:.1rem ;
+        margin-top: .14rem;
+      }
+      P{
+        margin-top: .7rem;
+        margin-left: .1rem;
+        margin-right: .1rem;
+        color: #00000070;
+      }
+    }
+  }
+}
+
+//个人页面
 .personBox {
   width: 100%;
   height: 100%;
@@ -175,11 +321,57 @@ html, body {
     }
   }
 }
+//2级商品页面
+.textilesBox {
+  h3 {
+    width: 100%;
+    text-align: center;
+    font-weight: 450;
+    font-size: .36rem;
+    height: 1rem;
+    line-height: 1rem;
+    margin-bottom: 0;
+  }
+  .mainImg {
+    height: 3rem;
+    width: 7.1rem;
+    margin-left: .2rem;
+  }
+  .ant-tabs-tab {
+    margin-right: 0;
+  }
+  .ant-tabs-tabpane {
+    ul {
+      li {
+        float: left;
+        width: 2rem;
+        height: 3.1rem;
+        margin: .2rem;
+        div {
+          width: 2rem;
+          height: 1.5rem;
+          margin-bottom: .1rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
 
-.container {
-  padding: 0 0 1.6rem;
+        p {
+          margin-bottom: 0;
+          font-size: .28rem;
+          text-align: center;
+        }
+        b {
+          display: block;
+          color: #f99000;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
-
+//详情页面
 .detailBox {
   width: 100%;
   .header {
@@ -322,56 +514,6 @@ html, body {
       font-size: .3rem;
       line-height: 1rem;
       color: #fff;
-    }
-  }
-}
-
-.textilesBox {
-  h3 {
-    width: 100%;
-    text-align: center;
-    font-weight: 450;
-    font-size: .36rem;
-    height: 1rem;
-    line-height: 1rem;
-    margin-bottom: 0;
-  }
-  .mainImg {
-    height: 3rem;
-    width: 7.1rem;
-    margin-left: .2rem;
-  }
-  .ant-tabs-tab {
-    margin-right: 0;
-  }
-  .ant-tabs-tabpane {
-    ul {
-      li {
-        float: left;
-        width: 2rem;
-        height: 3.1rem;
-        margin: .2rem;
-        div {
-          width: 2rem;
-          height: 1.5rem;
-          margin-bottom: .1rem;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-
-        p {
-          margin-bottom: 0;
-          font-size: .28rem;
-          text-align: center;
-        }
-        b {
-          display: block;
-          color: #f99000;
-          text-align: center;
-        }
-      }
     }
   }
 }

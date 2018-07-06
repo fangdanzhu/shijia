@@ -1,100 +1,122 @@
-.shopcartBox{
-        box-sizing: border-box;
-         height: 100%;
-         padding: .2rem;
-        background: #eeeeee50;
-        h3{text-align: center;
-            line-height: 1rem;
-            background: #fff;
-            font-size: .4rem;
-            position: relative;
-            span{
-                position: absolute;
-                font-size: .3rem;
-                color: #333;
-               right: .3rem;
-            }
-            }
-}
-
-
-.shopItem_empty{
+.shopcartBox {
+  box-sizing: border-box;
+  height: 100%;
+  padding: .2rem;
+  background: #eeeeee50;
+  h3 {
     text-align: center;
-    line-height: .7rem;
-    height: 100%;
-    color: #999;
-    box-sizing: border-box;
-    div{
-         padding-top: 3.5rem;
+    line-height: 1rem;
+    background: #fff;
+    font-size: .4rem;
+    position: relative;
+    span {
+      position: absolute;
+      font-size: .3rem;
+      color: #333;
+      right: .3rem;
     }
-    i{font-size: 1rem;}
-    span{display: block;}
+  }
 }
 
-.shopItem{
-        dl{
-        display: flex;
-        justify-content: space-around;
-        height: 2rem;
-        background: #fff;
-        
-        dt{padding:0 .3rem;
-           width:35%;
-           height: 4rem;
-           box-sizing: border-box;
-           flex-shrink: 0;
-           img{width: 100%;}}
-        dd{
-            line-height: .3rem;
-            p{
-                height: .6rem;
-                overflow: hidden;
-              }
-            span{color: #f00;
-                font-weight: bold;}  
-            button{background: #f00;
-                   width: .9rem;
-                   color: #fff;
-                   border: none; 
-                   height: 100%;
-                   margin-left: .2rem;}             
-        }
-        .check{box-sizing: border-box;
-                padding: .5rem 0;
-                text-align: center;}   
-    }
-    
+.shopItem_empty {
+  text-align: center;
+  line-height: .7rem;
+  height: 100%;
+  color: #999;
+  box-sizing: border-box;
+  div {
+    padding-top: 3.5rem;
+  }
+  i {
+    font-size: 1rem;
+  }
+  span {
+    display: block;
+  }
 }
 
-.shopcartSum{position: fixed;
-             bottom: 1.06rem;
-             display: flex;
-             justify-content: space-between;
-             width: 100%;
-             padding: .2rem .4rem;
-             box-sizing: border-box;
-             align-content: center;
-             form{
-                padding-top: .25rem;
-                
-             }
-             button{
-                 margin-top: .2rem; }
-             div{text-align: center;
-                  span{color: red;}  
-             }   
-        }
+.shopItem {
+  dl {
+    display: flex;
+    justify-content: space-around;
+    height: 2rem;
+    background: #fff;
+
+    dt {
+      padding: 0 .3rem;
+      width: 35%;
+      height: 4rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+      }
+    }
+    dd {
+      line-height: .3rem;
+      p {
+        height: .6rem;
+        overflow: hidden;
+      }
+      span {
+        color: #f00;
+        font-weight: bold;
+      }
+      button {
+        background: #f00;
+        width: .9rem;
+        color: #fff;
+        border: none;
+        height: 100%;
+        margin-left: .2rem;
+      }
+    }
+    .check {
+      box-sizing: border-box;
+      padding: .5rem 0;
+      text-align: center;
+    }
+  }
+
+}
+
+.shopcartSum {
+  position: fixed;
+  bottom: 1.06rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: .2rem .4rem;
+  box-sizing: border-box;
+  align-content: center;
+  form {
+    padding-top: .25rem;
+
+  }
+  button {
+    margin-top: .2rem;
+  }
+  div {
+    text-align: center;
+    span {
+      color: red;
+    }
+  }
+}
 
 //未登录样式
-.notLogin{
-    background: #eeeeee38;
-    padding:;
-    height: 100%;
-    padding: 0 .5rem;
-    h3{text-align: center;
+.notLogin {
+  background: #eeeeee38;
+  height: 100%;
+  padding: 0 .5rem;
+  h3 {
+    text-align: center;
     line-height: 1rem;
     font-size: .4rem;
-    margin-top: .3rem;}
-    div{height: 1.3rem;}        
-        
+    margin-top: .3rem;
+  }
+  div {
+    height: 1.3rem;
+  }
+
 }

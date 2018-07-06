@@ -10,7 +10,6 @@ export default class Hotsale extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {song: [], page: 10, flag: false};
-
     }
 
     async componentWillMount() {
@@ -24,8 +23,6 @@ export default class Hotsale extends React.Component {
         this.setState({
             song: songa
         });
-        console.log(songa);
-
     }
 
     render() {
@@ -34,7 +31,7 @@ export default class Hotsale extends React.Component {
         });
         return <section>
             <div className="heardHot clearfix">
-                <div className="uty"><p>陶家头条</p></div>
+                <div className="uty"><p>适家头条</p></div>
                 <NavLink to='/'><Icon type="left" style={{fontSize: 36, color: '#818181'}}/> </NavLink>
                 <ul className="Hotstyle clearfix">
                     {itre.map((item, index) => {
