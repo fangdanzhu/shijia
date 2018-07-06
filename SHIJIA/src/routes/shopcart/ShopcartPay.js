@@ -4,20 +4,28 @@ import {Icon} from 'antd'
 import {connect} from 'react-redux'
 import {Button} from 'element-react';
 import {Link} from 'react-router-dom'
-
+import {personInfo} from '../../api/person'
 import action from '../../store/action'
 
 class ShopcartPay extends React.Component{
 
 	constructor(props,context){
 		super(props,context);
-        console.log(this.props);
+		this.state={
+            personName:'未登录'
+		}
     }
+   async componentDidMount(){
+        let personData= await personInfo();
+       this.setState({
+           personName:personData.data.userName
+	   })
+   }
 
 	render(){
-		let {pay}=this.props,
+		let {paymentList}=this.props,
 		total=0;
-		pay.forEach(item=>{
+        paymentList.forEach(item=>{
 			total+=item.price;
 		});
 		return <section className="payBox">
@@ -26,23 +34,28 @@ class ShopcartPay extends React.Component{
 				确认订单
 			</h3>
 			<div className="self">
-				<p>用户</p>
+				<p>{this.state.personName}</p>
 				<span>北京市朝阳区国美第一城3号院4004</span>
 			</div>
 			<p className="title">SJ 适家自营</p>
 			<ul className="list">
-				{pay&&pay.length!==0?pay.map((item,index)=>{
-					 let {name,id,price,dec}=item;
+				{paymentList&&paymentList.length!==0?paymentList.map((item,index)=>{
+					 let {name,id,price,dec,pic,category}=item;
 					return <li className="clearfix" key={index}>
-						<img src={require('../../static/images/she3.png')} alt=""/>
+						<Link to={{
+                            pathname:'/detail',
+                            search: `?ID=${id}&category=${category}`
+                        }}>
+						<img src={pic} alt=""/>
 						<div className="right clearfix">
 							<p>{name}</p>
-							<span>{dec}</span>
+							<span>{dec.substr(0,22)}</span>
 							<br/>
 							<b>￥{price}</b>
 						</div>
+						</Link>
 					</li>
-				}):null}
+				}):<h2>没有数据,你咋进来的!!!</h2>}
 			</ul>
 			<div className="peishong clearfix">
 				<div className="left">
@@ -67,19 +80,18 @@ class ShopcartPay extends React.Component{
 				</div>
 				<div className="mid clearfix">
 					<h4>运费 <span>(同城免运费)</span></h4>
-					<span>￥6.00</span>
+					<span>￥{paymentList.length!==0?6.00:0.00}</span>
 				</div>
 				<div className="bot clearfix">
-					<h2>总价: <span>￥{(total+6).toFixed(2)}</span></h2>
+					<h2>总价: <span>￥{paymentList.length!==0?(total+6).toFixed(2):0.00}</span></h2>
 				</div>
 				<div className="end clearfix">
 					<Button type="success">微信支付</Button>
 					<Button type="info">支付宝</Button>
 				</div>
-
 			</div>
 		</section>
 	}
 }
-export default connect(state=>({...state.pay}))(ShopcartPay)
+export default connect(state=>({...state.shopcart}),action.shopcart)(ShopcartPay)
 
