@@ -38,6 +38,7 @@ render(<Provider store={store}>
                 <Route path="/detail" component={Detail}/>
             </Switch>
         </HashRouter>
+
     </LocaleProvider>
 </Provider>, root);
 
