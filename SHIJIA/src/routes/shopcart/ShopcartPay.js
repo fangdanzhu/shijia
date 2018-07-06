@@ -1,11 +1,18 @@
 import React from 'react'
 import NavBottom from '../../component/NavBottom'
+<<<<<<< HEAD
 import {Icon} from 'antd'
 import {connect} from 'react-redux'
 import {Button} from 'element-react';
 import {Link} from 'react-router-dom'
 
  class ShopcartPay extends React.Component{
+=======
+import action from '../../store/action'
+import {connect} from 'react-redux'
+
+class ShopcartPay extends React.Component{
+>>>>>>> c4c353434977048dca36c9fde1c6fd8520b48100
 	constructor(props,context){
 		super(props,context);
         console.log(this.props);
@@ -80,3 +87,4 @@ import {Link} from 'react-router-dom'
 }
 export default connect(state=>({...state.pay}))(ShopcartPay)
 
+export default connect(state=>({...state.shopcart}),action.shopcart)(ShopcartPay)

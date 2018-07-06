@@ -12,7 +12,6 @@ import action from '../../store/action'
 	
 	personRegister= async (ev)=>{
 		ev.preventDefault();
-		console.log(123)
 		let {userName,userTel,userPass} =this.refs;
 		let result =  await register({
 			 userName: userName.value,
@@ -23,6 +22,8 @@ import action from '../../store/action'
 		if(result.code===0){
 			this.props.queryInfo()
 			this.props.history.push('/person')
+		}else{
+			alert('注册失败！请正确填写注册信息！！')
 		}
 		
 	}
@@ -37,9 +38,9 @@ import action from '../../store/action'
 					</div>		
 					<div className="main">
 						<form>
-								<div><Icon type="user-add" /><input type="text" placeholder="请输入用户名" ref="userName" /></div>
-								<div><Icon type="unlock" /><input type="text" placeholder="手机号" ref="userTel" /></div>
-								<div><Icon type="lock" /><input type="password" placeholder="请输入密码" ref="userPass"/></div>
+								<div><Icon type="user-add" /><input type="text" placeholder="请输入用户名" ref="userName"  /></div>
+								<div><Icon type="unlock" /><input type="text" placeholder="手机号" ref="userTel"  /></div>
+								<div><Icon type="lock" /><input type="password" placeholder="请输入密码" ref="userPass"  /></div>
 								<button onClick={this.personRegister}>注册</button>
 								</form>
 								<p>我已阅读《并适家用户协议》</p>
