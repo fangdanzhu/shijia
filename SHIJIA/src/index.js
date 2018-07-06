@@ -16,6 +16,10 @@ import Hotsale from './routes/Hotsale'
 import Shopcart from './routes/Shopcart'
 import Publish from './routes/Publish'
 import Detail from './routes/Detail'
+
+import Memi from './routes/Memi'
+
+
 import Person from './routes/Person'
 //=>css
 import './static/css/reset.min.css'
@@ -27,9 +31,10 @@ render(<Provider store={store}>
             <Switch>
                 <Route path='/' exact component={Home}/>
                 <Route path='/home' component={Home}/>
-                <Route path='/shopcart' component={Shopcart}/>
+                <Route path='/memi' component={Memi}/>
                 <Route path='/person' component={Person}/>
                 <Route path='/publish' component={Publish}/>
+                <Route path='/shopcart' component={Shopcart}/>
                 <Route path='/hotsale' component={Hotsale}/>
                 <Route path="/detail" component={Detail}/>
             </Switch>

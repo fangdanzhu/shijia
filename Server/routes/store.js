@@ -122,9 +122,6 @@ route.post('/addClo',(req,res)=>{
    let {courseId,category} =req.body,
        userId=req.session.personID,
        id=1;
-    console.log(courseId, category);
-    console.log(userId);
-    console.log(req.collectionDATA);
     if(req.collectionDATA.length<=0){
             let collectionInfo={
                 id:1,
@@ -228,5 +225,4 @@ route.get('/queryClo',(req,res)=>{
         })
     }
 });
-
 module.exports = route;

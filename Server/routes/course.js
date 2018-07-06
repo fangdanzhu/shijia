@@ -16,8 +16,10 @@ route.get('/banner', (req, res) => {
 //获取首页今日推荐
 route.get('/tuijian',(req,res)=>{
         let data =[];
+
         data.push(req.courseDATAF[0].data[6],req.courseDATAF[0].data[3],req.courseDATAF[0].data[4],req.courseDATAF[1].data[5]);
     console.log(data);
+
     res.send({
         code: 0,
         msg: 'OK!',

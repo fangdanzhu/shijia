@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBottom from '../../component/NavBottom'
-import {Icon} from 'antd'
+import {Icon,Modal} from 'antd'
 import {connect} from 'react-redux'
 import {Button} from 'element-react';
 import {Link} from 'react-router-dom'
@@ -18,10 +18,29 @@ class ShopcartPay extends React.Component{
    async componentDidMount(){
         let personData= await personInfo();
        this.setState({
-           personName:personData.data.userName
+           personName:personData.data.userName,
+           visible: false,
 	   })
    }
 
+
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    };
+    handleOk = (e) => {
+        this.props.history.go(-1);
+        this.setState({
+            visible: false,
+        });
+    };
+
+    handleCancel = (e) => {
+        this.setState({
+            visible: false,
+        });
+    };
 	render(){
 		let {paymentList}=this.props,
 		total=0;
@@ -29,8 +48,19 @@ class ShopcartPay extends React.Component{
 			total+=item.price;
 		});
 		return <section className="payBox">
-			<h3 className="head">
-				<Icon type=""></Icon>
+			<h3 className="head clearfix">
+				<div>
+					<Icon type="close" className="iconTop" style={{fontSize:'.5rem'}} onClick={this.showModal}/>
+					<Modal
+						title="提示"
+						visible={this.state.visible}
+						onOk={this.handleOk}
+						onCancel={this.handleCancel}
+					>
+						<p>你要关闭购物页面?</p>
+					</Modal>
+				</div>
+
 				确认订单
 			</h3>
 			<div className="self">
@@ -55,7 +85,7 @@ class ShopcartPay extends React.Component{
 						</div>
 						</Link>
 					</li>
-				}):<h2>没有数据,你咋进来的!!!</h2>}
+				}):<h2>  -空-</h2>}
 			</ul>
 			<div className="peishong clearfix">
 				<div className="left">
