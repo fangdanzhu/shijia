@@ -6,22 +6,31 @@
     "address": [
       "北京市昌平区珠峰培训3楼快递存放处"
     ],
-    "phone": 18232366809
+    "phone": 18232366809,
+    "photoUrl": "http://localhost:8000/show/getShow?search=default.jpg"
   },
   {
     "id": 2,
-    "userName": "qqq",
+    "userName": "rrr",
     "address": [],
     "phone": "123",
-    "passWord": "123445"
+    "passWord": "rrr",
+    "photoUrl": "http://localhost:8000/show/getShow?search=default.jpg"
   },
   {
     "id": 3,
-    "userName": "zxc",
+    "userName": "qwe",
     "address": [],
     "phone": "123",
-    "passWord": "zxc",
-    "portrait": "",
-    "photoUrl": "C:\\Users\\Administrator\\Desktop\\shijia\\Server\\photoUpload/2397.jpg"
+    "passWord": "qwe",
+    "photoUrl": "http://localhost:8000/show/getShow?search=default.jpg"
+  },
+  {
+    "id": 4,
+    "userName": "sss",
+    "address": [],
+    "phone": "123",
+    "passWord": "sss",
+    "photoUrl": "http://localhost:8000/show/getShow?search=default.jpg"
   }
 ]

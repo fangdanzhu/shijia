@@ -17,7 +17,6 @@ route.get('/banner', (req, res) => {
 route.get('/tuijian',(req,res)=>{
         let data =[];
         data.push(req.courseDATAF[0].data[0],req.courseDATAL[0].data[0],req.courseDATAT[0].data[0],req.courseDATAT[1].data[0]);
-    console.log(data);
     res.send({
         code: 0,
         msg: 'OK!',

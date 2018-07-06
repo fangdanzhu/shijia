@@ -80,6 +80,7 @@ function beforeUpload(file) {
 
 		
 		return <section className="info">
+
 					<div className="content">
 					  <p></p>	
 					    <Upload

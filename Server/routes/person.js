@@ -25,7 +25,7 @@ route.post('/register',(req,res)=>{
         address:[],
         phone: '',
         passWord: '',
-        portrait:''
+        photoUrl:'http://localhost:8000/show/getShow?search=default.jpg'
     };
     let Xname =req.body.userName,
         isCK=false;
@@ -70,6 +70,7 @@ route.post('/login', (req, res) => {
         //=>登录成功：把当前登录用户的ID存储到SESSION上（如果SESSION上有用户信息就代表登录成功，反之没有登录）
         csId= req.session.personID = parseFloat(item.id);
         add_temp_store(req, res);//=>把存储到SESSION中的购物信息写入到JSON文件中
+
         res.send({code: 0, msg: 'OK!'});
         return;
     }
@@ -78,6 +79,7 @@ route.post('/login', (req, res) => {
 //校验是否登录
 route.get('/login', (req, res) => {
     //=>是否登录就看SESSION中是否存在（后台服务重启，SESSION都消失）
+
     const personID = req.session.personID;
     if (personID) {
         res.send({code: 0, msg: 'OK!'});
@@ -88,6 +90,7 @@ route.get('/login', (req, res) => {
 //获取个人信息
 route.get('/info', (req, res) => {
     //=>获取当前登录者信息：从SESSION中获取到登录者的编号
+
     const personID = req.session.personID;
     if (personID) {
         //=>在所有的数据中筛选出和登录者编号相同的那一项
@@ -111,17 +114,20 @@ route.get('/out', (req, res) => {
 route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
     // req.file is the `avatar` file
     // req.body will hold the text fields, if there were any
+
     let file =req.file;
-    console.log(file);
-    if(typeof req.session.personID==='undefined'){
-        console.log("AAA");
-        // return;
-    }
+    // if(typeof req.session.personID==='undefined'){
+    //     console.log("AAA");
+    //     // return;
+    // }
     if (typeof file ==='undefined'){
         res.send('no');
         return;
     }
-    let photoUrl =file.destination+'/'+(Math.random()*1000).toFixed(0)+file.originalname;
+    // console.log(file);
+    let str1=(Math.random()*1000).toFixed(0)+file.originalname.toString();
+    let photoUrl =file.destination+"/"+str1;
+    let headerPhoto="http://localhost:8000/show/getShow?search="+str1;
     fs.rename(file.path,`${photoUrl}`,(err)=>{
         if(err){
             res.send({
@@ -129,13 +135,15 @@ route.post('/photoUpload', upload.single('avatar'), function (req, res, next) {
                 msg:'上传头像失败'
             });
         }else {
-            req.personalDATA.forEach(item=>{
+           let newData= req.personalDATA.map(item=>{
                 if(item.id===csId){
-                    item.photoUrl=photoUrl;
+                    item.photoUrl=headerPhoto;
+                    return item;
                 }
+                return item;
             });
-            writeFile(PERSONAL_PATH,req.personalDATA).then(result=>{
-                console.log(result);
+            writeFile(PERSONAL_PATH,newData).then(result=>{
+                console.log('上传头像成功');
                 res.send({
                     code:0,
                     msg:'上传头像成功'
@@ -166,7 +174,4 @@ route.get('/photoUpload',(req,res)=>{
            portrait
        })
 });
-
-
-
 module.exports = route;
