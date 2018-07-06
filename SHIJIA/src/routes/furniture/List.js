@@ -67,21 +67,52 @@ class List extends React.Component {
             <h3 className="design-title"><i></i><span>今日推荐</span></h3>
             <ul className="recommend-body clearfix">
                 {tuijianData.map((item,index)=>{
-                        let {pic,name}=item;
+                        let {pic,name,id,category}=item;
                    return <li key={index}>
+                       <Link to={{
+                           pathname:'/detail',
+                           search: `?ID=${id}&category=${category}`
+                       }}>
                        <img src={pic} alt={name}/>
+                       </Link>
                    </li>
                 })}
 
             </ul>
             <h3 className="design-title"><i></i><span>设计前沿</span></h3>
             <div className="design-top">
+                <Link to={{
+                    pathname: '/detail',
+                    search: '?ID=18&category=sofa'
+                }}>
                 <img src={require('../../static/images/she1.png')} alt=""/>
+                </Link>
             </div>
             <ul className="design-bot clearfix">
-                <li><img src={require('../../static/images/she2.png')} alt=""/></li>
-                <li><img src={require('../../static/images/she3.png')} alt=""/></li>
-                <li><img src={require('../../static/images/she4.png')} alt=""/></li>
+                <li>
+                    <Link to={{
+                        pathname: '/detail',
+                        search: '?ID=5&category=sofa'
+                    }}>
+                        <img src={require('../../static/images/she2.png')} alt=""/>
+                    </Link>
+                </li>
+                <li>
+                    <Link to={{
+                        pathname: '/detail',
+                        search: '?ID=3&category=sofa'
+                    }}>
+                        <img src={require('../../static/images/she3.png')} alt=""/>
+                    </Link>
+                </li>
+                <li>
+                    <Link to={{
+                        pathname: '/detail',
+                        search: '?ID=10&category=sofa'
+                    }}>
+                        <img src={require('../../static/images/she4.png')} alt=""/>
+                    </Link>
+                </li>
             </ul>
         </div>
     }

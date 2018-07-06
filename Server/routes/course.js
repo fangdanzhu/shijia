@@ -6,7 +6,7 @@ let fs =require('fs');
 route.get('/banner', (req, res) => {
     //=>我就是把所有课程中的最后三条数据做为轮播图展示
     let data = [];
-    data.push(req.courseDATAF.reverse()[0].data[0],req.courseDATAL.reverse()[0].data[0],req.courseDATAT.reverse()[0].data[0]);
+    data.push(req.courseDATAF.reverse()[0].data[0],req.courseDATAL.reverse()[0].data[1],req.courseDATAT.reverse()[0].data[2]);
     res.send({
         code: 0,
         msg: 'OK!',
@@ -16,7 +16,7 @@ route.get('/banner', (req, res) => {
 //获取首页今日推荐
 route.get('/tuijian',(req,res)=>{
         let data =[];
-        data.push(req.courseDATAF[0].data[0],req.courseDATAL[0].data[0],req.courseDATAT[0].data[0],req.courseDATAT[1].data[0]);
+        data.push(req.courseDATAF[0].data[6],req.courseDATAF[0].data[3],req.courseDATAF[0].data[4],req.courseDATAF[1].data[5]);
     console.log(data);
     res.send({
         code: 0,
