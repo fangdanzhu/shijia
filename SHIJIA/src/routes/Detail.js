@@ -4,15 +4,16 @@ import {Icon} from 'antd'
 import {Link, withRouter} from 'react-router-dom'
 import Qs from 'qs'
 import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin} from '../api/detail'
+import action from '../store/action/index'
 
 class Detail extends React.Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
             data: null,
-            isCollect: false,
-            isShopcart: false,
-            isLogining: false,
+            isCollect: false,//判定是否收藏
+            isShopcart: false,//判定是否加入购物车
+            isLogining: false,//判定用户是否登录
         }
     }
 
@@ -34,7 +35,10 @@ class Detail extends React.Component {
         }
         result = await queryShopCart();
         if (parseFloat(result.code) === 0) {
-            let flag = result.data.find(item => parseFloat(item.id) === 0);
+            let flag = result.data.find(item => {
+                 let {id,category}=this.state.data;
+                return  parseFloat(item.id)=== parseFloat(id)&&category===item.category
+            });
             if (flag) {
                 this.setState({
                     isShopcart: true
@@ -60,9 +64,13 @@ class Detail extends React.Component {
         }
         let result = await queryShopCart();
         if (parseFloat(result.code) !== 0)return;
-        let flag = result.data.find(item => parseFloat(item.id) === 0);
+        let flag = result.data.find(item => {
+            let {id,category}=this.state.data;
+            return  parseFloat(item.id)=== parseFloat(id)&&category===item.category
+        });
+        console.log(flag);
         //加入购物车
-        if (!flag && !isShopcart) {
+        if (!flag) {
             result = await addShopCart({
                 courseID: data.id,
                 category: data.category
@@ -75,14 +83,14 @@ class Detail extends React.Component {
             return
         }
         //移出购物车
-        if (flag && isShopcart) {
+        if (flag) {
             result = await removeShopCart({
                 courseID: data.id,
                 category: data.category
             });
             if (parseFloat(result.code) === 0) {
                 this.setState({
-                    isShopcart: true
+                    isShopcart: false
                 });
             }
         }
@@ -90,7 +98,7 @@ class Detail extends React.Component {
     //去支付
     goToPay = async () => {
         let {isShopcart, isLogining, data} = this.state;
-        let {history} = this.props;
+        let {history,payData} = this.props;
         if (isLogining) {
             if (!isShopcart) {
                 let result = await addShopCart({
@@ -99,6 +107,7 @@ class Detail extends React.Component {
                 });
                 if (parseFloat(result.code) !== 0)return
             }
+            payData([data]);
             history.push('/shopcart/pay');
             return
         }
@@ -159,4 +168,4 @@ class Detail extends React.Component {
         </div>
     }
 }
-export default connect()(Detail)
+export default connect(state=>({...state.pay}),action.pay)(Detail)
