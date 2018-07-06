@@ -33,16 +33,12 @@ export default class Hotsale extends React.Component {
             return item
         });
         return <section>
-            <div className="heardHot">
+            <div className="heardHot clearfix">
                 <div className="uty"><p>陶家头条</p></div>
-
                 <NavLink to='/'><Icon type="left" style={{fontSize: 36, color: '#818181'}}/> </NavLink>
-
-                <ul className="Hotstyle">
-                    {
-                        itre.map((item, index) => {
+                <ul className="Hotstyle clearfix">
+                    {itre.map((item, index) => {
                             let {id, name, pic, dec, price, category} = item;
-
                             return <li className="heartLing" key={index}>
                                 <Link to={{
                                     pathname: '/detail',
@@ -51,7 +47,7 @@ export default class Hotsale extends React.Component {
                                     <div className="Hty">
                                         <img src={pic} alt=""/>
                                         <span className="Htt">{name}</span>
-                                        <span className="Htr">{price}</span>
+                                        <span className="Htr">￥{price}元</span>
                                         <p>{dec}</p>
                                     </div>
                                 </Link>
