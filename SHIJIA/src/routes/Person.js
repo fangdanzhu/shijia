@@ -6,6 +6,7 @@ import Register from './person/Register'
 import Info from './person/Info'
 import Tip from './person/Tip'
 import PersonDetail from './person/PersonDetail'
+import Collection from './person/Collection'
 
 import '../static/css/person.less'
 import {connect} from 'react-redux'
@@ -56,6 +57,7 @@ import  action from '../store/action'
 					} />
 					<Route path='/person/login'  component={Login} />
 					<Route path='/person/register'  component={Register} />
+					<Route path='/person/collection'  component={Collection} />
 					<Route path='/person/address' component={PersonDetail} />
 				</Switch>
 		      </section>

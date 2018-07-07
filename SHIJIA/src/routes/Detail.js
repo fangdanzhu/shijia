@@ -50,6 +50,7 @@ class Detail extends React.Component {
         }
         //检验是否已经收藏
         result=await queryCollect();
+        console.log(result);
         if (parseFloat(result.code) === 0) {
             let flagCol = result.data.find(item => {
                 let {id,category}=this.state.data;
@@ -77,7 +78,6 @@ class Detail extends React.Component {
              courseId:id,
              category:category
          });
-            console.log(result);
         }
 
     };

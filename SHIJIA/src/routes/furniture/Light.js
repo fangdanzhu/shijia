@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Tabs} from 'antd';
+import {Tabs,Icon} from 'antd';
 import {queryTextiels, queryMore} from '../../api/detail'
 
 class Light extends React.Component {
@@ -64,8 +64,11 @@ class Light extends React.Component {
         let TabPane = Tabs.TabPane;
         let data = this.state.dataItem;
         return <div className="textilesBox">
-            <h3>灯饰</h3>
-            <img src={require('../../static/images/jiafang.png')} alt="家纺" className="mainImg"/>
+            <h3>
+                <Icon type="left" onClick={() => {
+               this.props.history.go(-1)
+            }}/>灯饰</h3>
+            <img src={require('../../static/images/灯饰.png')} alt="家纺" className="mainImg"/>
             <Tabs defaultActiveKey="1" onChange={this.callback}>
                 <TabPane tab="全部" key="1">
                     <ul>

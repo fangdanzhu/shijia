@@ -13,3 +13,7 @@ export function queryGoodsInfo(){
 export function remveGoodsInfo(payload){
 	return axios.post('/store/remove',payload)
 }
+
+export function toPaying(data) {
+	return axios.post('/store/pay ',data)
+}

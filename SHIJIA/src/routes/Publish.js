@@ -29,12 +29,6 @@ const warning = () => {
 
 const confirm = Modal.confirm;
 
-
-
-
-
-
-
 export default class Hotsale extends React.Component{
     constructor(props,context){
         super(props,context);
@@ -54,7 +48,6 @@ export default class Hotsale extends React.Component{
             this.props.history.push('/memi');
         }, 2500);
     };
-
 
     async componentDidMount(){
             let isDl=await checkLogin();
@@ -78,8 +71,6 @@ export default class Hotsale extends React.Component{
         }
     };
 
-
-
     render(){
             if(!this.state.isDl){
                 this.showConfirm();
@@ -92,13 +83,9 @@ export default class Hotsale extends React.Component{
         );
         const imageUrl = this.state.imageUrl;
 
-
-
         return <section className='pushBox'>
             <Card title="" extra={<Button href="javascript:;" onClick={this.push}>发布</Button>} style={{ width:'100%' }} >
-
                 <TextArea rows={5}  placeholder="来吧，得瑟一下呗..."  onChange={this.chenge}  />
-
                 <Upload
                     name="avatar"
                     listType="picture-card"
@@ -110,17 +97,12 @@ export default class Hotsale extends React.Component{
                 >
                     {imageUrl ? <img src={imageUrl} alt="avatar" className='ImgBox' style={{maxWidth:300,maxHeight:200}} /> : uploadButton}
                 </Upload>
-
             </Card>
-
-
 			<NavBottom/>
-
 		</section>
     }
 
     showConfirm=()=> {
-        console.log(555);
         let that=this;
         confirm({
             title: '登录才能晒照哦?',

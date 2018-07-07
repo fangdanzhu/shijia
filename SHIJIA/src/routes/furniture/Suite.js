@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Tabs} from 'antd';
+import {Tabs,Icon} from 'antd';
 import {queryTextiels, queryMore} from '../../api/detail'
 
 class Suite extends React.Component {
@@ -64,8 +64,10 @@ class Suite extends React.Component {
         let TabPane = Tabs.TabPane;
         let data = this.state.dataItem;
         return <div className="textilesBox">
-            <h3>沙发</h3>
-            <img src={require('../../static/images/jiafang.png')} alt="家纺" className="mainImg"/>
+            <h3><Icon type="left" onClick={() => {
+                this.props.history.go(-1)
+            }}/>沙发</h3>
+            <img src={require('../../static/images/沙发.png')} alt="家纺" className="mainImg"/>
             <Tabs defaultActiveKey="1" onChange={this.callback}>
                 <TabPane tab="全部" key="1">
                     <ul>

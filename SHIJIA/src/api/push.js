@@ -6,7 +6,6 @@ export function pushInfo(payload) {
     });
 }
 export function queryIn(info) {
-    console.log(info);
     return axios.get('/show/showList',{
         params:info
     })

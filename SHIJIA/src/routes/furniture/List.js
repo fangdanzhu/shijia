@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Carousel, Icon,} from 'antd';
-import {Carousel as Carousel2} from 'element-react';
+import {Carousel as Carousela} from 'element-react';
 import {Link} from 'react-router-dom';
 import action from '../../store/action/index'
 import NavTop from '../../component/NavTop';
@@ -37,15 +37,18 @@ class List extends React.Component {
                     })}
                 </Carousel>) : ''}
             <ul className="nav clearfix">
-                <li onClick={() => history.push('/home/suite')}><img
-                    src={require('../../static/images/家居.png')} alt=""/><p>沙发</p></li>
-                <li onClick={() => history.push('/home/light')}><img
-                    src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
-                <li onClick={() => history.push('/home/textiles')}><img
-                    src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
-                <li><img src={require('../../static/images/软装饰品.png')} alt=""/><p>装饰</p></li>
-                <li><img src={require('../../static/images/儿童.png')} alt=""/><p>儿童</p></li>
-                <li><img src={require('../../static/images/笔 (1).png')} alt=""/><p>设计师</p></li>
+                <li onClick={() => history.push('/home/suite')}>
+                    <img src={require('../../static/images/家居.png')} alt=""/><p>沙发</p></li>
+                <li onClick={() => history.push('/home/light')}>
+                    <img src={require('../../static/images/灯饰照明.png')} alt=""/><p>灯饰</p></li>
+                <li onClick={() => history.push('/home/textiles')}>
+                    <img src={require('../../static/images/家纺家饰.png')} alt=""/><p>家纺</p></li>
+                <li onClick={() => history.push('/home/textiles')}>
+                    <img src={require('../../static/images/软装饰品.png')} alt=""/><p>装饰</p></li>
+                <li onClick={() => history.push('/home/light')}>
+                    <img src={require('../../static/images/儿童.png')} alt=""/><p>儿童</p></li>
+                <li onClick={() => history.push('/home/suite')}>
+                    <img src={require('../../static/images/笔 (1).png')} alt=""/><p>设计师</p></li>
             </ul>
             <Link to='/hotsale' className="hot-link">
                 <img src={require('../../static/images/火.png')} alt=""/>
@@ -55,13 +58,13 @@ class List extends React.Component {
             </Link>
             <div className="recommend" >
                 <div className="demo-4 medium">
-                    <Carousel2 interval="40000" type="card" height="5rem" >
+                    <Carousela interval="40000" type="card" height="5rem" >
                         {[1,2,3,4,5].map((item, index) => {
-                                return (<Carousel2.Item key={index}>
+                                return (<Carousela.Item key={index}>
                                         <li><img src={require(`../../static/images/tui${item}.jpg`)} alt=""/></li>
-                                    </Carousel2.Item>
+                                    </Carousela.Item>
                                 )})}
-                    </Carousel2>
+                    </Carousela>
                 </div>
             </div>
             <h3 className="design-title"><i></i><span>今日推荐</span></h3>

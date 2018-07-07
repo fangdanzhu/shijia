@@ -40,6 +40,5 @@ export function queryCollect() {
 }
 //添加收藏
 export function addCollect(data) {
-    console.log(data);
-    return axios.get('/store/addClo',data)
+    return axios.post('/store/addClo',data)
 }

@@ -158,7 +158,7 @@ route.post('/addClo',(req,res)=>{
                             category,
                             time:(new Date().toLocaleString())
                 };
-                cur.push(collectionInfo);
+                cur.data.push(collectionInfo);
                 req.collectionDATA.splice(index,1,cur);
                 writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
                     res.send({
