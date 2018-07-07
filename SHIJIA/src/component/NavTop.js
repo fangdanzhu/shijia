@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import {connect}from "react-redux"
-import {withRouter, NavLink,Link} from "react-router-dom"
+import {withRouter, NavLink, Link} from "react-router-dom"
 import {Input, Icon} from 'antd';
 import action from '../store/action/index';
 import {HeadList} from "../api/couser"
@@ -13,10 +13,11 @@ class NavTop extends Component {
         this.state = {val: "", banner: []}
 
     }
+
     handlChange = async (ev) => {
         let {banner} = this.state;
         let value = ev.target.value;
-        value.length==0?this.setState({banner:[]}):null;
+        value.length == 0 ? this.setState({banner: []}) : null;
         if (value) {
             let result = await HeadList({cont: value});
             if (result.code === 0) {
@@ -42,16 +43,15 @@ class NavTop extends Component {
                 <Icon type="table" style={{fontSize: 30, color: '#FFF'}}/>
                 <ul className="list-rem">
                     {this.state.banner.map((item, index) => {
-                        let {id,category}=item;
+                        let {id, category} = item;
                         return <li className="list-var" key={index}><Link to={{
-                            pathname:'/detail',
+                            pathname: '/detail',
                             search: `?ID=${id}&category=${category}`
                         }}>{item.name}</Link></li>
                     })}
                 </ul>
             </div>
         </header>
-
     }
 }
 export default withRouter(connect(state => ({...state.courser}), action.course)(NavTop))

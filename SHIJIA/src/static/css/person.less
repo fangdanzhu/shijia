@@ -137,6 +137,8 @@
         }
         .ant-upload.ant-upload-select-picture-card {
             border: none!important;
+            position: relative;
+            display: block;
             background: #fff !important;
             padding: 0!important;
             height: 1.5rem!important;
@@ -145,6 +147,12 @@
             margin-bottom: .3rem;
             border-radius: 50%;
             margin-top: .3rem;
+            span{padding: 0;}
+            img{width: 1.6rem!important;
+               height:1.6rem!important;
+                  border-radius: 50%;
+                  position: absolute;
+                  left: 0;}
         }
     }
     .info-item {
@@ -189,6 +197,7 @@
 
 //我的收藏
 .person_collection {
+    position: relative;
     background: #fbf9f9;
     height: 100%;
     width: 100%;
@@ -197,7 +206,13 @@
        line-height: 1rem;
        font-size: .3rem;
        background: #fff;
-       font-weight: bold;}
+       font-weight: bold;
+        i{
+            position: absolute;
+            top: .4rem;
+            left: .3rem;
+        }
+    }
     .empty-collection{  background: url(../images/person_mycol.gif) no-repeat center 30%;
                         height: 100%; 
                        background-size:30% ;

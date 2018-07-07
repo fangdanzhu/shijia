@@ -48,12 +48,10 @@ class ShopcartPay extends React.Component {
         let {paymentList} = this.props;
         if(!paymentList[0])return;
         let {id, category} = paymentList[0];
-        console.log(id, category);
         this.props.history.replace('/shopcart/payed');
-        console.log(1);
-        let result= await toPaying({
+/*        let result= await toPaying({
             id, category
-        });
+        });*/
     };
 
     render() {
@@ -75,7 +73,6 @@ class ShopcartPay extends React.Component {
                         <p>你要关闭购物页面?</p>
                     </Modal>
                 </div>
-
                 确认订单
             </h3>
             <div className="self">

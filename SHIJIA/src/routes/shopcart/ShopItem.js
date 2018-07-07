@@ -16,12 +16,8 @@ import {withRouter} from 'react-router-dom'
 	
 	removeShopInfo= async()=>{
 		let {id,category} = this.props.item
-		let result = await remveGoodsInfo(
-			{
-				courseID:id,
-				category
-			}
-		)
+		let courseID =id;
+		let result = await remveGoodsInfo([{courseID,category}])
 		if(result.code===0){
 			this.props.fn(this.props.item.id)
 		}

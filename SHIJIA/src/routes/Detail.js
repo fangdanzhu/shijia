@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Icon} from 'antd'
+import {Icon,Badge} from 'antd'
 import {Link, withRouter} from 'react-router-dom'
 import Qs from 'qs'
 import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin,addCollect,queryCollect,removeCollect} from '../api/detail'
@@ -14,6 +14,7 @@ class Detail extends React.Component {
             isCollect: false,//判定是否收藏
             isShopcart: false,//判定是否加入购物车
             isLogining: false,//判定用户是否登录
+            Mount:0
         }
     }
 
@@ -37,6 +38,13 @@ class Detail extends React.Component {
         }
         //验证是否已加入购物车
         result = await queryShopCart();
+        let mount=result.data.length;
+        let timer=setTimeout(()=>{
+            this.setState({
+                Mount:mount
+            });
+        },0)
+
         if (parseFloat(result.code) === 0) {
             let flag = result.data.find(item => {
                  let {id,category}=this.state.data;
@@ -44,18 +52,16 @@ class Detail extends React.Component {
             });
             if (flag) {
                 this.setState({
-                    isShopcart: true
+                    isShopcart: true,
                 })
             }
         }
         //检验是否已经收藏
         result=await queryCollect();
-        console.log(result);
         if (parseFloat(result.code) === 0) {
             let flagCol = result.data.find(item => {
                 let {id,category}=this.state.data;
                 return  parseFloat(item.id)=== parseFloat(id)&&category===item.category});
-            console.log(flagCol);
             if(flagCol){
                 this.setState({
                     isCollect:true
@@ -73,13 +79,13 @@ class Detail extends React.Component {
              courseId:id,
              category:category
          });
-           console.log(result);
            if(parseFloat(result.code)===0){
                this.setState({
                    isCollect:true
                });
            }
        }else{
+
            let result=  await removeCollect({
                courseId:id,
                category:category
@@ -112,7 +118,8 @@ class Detail extends React.Component {
             });
             if (parseFloat(result.code) === 0) {
                 this.setState({
-                    isShopcart: true
+                    isShopcart: true,
+                    Mount:this.state.Mount+1
                 });
             }
             return
@@ -125,7 +132,8 @@ class Detail extends React.Component {
             });
             if (parseFloat(result.code) === 0) {
                 this.setState({
-                    isShopcart: false
+                    isShopcart: false,
+                    Mount:this.state.Mount-1
                 });
             }
         }
@@ -151,7 +159,7 @@ class Detail extends React.Component {
 
     render() {
         let {history} = this.props,
-            {data, isCollect, isShopcart} = this.state;
+            {data, isCollect, isShopcart,Mount} = this.state;
         if (!data)return '没有这件商品！';
         let {name, pic, dec, id, price} = data;
         return <div className="detailBox">
@@ -194,7 +202,8 @@ class Detail extends React.Component {
                 <li className="kefu"><Icon type="customer-service" style={{fontSize: '.4rem', color: 'red'}}/><p>客服</p>
                 </li>
                 <li className="car"><Link to='/shopcart'><Icon type="shopping-cart"
-                                                               style={{fontSize: '.4rem', color: 'red'}}/><p>购物车</p>
+                                                               style={{fontSize: '.4rem', color: 'red'}}/>
+                    <sup>{Mount}</sup><p>购物车</p>
                 </Link></li>
                 <li className="pay" onClick={this.goToPay}>立即购买</li>
                 <li className={isShopcart ? 'remove' : 'add'}

@@ -116,17 +116,16 @@ class ShopcartInfo extends React.Component{
 				let shopList = goodsList.filter(item=>(item.checkState))
 			    payment(shopList);
 			   
-			    goodsList.forEach( async item=>{
-			    	if(item.checkState){
-			    		let {id,category} = item;
-				        let res = 	await remveGoodsInfo({id,category })
-				        if(res.code===0){
-							this.props.history.push('/shopcart/pay')			
-				        }
-				    }
-			    	
+			    let  tempAry = goodsList.filter(item=>(item.checkState))
+			    let removeList = []
+			    tempAry.forEach(item=>{
+			    	let {id,category} = item;
+			    	removeList.push({courseID:id,category})
 			    })
-			  
+			    console.log(removeList)
+			    let  res = await remveGoodsInfo(removeList)
+				this.props.history.push('/shopcart/pay')			
+				
 		
 	 }
   	

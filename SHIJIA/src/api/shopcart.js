@@ -14,6 +14,6 @@ export function remveGoodsInfo(payload){
 	return axios.post('/store/remove',payload)
 }
 
-export function toPaying(data) {
-	return axios.post('/store/pay ',data)
+export function toPaying(removeList) {
+	return axios.post('/store/pay ',removeList)
 }

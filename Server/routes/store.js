@@ -31,7 +31,6 @@ route.post('/add', (req, res) => {
 route.post('/remove', (req, res) => {
     let personID = req.session.personID,
         {removeList=[]} = req.body;
-    courseID = parseFloat(courseID);
 
     if (personID) {
         req.storeDATA = req.storeDATA.filter(item => {
@@ -218,7 +217,7 @@ route.post('/removeClo',(req,res)=>{
    //拿到用户的收藏对应的索引
    let newIndex=req.collectionDATA.findIndex(item=>item.userId===parseFloat(userId));
 
-   newData=newData.filter(item=>{
+   newData=newData.data.filter(item=>{
        return item.id!==parseFloat(id);
    });
    req.collectionDATA.splice(newIndex,1,newData);
