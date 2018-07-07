@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Icon} from 'antd'
 import {Link, withRouter} from 'react-router-dom'
 import Qs from 'qs'
-import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin,queryCollect,addCollect} from '../api/detail'
+import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin,addCollect,queryCollect} from '../api/detail'
 import action from '../store/action/index'
 
 class Detail extends React.Component {
@@ -20,6 +20,7 @@ class Detail extends React.Component {
     async componentDidMount() {
         let {location: {search}} = this.props,
             {ID = 0, category = ''} = Qs.parse(search.substr(1)) || {};
+        //获取物品详情
         let result = await queryDetail({ID, category});
         this.ID = ID;
         if (parseFloat(result.code) === 0) {
@@ -27,12 +28,14 @@ class Detail extends React.Component {
                 data: result.data[0]
             });
         }
+        //验证是否登录
         result = await isLogin();
         if (parseFloat(result.code) === 0) {
             this.setState({
                 isLogining: true
             })
         }
+        //验证是否加入购物车
         result = await queryShopCart();
         if (parseFloat(result.code) === 0) {
             let flag = result.data.find(item => {
@@ -45,11 +48,25 @@ class Detail extends React.Component {
                 })
             }
         }
-
+        //检验是否已经收藏
+        result=await queryCollect();
+        console.log(result);
+        if (parseFloat(result.code) === 0) {
+            let flagCol = result.data.find(item => {
+                let {id,category}=this.state.data;
+                return  parseFloat(item.id)=== parseFloat(id)&&category===item.category});
+            console.log(flagCol);
+            if(flagCol){
+                this.setState({
+                    isCollect:true
+                });
+            }
+        }
     }
 
 //收藏
-     collect = async () => {
+
+   collect = async () => {
         let {isCollect} = this.state;
         isCollect = !isCollect;
         this.setState({
@@ -63,6 +80,7 @@ class Detail extends React.Component {
              category:category
          });
         }
+
     };
 
     handleCart = async () => {
@@ -77,7 +95,6 @@ class Detail extends React.Component {
             let {id,category}=this.state.data;
             return  parseFloat(item.id)=== parseFloat(id)&&category===item.category
         });
-        console.log(flag);
         //加入购物车
         if (!flag) {
             result = await addShopCart({
@@ -107,7 +124,7 @@ class Detail extends React.Component {
     //去支付
     goToPay = async () => {
         let {isShopcart, isLogining, data} = this.state;
-        let {history,payData} = this.props;
+        let {history,payment} = this.props;
         if (isLogining) {
             if (!isShopcart) {
                 let result = await addShopCart({
@@ -116,7 +133,7 @@ class Detail extends React.Component {
                 });
                 if (parseFloat(result.code) !== 0)return
             }
-            payData([data]);
+            payment([data]);
             history.push('/shopcart/pay');
             return
         }
@@ -177,4 +194,4 @@ class Detail extends React.Component {
         </div>
     }
 }
-export default connect(state=>({...state.pay}),action.pay)(Detail)
+export default connect(state=>({...state.shopcart}),action.shopcart)(Detail)

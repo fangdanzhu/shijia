@@ -43,4 +43,3 @@ export function queryCollect() {
 export function addCollect(data) {
     return axios.post('/store/addClo',data)
 }
-

@@ -1,9 +1,9 @@
 import React from 'react'
-import {Icon, Button,Upload, message} from 'antd'
+import {Icon, Button, Upload, message} from 'antd'
 import NavBottom from '../../component/NavBottom'
 import PersonDetail from './PersonDetail'
-import {Route,Link} from 'react-router-dom'
-import {personInfo,exitLogin} from '../../api/person'
+import {Route, Link} from 'react-router-dom'
+import {personInfo, exitLogin} from '../../api/person'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import action from '../../store/action'
@@ -28,33 +28,34 @@ function beforeUpload(file) {
 }
 
 
-
- class Info extends React.Component{
-	constructor(props,context){
-		super(props,context)
-		this.state={
+class Info extends React.Component {
+    constructor(props, context) {
+        super(props, context)
+        this.state = {
             loading: false,
-            imageUrl:null
+            imageUrl: null
         }
-	}
-	async componentDidMount(){
-		let {personInfo,queryInfo} = this.props;
-		!personInfo? await queryInfo():null
-	}
-	exit = async (ev)=>{
-		ev.preventDefault()
-		let result = await exitLogin();
-		
-		if(result.code===0){
-			console.log()
-			this.props.history.push('/person')
-		}
-		
-	}
-	//处理头像
-	handleChange = (info) => {
+    }
+
+    async componentDidMount() {
+        let {personInfo, queryInfo} = this.props;
+        !personInfo ? await queryInfo() : null
+    }
+
+    exit = async (ev) => {
+        ev.preventDefault()
+        let result = await exitLogin();
+
+        if (result.code === 0) {
+            console.log()
+            this.props.history.push('/person')
+        }
+
+    }
+    //处理头像
+    handleChange = (info) => {
         if (info.file.status === 'uploading') {
-            this.setState({ loading: true });
+            this.setState({loading: true});
             return;
         }
         if (info.file.status === 'done') {
@@ -113,8 +114,8 @@ function beforeUpload(file) {
 					<NavBottom />
 		       </section>
 	}
+
 }
 
-
-export default withRouter(connect(state=>({...state.person}),action.person)(Info))
+export default withRouter(connect(state => ({...state.person}), action.person)(Info))
 

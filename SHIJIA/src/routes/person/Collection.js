@@ -4,8 +4,9 @@ import action from '../../store/action'
 import {connect} from 'react-redux'
 import NavBottom from '../../component/NavBottom'
 import {Button} from 'antd'
-import {Link} from 'react-router-dom'
 import {myCollection} from '../../api/person'
+import {queryCollect} from '../../api/detail'
+import {Link} from 'react-router-dom'
 
  class Collection extends React.Component{
 	constructor(props,context){
@@ -15,12 +16,13 @@ import {myCollection} from '../../api/person'
 			mycol:[]}
 	}
 	async componentDidMount(){
-		
-	 let result = await myCollection();
+
+	 let result = await queryCollect();
+	 	if(result.code===0){
 	 		this.setState({
 	 			mycol:result.data
 	 		})
-	 		
+	 	}	
 	 
 	 	if(!this.props.personInfo){
 	 		this.props.queryInfo()

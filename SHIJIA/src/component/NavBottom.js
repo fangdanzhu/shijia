@@ -12,8 +12,7 @@ const Search = Input.Search;
                 <NavLink  exact to="/"><Icon type="home" /><span>首页</span></NavLink>
                 <NavLink to="/memi"><Icon type="rocket" /><span>觅me</span></NavLink>
             <NavLink to="/publish" className="sd">
-                <Icon type="plus-circle-o" style={{fontSize:'1rem',color:'#cccccc',marginTop:0}}/>
-
+                <Icon type="plus-circle-o" style={{fontSize:'.8rem',color:'#00000030',marginTop:'.12rem'}}/>
             </NavLink>
                 <NavLink to="/shopcart"><Icon type="shopping-cart" /><span>购物车</span></NavLink>
                 <NavLink to="/person"><Icon type="user" /><span>我的</span></NavLink>
