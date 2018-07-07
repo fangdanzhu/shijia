@@ -36,7 +36,7 @@ class NavTop extends Component {
             <div className='headerbox'>
                 <Icon type="minus-square-o" style={{fontSize: 30, color: '#FFF'}}/>
                 <Search
-                    placeholder="input search text"
+                    placeholder="欧式 吊灯"
                     onSearch={value => console.log(value)}
                     style={{width: 200}} onChange={this.handlChange}
                     valve={this.state.val}/>

@@ -24,7 +24,6 @@ function queryItem(req,category) {
     let Data=[];
     Data=regF.test(category)?req.courseDATAF:(regL.test(category)?req.courseDATAL:regT.test(category)?req.courseDATAT:null);
     //获取所有的 对应类的所有商品信息 参数  category
-    console.log(Data);
     function queryAll(category) {
         let result={};
         Data.forEach(item=>{

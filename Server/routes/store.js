@@ -29,17 +29,41 @@ route.post('/add', (req, res) => {
 
 //移除购物车商品信息
 route.post('/remove', (req, res) => {
-    let personID = req.session.personID,
-        {removeList=[]} = req.body;
-
+    let personID = req.session.personID;
+    let obj={},removeListA=[],removeList=[];
+    for(let key in req.body){
+        removeListA.push(req.body[key])
+    }
+    removeListA.forEach((item,index)=>{
+      if(index%2===0){
+          obj.courseID=item;
+      }else {
+          obj.category=item;
+          removeList.push(obj);
+          obj={}
+      }
+    });
     if (personID) {
-        req.storeDATA = req.storeDATA.filter(item => {
-            removeList.forEach(cur=>{
-
-                return !(parseFloat(item.courseID) === cur.courseID && parseFloat(item.personID) === personID && cur.category === item.category);
-            })
+        //如果用户登录状态下，就先拿到该用户的所有购物车商品信息
+        let newDATA=req.storeDATA.filter(item=>{
+            return item.personID===parseFloat(personID);
         });
-        writeFile(STORE_PATH, req.storeDATA).then(() => {
+
+        for (let i = 0; i < newDATA.length; i++) {
+            let cur = newDATA[i];
+            for (let j = 0; j < removeList.length; j++) {
+                let rl = removeList[j];
+                if(cur.courseID==rl.courseID&&cur.category==rl.category){
+                    console.log(j);
+                    newDATA.splice(j,1);
+                    removeList.splice(j,1);
+                    i--;
+                    j--;
+                    break;
+                }
+            }
+        }
+        writeFile(STORE_PATH, newDATA).then(() => {
             res.send({code: 0, msg: 'OK!'});
         }).catch(() => {
             res.send({code: 1, msg: 'NO!'});
@@ -52,6 +76,21 @@ route.post('/remove', (req, res) => {
             return parseFloat(item.courseID) !== cur.courseID && item.category !== cur.category;
         })
     });
+
+    for (let i = 0; i < req.session.storeList.length; i++) {
+        let A=req.session.storeList[i];
+        for (let j = 0; j < removeList.length; j++) {
+            let B = removeList[j];
+            if(parseFloat(A.courseID)===parseFloat(B.courseID)&&A.category===B.category){
+                req.session.storeList.splice(j,1);
+                i--;
+                removeList.splice(j,1);
+                j--;
+                break;
+            }
+        }
+
+    }
     res.send({code: 0, msg: 'OK!'});
 });
 
@@ -60,7 +99,6 @@ route.get('/info', (req, res) => {
     let state = parseFloat(req.query.state) || 0,
         personID = req.session.personID,
         storeList = [];
-    console.log(state, personID);
     if (personID) {
         //=>登录状态下是从JSON文件中获取：在STORE.JSON中找到所有personID和登录用户相同的(服务器从SESSION中可以获取用户ID的)
         req.storeDATA.forEach(item => {
@@ -217,9 +255,11 @@ route.post('/removeClo',(req,res)=>{
    //拿到用户的收藏对应的索引
    let newIndex=req.collectionDATA.findIndex(item=>item.userId===parseFloat(userId));
 
-   newData=newData.data.filter(item=>{
+
+   newD=newData.data.filter(item=>{
        return item.id!==parseFloat(id);
    });
+   newData.data=newD;
    req.collectionDATA.splice(newIndex,1,newData);
    writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
        res.send({

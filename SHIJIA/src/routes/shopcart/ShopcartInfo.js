@@ -124,7 +124,7 @@ class ShopcartInfo extends React.Component{
 			    })
 			    console.log(removeList)
 			    let  res = await remveGoodsInfo(removeList)
-				this.props.history.push('/shopcart/pay')			
+				this.props.history.push('/shopcart/pay')
 				
 		
 	 }
@@ -156,7 +156,8 @@ class ShopcartInfo extends React.Component{
 										  	 	<p>不含运费优化扣减</p>
 								  	 </div>
 								  	 <div>
-								  			 <Button type="danger" onClick={this.payment}>去结算</Button>								     </div>
+								  			 <Button type="danger" onClick={this.payment}>去结算</Button>
+								     </div>
 							 </div>
 				</div>
 			  </section>

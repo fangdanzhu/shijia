@@ -15,7 +15,6 @@ route.get('/getShow',(req,res)=>{
     let data=fs.readdirSync(str);
     res.set('Content-Type','image/jpeg');
     let url =str+"/"+search;
-    console.log(url);
     data=fs.readFileSync(url);
     res.send(data)
 });

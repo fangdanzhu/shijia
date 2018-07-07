@@ -10,7 +10,6 @@ import {withRouter} from 'react-router-dom'
 		super(props,context)
 		this.state={
 			flag:false, //操作删除按钮,
-
 		}
 	}
 	
@@ -18,7 +17,7 @@ import {withRouter} from 'react-router-dom'
 		let {id,category} = this.props.item
 		let courseID =id;
 		let result = await remveGoodsInfo([{courseID,category}])
-		if(result.code===0){
+        if(result.code===0){
 			this.props.fn(this.props.item.id)
 		}
 		

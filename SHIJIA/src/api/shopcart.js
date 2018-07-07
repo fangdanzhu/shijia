@@ -10,10 +10,10 @@ export function queryGoodsInfo(){
 }
 
 //=>从购物车移出
-export function remveGoodsInfo(payload){
-	return axios.post('/store/remove',payload)
+export function remveGoodsInfo(removeList){
+	return axios.post('/store/remove',removeList)
 }
 
-export function toPaying(removeList) {
-	return axios.post('/store/pay ',removeList)
+export function toPaying(payload) {
+	return axios.post('/store/pay ',payload)
 }
