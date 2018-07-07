@@ -10,19 +10,14 @@ import {withRouter} from 'react-router-dom'
 		super(props,context)
 		this.state={
 			flag:false, //操作删除按钮,
-
 		}
 	}
 	
 	removeShopInfo= async()=>{
 		let {id,category} = this.props.item
-		let result = await remveGoodsInfo(
-			{
-				courseID:id,
-				category
-			}
-		)
-		if(result.code===0){
+		let courseID =id;
+		let result = await remveGoodsInfo([{courseID,category}])
+        if(result.code===0){
 			this.props.fn(this.props.item.id)
 		}
 		
