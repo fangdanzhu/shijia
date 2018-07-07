@@ -32,7 +32,7 @@ export default class Hotsale extends React.Component {
         return <section>
             <div className="heardHot clearfix">
                 <div className="uty"><p>适家头条</p></div>
-                <NavLink to='/'><Icon type="left" style={{fontSize: 36, color: '#818181'}}/> </NavLink>
+                <NavLink to='/'><Icon type="left" style={{fontSize:'.36rem', color: '#000'}}/> </NavLink>
                 <ul className="Hotstyle clearfix">
                     {itre.map((item, index) => {
                             let {id, name, pic, dec, price, category} = item;
