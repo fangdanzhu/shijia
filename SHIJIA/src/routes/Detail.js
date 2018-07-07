@@ -79,8 +79,8 @@ class Detail extends React.Component {
              category:category
          });
         }
-
     };
+
     handleCart = async () => {
         let {isShopcart, data, isLogining} = this.state;
         if (!isLogining) {

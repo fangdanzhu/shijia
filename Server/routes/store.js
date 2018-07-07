@@ -93,7 +93,7 @@ route.post('/pay', (req, res) => {
     //=>把某一个课程的STATE修改为1（改完后也是需要把原始JSON文件替换的）
     let {storeID} = req.body,
         personID = req.session.personID,
-        category = req.session.category,
+        category = req.body.category,
         isUpdate = false;
     if (personID) {
         req.storeDATA = req.storeDATA.map(item => {
