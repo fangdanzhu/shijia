@@ -7,13 +7,11 @@
 <h1 id="适家项目请求接口文档">适家项目请求接口文档</h1>
 
 <p><strong>[首页数据]</strong> <br>
-1.获取轮播图 <br>
+1.获取轮播图数据 <br>
 地址：/course/banner <br>
 方式：get <br>
 参数：– <br>
 返回:</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="language-` hljs less"><div class="hljs-line">{
 </div><div class="hljs-line">   <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,  <span class="hljs-comment">//=&gt;0 获取轮播图成功   1 失败</span>
@@ -48,6 +46,8 @@
 </div><div class="hljs-line">}
 </div></code></pre>
 
+<p><strong>【商品数据】</strong></p>
+
 <p>3 获取商品列表 <br>
 地址 /course/info <br>
 方式get <br>
@@ -57,8 +57,6 @@ category:商品的一级类别 <br>
 model:商品的二级类别 <br>
 limit:每页最多显示几条 <br>
 page：第几页</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="language-` hljs haml"><div class="hljs-line">【家具】
 </div><div class="hljs-line">-<span class="ruby"> <span class="hljs-symbol">category:</span><span class="hljs-symbol">sofa:</span>沙发
@@ -152,11 +150,11 @@ page：第几页</p>
 
 <hr>
 
+<p><strong>【用户】</strong></p>
+
 <p>4 用户注册 <br>
 地址:/person/register <br>
 方式:post</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="hljs stylus"><div class="hljs-line">参数:
 </div><div class="hljs-line"><wbr>
@@ -174,16 +172,10 @@ page：第几页</p>
 
 <p>5 用户登录 <br>
 地址:/person/login <br>
-方式:post</p>
+方式:post <br>
+参数: userName,  passWord</p>
 
-
-
-<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">参数:
-</div><div class="hljs-line"><wbr>
-</div><div class="hljs-line">        <span class="hljs-selector-tag">userName</span>,
-</div><div class="hljs-line">        <span class="hljs-selector-tag">passWord</span>
-</div><div class="hljs-line"><wbr>
-</div><div class="hljs-line">返回:{
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">返回:{
 </div><div class="hljs-line">            <span class="hljs-attribute">code</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, msg: <span class="hljs-string">'OK/no!'</span>
 </div><div class="hljs-line">        }
 </div></code></pre>
@@ -195,12 +187,9 @@ page：第几页</p>
 方式:get <br>
 参数:</p>
 
-
-
 <pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">返回:{
 </div><div class="hljs-line">        <span class="hljs-attribute">code</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, msg: <span class="hljs-string">'OK/no!'</span>
 </div><div class="hljs-line">     }
-</div><div class="hljs-line"><wbr>
 </div></code></pre>
 
 <hr>
@@ -209,8 +198,6 @@ page：第几页</p>
 地址:/person/info <br>
 方式:get <br>
 参数:—</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="hljs groovy"><div class="hljs-line">返回:{
 </div><div class="hljs-line">        {<span class="hljs-string">code:</span> <span class="hljs-number">0</span>, <span class="hljs-string">msg:</span> <span class="hljs-string">'OK!'</span>, <span class="hljs-string">data:</span> {
@@ -242,45 +229,37 @@ page：第几页</p>
 <hr>
 
 <p><strong>【购物车】</strong> <br>
-9 增加购物车信息</p>
-
-
+9 添加到购物车</p>
 
 <pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/add</span>
 </div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
-</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?personID=xxx&amp;&amp;category=xxx
+</div><div class="hljs-line">参数<span class="hljs-symbol">:personID</span>,category
 </div><div class="hljs-line">返回<span class="hljs-symbol">:</span>{
 </div><div class="hljs-line">        {<span class="hljs-symbol">code:</span> <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, <span class="hljs-symbol">msg:</span> <span class="hljs-string">'OK/no!'</span>}
 </div><div class="hljs-line">    }
-</div><div class="hljs-line"><wbr>
 </div><div class="hljs-line"><wbr>
 </div></code></pre>
 
 <p>10 移除购物车商品信息</p>
 
-
-
 <pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/remove</span>
 </div><div class="hljs-line">方式<span class="hljs-symbol">:post</span>
-</div><div class="hljs-line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?courseID=xxx&amp;&amp;category=xxx
+</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>[
+</div><div class="hljs-line">        {courseID,
+</div><div class="hljs-line">        category}
+</div><div class="hljs-line">        {courseID,
+</div><div class="hljs-line">        category}...
+</div><div class="hljs-line">       ]
 </div></code></pre>
 
-
-
-<pre class="prettyprint hljs-dark"><code class="hljs ruby"><div class="hljs-line">=======
-</div><div class="hljs-line">参数<span class="hljs-symbol">:</span>?personID=xxx&amp;&amp;category=xxx
-</div><div class="hljs-line"><span class="hljs-meta">&gt;&gt;</span>&gt;&gt;&gt;&gt;&gt; f797cf5234a47babfaef7a51db02c6922ba164a8
-</div><div class="hljs-line">返回<span class="hljs-symbol">:</span>{
-</div><div class="hljs-line">        {<span class="hljs-symbol">code:</span> <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, <span class="hljs-symbol">msg:</span> <span class="hljs-string">'OK/no!'</span>}
+<pre class="prettyprint hljs-dark"><code class="hljs less"><div class="hljs-line">返回:{
+</div><div class="hljs-line">        {<span class="hljs-attribute">code</span>: <span class="hljs-number">0</span>/<span class="hljs-number">1</span>, <span class="hljs-attribute">msg</span>: <span class="hljs-string">'OK/no!'</span>}
 </div><div class="hljs-line">        }
 </div></code></pre>
 
 <hr>
 
 <p>11 获取购物车商品信息</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">地址<span class="hljs-symbol">:/store/info</span>
 </div><div class="hljs-line">方式<span class="hljs-symbol">:get</span>
@@ -342,13 +321,11 @@ page：第几页</p>
 
 <hr>
 
-<p>14 上传头像 （必须先注册之后） <br>
+<p>14 上传头像 （必须先注册之后）<strong>基于antd 的</strong>发送请求 <br>
 地址:/person/photoUpload <br>
 方式:post <br>
 参数– <br>
 返回:</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">     {
 </div><div class="hljs-line">                <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
@@ -372,24 +349,27 @@ page：第几页</p>
 <pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">         {
 </div><div class="hljs-line">           <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
 </div><div class="hljs-line">           msg:<span class="hljs-string">'成功获取头像'</span>,
-</div><div class="hljs-line">           portrait
+</div><div class="hljs-line">           portrait（头像图片地址）
 </div><div class="hljs-line">       }
 </div></code></pre>
 
 <hr>
 
-<p>【发布】 <br>
-15 上传发布内容—图片 <br>
-（必须先注册之后） 不需要绑定事件 利用   action发送请求 <br>
-地址:/person/putPhoto</p>
+<p><strong>【发布】</strong></p>
 
-<p>16发布内容 <br>
+<ol start="15"><li rel="15">上传发布内容—图片 <br>
+（必须先注册之后） 不需要绑定事件 <strong>利用   action发送请求</strong> <br>
+地址:/person/putPhoto</li>
+</ol>
+
+<hr>
+
+<ol start="16"><li rel="16">发布内容 <br>
 地址：/person/put <br>
 方式:post <br>
 参数: cont    (描述的内容) <br>
-返回:</p>
-
-
+返回:</li>
+</ol>
 
 <pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">{
 </div><div class="hljs-line">       <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
@@ -398,11 +378,10 @@ page：第几页</p>
 </div></code></pre>
 
 <p>16 获取 觅me 列表 <br>
+地址:/show/showList <br>
 方式:get <br>
 参数 limit每页的条数 page第几页  model=all 返回全部数据 <br>
 返回:</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="language-` hljs css"><div class="hljs-line">{
 </div><div class="hljs-line">           <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
@@ -411,22 +390,20 @@ page：第几页</p>
 </div><div class="hljs-line">                    <span class="hljs-string">"id"</span>:<span class="hljs-number">1</span>,
 </div><div class="hljs-line">                    <span class="hljs-string">"userId"</span>:<span class="hljs-number">1</span>
 </div><div class="hljs-line">                    <span class="hljs-string">"userName"</span>:<span class="hljs-string">"lsq"</span>,
-</div><div class="hljs-line">                    <span class="hljs-string">"dec"</span>:<span class="hljs-string">"帮帮哦"</span>,
+</div><div class="hljs-line">                    <span class="hljs-string">"dec"</span>:<span class="hljs-string">"沙发不错哦"</span>,
 </div><div class="hljs-line">                    <span class="hljs-string">"showUrl"</span>:<span class="hljs-string">"图片显示地址"</span>,
 </div><div class="hljs-line">                    <span class="hljs-string">"time"</span>:<span class="hljs-string">"2018-7-4 am 4:00"</span>
 </div><div class="hljs-line">                      }
 </div><div class="hljs-line">       }
 </div></code></pre>
 
-<p>17 添加到我的收藏 <br>
+<p>17 添加到我的收藏    <strong>(必须登录)</strong> <br>
 地址:/store/addClo <br>
 post 请求 <br>
 参数 : <br>
                 courseId:商品id <br>
              category:商品分类 <br>
 返回:</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">         {
 </div><div class="hljs-line">                    <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
@@ -438,12 +415,10 @@ post 请求 <br>
 </div><div class="hljs-line">       }
 </div></code></pre>
 
-<p>18获取我的收藏列表 <br>
+<p>18获取我的收藏列表 <strong>(必须登录)</strong> <br>
 地址:/store/queryClo <br>
 参数– <br>
 返回:</p>
-
-
 
 <pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">{
 </div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>,
@@ -458,10 +433,22 @@ post 请求 <br>
 </div><div class="hljs-line">                    ]
 </div><div class="hljs-line">        }
 </div><div class="hljs-line"><wbr>
-</div><div class="hljs-line"><wbr>
-</div><div class="hljs-line"><wbr>
 </div><div class="hljs-line">{
 </div><div class="hljs-line">            <span class="hljs-attribute">code</span>:<span class="hljs-number">1</span>,
 </div><div class="hljs-line">            msg:<span class="hljs-string">'失败'</span>
 </div><div class="hljs-line">        }
+</div></code></pre>
+
+<ol start="19"><li rel="19">从我的收藏移除  <br>
+方式： post <br>
+参数 id：商品对应的 <br>
+返回:</li>
+</ol>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs css"><div class="hljs-line">{
+</div><div class="hljs-line">           <span class="hljs-attribute">code</span>:<span class="hljs-number">0</span>/<span class="hljs-number">1</span>,
+</div><div class="hljs-line">           msg:<span class="hljs-string">'移除成功/失败'</span>
+</div><div class="hljs-line">       }
 </div></code></pre></div></body></html>

@@ -7,6 +7,7 @@ import {personInfo,exitLogin} from '../../api/person'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import action from '../../store/action'
+import axios from "axios";
 
 
 function getBase64(img, callback) {
@@ -80,6 +81,7 @@ function beforeUpload(file) {
 
 		
 		return <section className="info">
+
 					<div className="content">
 					
 						 <Upload
@@ -93,8 +95,8 @@ function beforeUpload(file) {
 						>
                             {imageUrl ? <img src={imageUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
 						</Upload>
-					    
-				
+
+
 					  <span>昵称:{userName}</span>
 					  <span>联系方式:{phone}</span>
 					 </div>
@@ -109,10 +111,12 @@ function beforeUpload(file) {
 					 <div className="exitLogin">
 						 <Button type="danger" onClick={this.exit}>退出登陆</Button>
 					</div>
-					
+
 					<NavBottom />
 		       </section>
 	}
+
+
 }
 
 

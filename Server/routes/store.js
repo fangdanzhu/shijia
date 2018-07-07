@@ -8,12 +8,12 @@ const express = require('express'),
 //=>增加购物车信息
 route.post('/add', (req, res) => {
     let personID = req.session.personID,//=>登录用户的ID
-        {courseID,category} = req.body;//=>传递的课程ID，我就是要把这个课程加入购物车
+        {courseID, category} = req.body;//=>传递的课程ID，我就是要把这个课程加入购物车
     courseID = parseFloat(courseID);
 
     //=>已经登录状态下，把信息直接存储到JSON中即可（用户在其它平台上登录，也可以从JSON中获取到数据，实现信息跨平台）
     if (personID) {
-        utils.ADD_STORE(req, res, courseID,category).then(() => {
+        utils.ADD_STORE(req, res, courseID, category).then(() => {
             res.send({code: 0, msg: 'OK!'});
         }).catch(() => {
             res.send({code: 1, msg: 'NO!'});
@@ -23,19 +23,22 @@ route.post('/add', (req, res) => {
 
     //=>未登录状态下，临时存储到SESSION中(等到下一次登录成功，也要把SESSION中存储的信息，直接存储到文件中（并且清空SESSION中的信息）
     !req.session.storeList ? req.session.storeList = [] : null;
-    req.session.storeList.push({courseID,category});
+    req.session.storeList.push({courseID, category});
     res.send({code: 0, msg: 'OK!'});
 });
 
 //移除购物车商品信息
 route.post('/remove', (req, res) => {
     let personID = req.session.personID,
-        {courseID = 0,category} = req.body;
+        {removeList=[]} = req.body;
     courseID = parseFloat(courseID);
 
     if (personID) {
         req.storeDATA = req.storeDATA.filter(item => {
-            return !(parseFloat(item.courseID) === courseID && parseFloat(item.personID) === personID&&category===item.category);
+            removeList.forEach(cur=>{
+
+                return !(parseFloat(item.courseID) === cur.courseID && parseFloat(item.personID) === personID && cur.category === item.category);
+            })
         });
         writeFile(STORE_PATH, req.storeDATA).then(() => {
             res.send({code: 0, msg: 'OK!'});
@@ -44,10 +47,11 @@ route.post('/remove', (req, res) => {
         });
         return;
     }
-
     !req.session.storeList ? req.session.storeList = [] : null;
     req.session.storeList = req.session.storeList.filter(item => {
-        return parseFloat(item.courseID) !== courseID&&item.category!==category;
+        removeList.forEach(cur=>{
+            return parseFloat(item.courseID) !== cur.courseID && item.category !== cur.category;
+        })
     });
     res.send({code: 0, msg: 'OK!'});
 });
@@ -64,7 +68,7 @@ route.get('/info', (req, res) => {
             if (parseFloat(item.personID) === personID && parseFloat(item.state) === state) {
                 storeList.push({
                     courseID: parseFloat(item.courseID),
-                    category:item.category
+                    category: item.category
                 });
             }
         });
@@ -72,13 +76,13 @@ route.get('/info', (req, res) => {
         if (state === 0) {
             storeList = req.session.storeList || [];
             storeList = storeList.map(item => {
-                return {courseID: item.courseID,category:item.category, storeID: 0};
+                return {courseID: item.courseID, category: item.category, storeID: 0};
             });
         }
     }
     let data = [];
     storeList.forEach(({courseID, category} = {}) => {
-        let item = utils.queryItem(req,category).find(item => parseFloat(item.id) === courseID);
+        let item = utils.queryItem(req, category).find(item => parseFloat(item.id) === courseID);
         data.push(item);
     });
     res.send({
@@ -93,11 +97,11 @@ route.post('/pay', (req, res) => {
     //=>把某一个课程的STATE修改为1（改完后也是需要把原始JSON文件替换的）
     let {storeID} = req.body,
         personID = req.session.personID,
-        category = req.session.category,
+        category = req.body.category,
         isUpdate = false;
     if (personID) {
         req.storeDATA = req.storeDATA.map(item => {
-            if (parseFloat(item.id) === parseFloat(storeID) && parseFloat(item.personID) === parseFloat(personID)&& category===item.category) {
+            if (parseFloat(item.id) === parseFloat(storeID) && parseFloat(item.personID) === parseFloat(personID) && category === item.category) {
                 isUpdate = true;
                 return {...item, state: 1};
             }
@@ -118,110 +122,138 @@ route.post('/pay', (req, res) => {
 });
 
 //添加到我的收藏  post 请求    参数 商品id  courseId  商品分类  category
-route.post('/addClo',(req,res)=>{
-   let {courseId,category} =req.body,
-       userId=req.session.personID,
-       id=1;
-    if(req.collectionDATA.length<=0){
-            let collectionInfo={
-                id:1,
+route.post('/addClo', (req, res) => {
+    let {courseId, category} = req.body,
+        userId = req.session.personID,
+        id = 1;
+    if (req.collectionDATA.length <= 0) {
+        let collectionInfo = {
+            id: 1,
+            userId,
+            data: [
+                {
+                    id,
+                    courseId,
+                    category,
+                    time: (new Date().toLocaleString())
+                }
+            ]
+        };
+        req.collectionDATA.push(collectionInfo);
+        writeFile(COLLECTION_PATH, req.collectionDATA).then(() => {
+            res.send({
+                code: 0,
+                msg: "添加成功"
+            })
+        }).catch(() => {
+            res.send({
+                code: 1,
+                msg: "添加失败"
+            })
+        })
+    } else {
+        let cur = req.collectionDATA.find(item => item.userId === userId);
+        if (cur) {
+            id = cur.data[cur.data.length - 1].id + 1;
+            let index = req.collectionDATA.findIndex(item => item.userId === userId);
+            let collectionInfo = {
+                id,
+                courseId,
+                category,
+                time: (new Date().toLocaleString())
+            };
+            cur.data.push(collectionInfo);
+            req.collectionDATA.splice(index, 1, cur);
+            writeFile(COLLECTION_PATH, req.collectionDATA).then(() => {
+                res.send({
+                    code: 0,
+                    msg: "添加成功"
+                })
+            }).catch(() => {
+                res.send({
+                    code: 1,
+                    msg: "添加失败"
+                })
+            })
+        } else {
+            id = req.collectionDATA[req.collectionDATA.length - 1].id + 1;
+            let collectionInfo = {
+                id,
                 userId,
-                data:[
+                data: [
                     {
-                        id,
+                        id: 1,
                         courseId,
                         category,
-                        time:(new Date().toLocaleString())
+                        time: (new Date().toLocaleString())
                     }
                 ]
             };
             req.collectionDATA.push(collectionInfo);
-            writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+            writeFile(COLLECTION_PATH, req.collectionDATA).then(() => {
+                console.log('A');
                 res.send({
-                    code:0,
-                    msg:"添加成功"
+                    code: 0,
+                    msg: "添加成功"
                 })
-            }).catch(()=>{
+            }).catch(() => {
+                console.log("B");
                 res.send({
-                    code:1,
-                    msg:"添加失败"
+                    code: 1,
+                    msg: "添加失败"
                 })
             })
-        }else {
-            let cur=req.collectionDATA.find(item=>item.userId===userId);
-            if(cur){
-                id=cur.data[cur.data.length-1].id+1;
-                let index =req.collectionDATA.findIndex(item=>item.userId===userId);
-                let collectionInfo={
-                            id,
-                            courseId,
-                            category,
-                            time:(new Date().toLocaleString())
-                };
-                cur.push(collectionInfo);
-                req.collectionDATA.splice(index,1,cur);
-                writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
-                    res.send({
-                        code:0,
-                        msg:"添加成功"
-                    })
-                }).catch(()=>{
-                    res.send({
-                        code:1,
-                        msg:"添加失败"
-                    })
-                })
-            }else {
-                    id=req.collectionDATA[req.collectionDATA.length-1].id+1;
-                let collectionInfo={
-                    id,
-                    userId,
-                    data:[
-                        {
-                            id:1,
-                            courseId,
-                            category,
-                            time:(new Date().toLocaleString())
-                        }
-                    ]
-                };
-                req.collectionDATA.push(collectionInfo);
-                writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
-                    console.log('A');
-                    res.send({
-                        code:0,
-                        msg:"添加成功"
-                    })
-                }).catch(()=>{
-                    console.log("B");
-                    res.send({
-                        code:1,
-                        msg:"添加失败"
-                    })
-                })
-            }
         }
+    }
+});
+
+//移除我的收藏 post  参数 商品对应的id
+route.post('/removeClo',(req,res)=>{
+   let userId =req.session.personID,
+       {id}=req.body;
+   //拿到对应用户的收藏
+   let newData=req.collectionDATA.find(item=>{
+       return item.userId===parseFloat(userId);
+   });
+   //拿到用户的收藏对应的索引
+   let newIndex=req.collectionDATA.findIndex(item=>item.userId===parseFloat(userId));
+
+   newData=newData.filter(item=>{
+       return item.id!==parseFloat(id);
+   });
+   req.collectionDATA.splice(newIndex,1,newData);
+   writeFile(COLLECTION_PATH,req.collectionDATA).then(()=>{
+       res.send({
+           code:0,
+           msg:'移除成功'
+       })
+   }).catch(()=>{
+       res.send({
+           code:1,
+           msg:'移除失败'
+       })
+   })
 });
 
 //获取我的收藏
-route.get('/queryClo',(req,res)=>{
-   let userId =req.session.personID,
-       data=[];
-   req.collectionDATA.forEach(item=>{
-       if(item.userId===userId){
-           data=item.data;
-       }
-   });
-    if(data){
+route.get('/queryClo', (req, res) => {
+    let userId = req.session.personID,
+        data = [];
+    req.collectionDATA.forEach(item => {
+        if (item.userId === userId) {
+            data = item.data;
+        }
+    });
+    if (data) {
         res.send({
-            code:0,
-            msg:'成功',
+            code: 0,
+            msg: '成功',
             data
         })
     } else {
         res.send({
-            code:1,
-            msg:'失败'
+            code: 1,
+            msg: '失败'
         })
     }
 });
