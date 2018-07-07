@@ -43,3 +43,7 @@ export function queryCollect() {
 export function addCollect(data) {
     return axios.post('/store/addClo',data)
 }
+//移除收藏
+export  function removeCollect(data) {
+    return axios.post('/store/removeClo',data)
+}

@@ -58,7 +58,7 @@ class List extends React.Component {
             </Link>
             <div className="recommend" >
                 <div className="demo-4 medium">
-                    <Carousela interval="40000" type="card" height="5rem" >
+                    <Carousela type="card" height="5rem" >
                         {[1,2,3,4,5].map((item, index) => {
                                 return (<Carousela.Item key={index}>
                                         <li><img src={require(`../../static/images/tui${item}.jpg`)} alt=""/></li>

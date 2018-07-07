@@ -41,11 +41,11 @@ import {Link} from 'react-router-dom'
 		         	{
 		         		this.state.mycol.map((item,index)=>{
 		         		let {pic,name,dec,price,id,category} = item;
-		         		return <dl >
+		         		return <dl key={index}>
 				         	   <Link to={{
 		                                pathname:'/detail',
 		                                search: `?ID=${id}&category=${category}`
-		                              }} key={index}>
+		                              }}>
 							          <dt><img src={pic} /></dt>
 							          <dd>
 							          		<h4>{name}</h4>
