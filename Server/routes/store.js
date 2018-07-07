@@ -31,7 +31,6 @@ route.post('/add', (req, res) => {
 route.post('/remove', (req, res) => {
     let personID = req.session.personID,
         {removeList=[]} = req.body;
-    courseID = parseFloat(courseID);
 
     if (personID) {
         req.storeDATA = req.storeDATA.filter(item => {
@@ -61,6 +60,7 @@ route.get('/info', (req, res) => {
     let state = parseFloat(req.query.state) || 0,
         personID = req.session.personID,
         storeList = [];
+    console.log(state, personID);
     if (personID) {
         //=>登录状态下是从JSON文件中获取：在STORE.JSON中找到所有personID和登录用户相同的(服务器从SESSION中可以获取用户ID的)
         req.storeDATA.forEach(item => {
@@ -190,11 +190,13 @@ route.post('/addClo', (req, res) => {
             };
             req.collectionDATA.push(collectionInfo);
             writeFile(COLLECTION_PATH, req.collectionDATA).then(() => {
+                console.log('A');
                 res.send({
                     code: 0,
                     msg: "添加成功"
                 })
             }).catch(() => {
+                console.log("B");
                 res.send({
                     code: 1,
                     msg: "添加失败"
