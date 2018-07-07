@@ -10,7 +10,7 @@ function ADD_STORE(req, res, courseID,category) {
             personID,
             category,
             state: 0,//=>默认是不支付
-            time: new Date().getTime()
+            time: new Date().toLocaleString()
         };
     //=>把数据先存放到原始数组中，最后把原始数组写入到JSON中永久保存
     req.storeDATA.push(storeInfo);

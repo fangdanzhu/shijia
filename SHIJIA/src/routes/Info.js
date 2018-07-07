@@ -7,6 +7,7 @@ import {personInfo, exitLogin} from '../../api/person'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import action from '../../store/action'
+import axios from "axios";
 
 
 function getBase64(img, callback) {
@@ -75,6 +76,7 @@ class Info extends React.Component {
             </div>
         );
         const imageUrl = this.state.imageUrl;
+
         return <section className="info">
             <div className="content">
                 <Upload
@@ -106,6 +108,7 @@ class Info extends React.Component {
             <NavBottom />
         </section>
     }
+
 }
 
 

@@ -28,15 +28,7 @@ class NavTop extends Component {
             }
         }
     };
-    handLeave = (ev) => {
-        this.setState({
-            banner: []
-        })
-        let value = ev.target.value;
-        value.length == 0 ? this.setState({
-            banner: []
-        }) : null;
-    };
+
 
     render() {
         return <header className="headerNavBox clearfix">
@@ -45,7 +37,7 @@ class NavTop extends Component {
                 <Search
                     placeholder="input search text"
                     onSearch={value => console.log(value)}
-                    style={{width: 200}} onChange={this.handlChange} onBlur={this.handLeave}
+                    style={{width: 200}} onChange={this.handlChange}
                     valve={this.state.val}/>
                 <Icon type="table" style={{fontSize: 30, color: '#FFF'}}/>
                 <ul className="list-rem">

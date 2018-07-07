@@ -29,6 +29,9 @@ class Memi extends React.Component {
      this.props.history.push('/publish');
     }
 
+
+
+
     render() {
         if(this.state.data.length<=0)return'';
         return <section className='MEMI' >
