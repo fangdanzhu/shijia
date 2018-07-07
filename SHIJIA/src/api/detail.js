@@ -34,6 +34,7 @@ export function addShopCart(data) {
 export function removeShopCart(data) {
     return axios.post('/store/remove',data)
 }
+
 //获取收藏列表
 export function queryCollect() {
     return axios.get('/store/queryClo')

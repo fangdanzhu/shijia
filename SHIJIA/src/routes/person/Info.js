@@ -67,56 +67,55 @@ class Info extends React.Component {
         }
     };
 
-    render() {
-        if (!this.props.personInfo) return '';
-        let {userName, phone} = this.props.personInfo;
-
-        const uploadButton = (
-            <div>
-                <Icon type={this.state.loading ? 'loading' : 'plus'}/>
-                <div className="ant-upload-text">选则头像</div>
-            </div>
+	render(){
+		if(!this.props.personInfo) return ''; 
+	
+		
+		let {userName,phone,photoUrl} = this.props.personInfo;
+			console.log(this.props.personInfo)
+		const uploadButton = (
+			<div>
+				<Icon type={this.state.loading ? 'loading' : 'plus'} />
+				<div className="ant-upload-text">选则头像</div>
+			</div>
         );
         const imageUrl = this.state.imageUrl;
+		return <section className="info">
+					<div className="content">
+					    {photoUrl?<p><img src={photoUrl} className="portraitPic" /></p>: <Upload
+							name="avatar"
+							listType="picture-card"
+							className="avatar-uploader"
+							showUploadList={false}
+							action="http://localhost:8000/person/photoUpload"
+							beforeUpload={beforeUpload}
+							onChange={this.handleChange}
+						>
+                            {imageUrl ? <img src={photoUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
+						</Upload>}
+						
+					    
+				
+					  <span>昵称:{userName}</span>
+					  <span>联系方式:{phone}</span>
+					 </div>
+					 <ul className="info-item" >
+					 	<li><Icon type="solution" /><span>我的订单</span></li>
+					 	<li><Link to='person/collection'><Icon type="star-o" /><span>我的收藏</span></Link></li>
+					 	<li><Icon type="red-envelope" /><span>我的钱包</span></li>
+					 	<li><Icon type="heart-o" /><span>我的地址</span></li>
+					 	<li><Icon type="heart-o" /><span>我的关注</span></li>
+					 	<li><Icon type="heart-o" /><span>我的关注</span></li>
+					 </ul>
+					 <div className="exitLogin">
+						 <Button type="danger" onClick={this.exit}>退出登陆</Button>
+					</div>
+					
+					<NavBottom />
+		       </section>
+	}
 
-
-        return <section className="info">
-
-            <div className="content">
-
-                <Upload
-                    name="avatar"
-                    listType="picture-card"
-                    className="avatar-uploader"
-                    showUploadList={false}
-                    action="http://localhost:8000/person/photoUpload"
-                    beforeUpload={beforeUpload}
-                    onChange={this.handleChange}
-                >
-                    {imageUrl ?
-                        <img src={imageUrl} alt="avatar" style={{width: '1rem', height: '1rem'}}/> : uploadButton}
-                </Upload>
-
-
-                <span>昵称:{userName}</span>
-                <span>联系方式:{phone}</span>
-            </div>
-            <ul className="info-item">
-                <li><Icon type="solution"/><span>我的订单</span></li>
-                <li><Link to='person/collection'><Icon type="star-o"/><span>我的收藏</span></Link></li>
-                <li><Icon type="red-envelope"/><span>我的钱包</span></li>
-                <li><Icon type="heart-o"/><span>我的地址</span></li>
-                <li><Icon type="heart-o"/><span>我的关注</span></li>
-            </ul>
-            <div className="exitLogin">
-                <Button type="danger" onClick={this.exit}>退出登陆</Button>
-            </div>
-
-            <NavBottom />
-        </section>
-    }
 }
-
 
 export default withRouter(connect(state => ({...state.person}), action.person)(Info))
 

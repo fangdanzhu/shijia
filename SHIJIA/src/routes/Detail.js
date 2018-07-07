@@ -35,7 +35,7 @@ class Detail extends React.Component {
                 isLogining: true
             })
         }
-        //验证是否加入购物车
+        //验证是否已加入购物车
         result = await queryShopCart();
         if (parseFloat(result.code) === 0) {
             let flag = result.data.find(item => {

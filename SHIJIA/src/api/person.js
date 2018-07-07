@@ -28,3 +28,9 @@ export function login(payload){
 export function exitLogin(){
 	return axios.get('/person/out')
 }
+
+
+//=>我的收藏
+export function myCollection(){
+	return axios.get('/store/queryClo')
+}

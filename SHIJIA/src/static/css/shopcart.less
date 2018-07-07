@@ -1,231 +1,271 @@
-.shopcartBox{
-        box-sizing: border-box;
-         height: 100%;
-         padding: .2rem;
-         overflow: scroll;
-          margin-bottom: 2rem;
-        background: #eeeeee50;
-        h3{text-align: center;
-            line-height: 1rem;
-            background: #fff;
-            font-size: .4rem;
-            position: relative;
-            span{
-                position: absolute;
-                font-size: .3rem;
-                color: #333;
-               right: .3rem;
-            }
-            }
+#root {
+  height: 100%;
 }
 
-.shopItem_empty{
+.shopcartBox {
+  box-sizing: border-box;
+  height: calc(100% - 2rem);
+  padding: .2rem;
+  overflow: scroll;
+  margin-bottom: 2rem;
+  background: #eeeeee50;
+  h3 {
     text-align: center;
-    line-height: .7rem;
-    height: 100%;
-    color: #999;
-    box-sizing: border-box;
-    div{
-         padding-top: 3.5rem;
+    line-height: 1rem;
+    background: #fff;
+    font-weight: bold;
+    font-size: .3rem;
+    position: relative;
+    span {
+      position: absolute;
+      font-size: .3rem;
+      color: #333;
+      right: .3rem;
     }
-    i{font-size: 1rem;}
-    span{display: block;}
+  }
 }
 
-.shopItem{
-        dl{
-        display: flex;
-        justify-content: space-around;
-        height: 2rem;
-        background: #fff;
-        margin: .3rem 0;
-        
-        dt{padding:0 .3rem;
-           width:35%;
-           height: 2rem;
-           box-sizing: border-box;
-           flex-shrink: 0;
-           overflow: hidden;
-           img{width: 100%;
-               height: 100%;
-                display: inline;}
-            }   
-        dd{
-            line-height: .3rem;
-           
-            p{
-                height: .6rem;
-                overflow: hidden;
-                width: 4rem;
-              }
-            p.edit{width: 3rem;}  
-            .ant-checkbox-wrapper{margin: 0;  padding: 0;}  
-            .ant-checkbox{margin: 0;  padding: 0;}
-            span{color: #f00;
-                font-weight: bold;}  
-            button{background: #f00;
-                   width: .9rem;
-                   color: #fff;
-                   border: none; 
-                   height: 100%;
-                   margin-left: .2rem;}             
-        }
-        .check{box-sizing: border-box;
-                padding: .5rem 0;
-                text-align: center;
-                 flex-shrink: 0;}   
-    }
-    
+.shopItem_empty {
+  text-align: center;
+  line-height: .7rem;
+  height: 100%;
+  color: #999;
+  box-sizing: border-box;
+  div {
+    padding-top: 3.5rem;
+  }
+  i {
+    font-size: 1rem;
+  }
+  span {
+    display: block;
+  }
 }
 
-.shopcartSum{position: fixed;
-             bottom: 1.06rem;
-             display: flex;
-             justify-content: space-between;
-             width: 100%;
-             padding: .2rem .4rem;
-             box-sizing: border-box;
-             background: #fff;
-             align-content: center;
-             form{
-                padding-top: .25rem;
-                
-             }
-             button{
-                 margin-top: .2rem; }
-             div{text-align: center;
-                  span{color: red;}  
-             }   
-        }
+.shopItem {
+  dl {
+    display: flex;
+    justify-content: space-around;
+    height: 2rem;
+    background: #fff;
+    margin: .3rem 0;
+
+    dt {
+      padding: 0 .3rem;
+      width: 35%;
+      height: 2rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        display: inline;
+      }
+    }
+    dd {
+      line-height: .3rem;
+
+      p {
+        height: .6rem;
+        overflow: hidden;
+        width: 4rem;
+      }
+      p.edit {
+        width: 3rem;
+      }
+      .ant-checkbox-wrapper {
+        margin: 0;
+        padding: 0;
+      }
+      .ant-checkbox {
+        margin: 0;
+        padding: 0;
+      }
+      span {
+        color: #f00;
+        font-weight: bold;
+      }
+      button {
+        background: #f00;
+        width: .9rem;
+        color: #fff;
+        border: none;
+        height: 100%;
+        margin-left: .2rem;
+      }
+    }
+    .check {
+      box-sizing: border-box;
+      padding: .5rem 0;
+      text-align: center;
+      flex-shrink: 0;
+    }
+  }
+
+}
+
+.shopcartSum {
+  position: fixed;
+  bottom: 1.06rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: .2rem .4rem;
+  box-sizing: border-box;
+  background: #fff;
+  align-content: center;
+  form {
+    padding-top: .25rem;
+
+  }
+  button {
+    margin-top: .2rem;
+  }
+  div {
+    text-align: center;
+    span {
+      color: red;
+    }
+  }
+}
 
 //未登录样式
-.notLogin{
-    background: #eeeeee38;
-    height: 100%;
-    padding: 0 .5rem;
-    h3{text-align: center;
+.notLogin {
+  background: url(../images/shopcart_bg1.png) no-repeat 70% 60%;
+  background-color: #eeeeee50;
+  background-size: 50%;
+  height: calc(100% - 1rem);
+  text-align: center;
+
+  h3 {
+    text-align: center;
     line-height: 1rem;
-    font-size: .4rem;
-    margin-top: .3rem;}
-    div{height: 1.3rem;}        
-        
+    background: #fff;
+    font-weight: bold;
+    font-size: .3rem;
+  }
+  a {
+    color: #000000;
+    font-size: .28rem;
+    line-height: 1rem;
+  }
+  div {
+    height: 1.3rem;
+  }
+
 }
+
 //支付页面
-.payBox{
+.payBox {
   width: 100%;
-  .head{
+  .head {
     height: .8rem;
     text-align: center;
     font-size: .4rem;
     background: #ffffff;
-    margin-bottom:1px;
+    margin-bottom: 1px;
     line-height: .8rem;
-    .iconTop{
+    .iconTop {
       float: left;
       margin-top: .1rem;
       margin-left: .1rem;
     }
   }
-  .self{
+  .self {
     width: 100%;
     height: 1.5rem;
     padding: .1rem;
     background: #fff;
-    margin-bottom:6px;
-    border-bottom:1px solid red;
-    p{
-      font-size: .3rem;
-      font-weight:550;
-    }
-    span{
-
-    }
+    font-weight: bold;
+    font-size: .3rem;
   }
-  .title{
+
+  .title {
     color: #000;
     font-size: .35rem;
     height: .8rem;
     line-height: .8rem;
     background: #fff;
-    margin-bottom:1px;
+    margin-bottom: 1px;
     padding-left: .1rem;
   }
-  .list{
+  .list {
     width: 100%;
     margin-bottom: 10px;
-    li{
+    li {
       height: 1.5rem;
       width: 100%;
       background: #fff;
       margin-bottom: 1px;
       padding: .1rem 0;
-       img{
-         height: 1.2rem;
-         width: 1.2rem;
-         float: left;
-         margin:0 .5rem ;
-       }
-      .right{
+      img {
+        height: 1.2rem;
+        width: 1.2rem;
         float: left;
-        p{
-          font-weight:550;
-          margin-bottom:0;
+        margin: 0 .5rem;
+      }
+      .right {
+        float: left;
+        p {
+          font-weight: 550;
+          margin-bottom: 0;
         }
-        span{
+        span {
           color: #00000070;
           font-size: .2rem;
         }
-        b{
+        b {
           color: orangered;
-          font-weight:normal;
+          font-weight: normal;
         }
       }
 
     }
   }
-  .peishong{
+  .peishong {
     width: 100%;
     height: 1.2rem;
     background: #fff;
     margin-bottom: 1px;
-    .left{
+    .left {
       float: left;
-      padding:.1rem .1rem;
+      padding: .1rem .1rem;
       color: #00000060;
-      h5{
+      h5 {
         font-size: .3rem;
       }
     }
-    .right{
-      padding:.2rem 0;
+    .right {
+      padding: .2rem 0;
       color: #00000060;
-      h6{
+      h6 {
         text-align: center;
         font-size: .25rem;
       }
       float: right;
     }
   }
-  .tuihuan{
+  .tuihuan {
     width: 100%;
     height: 1.1rem;
     background: #fff;
     margin-bottom: 10px;
-    .left{
+    .left {
       float: left;
-      padding:.1rem .1rem;
+      padding: .1rem .1rem;
       color: #00000060;
-      h5{
+      h5 {
         font-size: .3rem;
       }
     }
 
   }
-  .price{
+  .price {
     background: #fff;
-    padding: .2rem .1rem ;
-    .top{
-      h4{
+    padding: .2rem .1rem;
+    .top {
+      h4 {
         float: left;
         font-weight: 500;
         font-size: .25rem;
@@ -237,14 +277,14 @@
         color: red;
       }
     }
-    .mid{
-      h4{
+    .mid {
+      h4 {
         float: left;
         font-weight: 500;
         font-size: .25rem;
         color: #000;
-        span{
-          font-size:.22rem;
+        span {
+          font-size: .22rem;
           color: #00000060;
         }
       }
@@ -254,10 +294,10 @@
         color: red;
       }
     }
-    .bot{
-      h2{
+    .bot {
+      h2 {
         float: right;
-        font-weight:bold;
+        font-weight: bold;
       }
       span {
         float: right;
@@ -268,10 +308,32 @@
     }
 
   }
-  .end{
-    Button{
+  .end {
+    Button {
       float: right;
       margin: .1rem .05rem;
     }
+  }
+}
+//支付完成
+.payedBox{
+  width: 100%;
+  height: 5rem;
+  position: relative;
+  h2{
+    position: absolute;
+    top: 1rem;
+    left: .6rem;
+    width: 6rem;
+    height: 4rem;
+    font-size: .8rem;
+    text-align: center;
+    line-height: 4rem;
+    color: #00000090;
+  }
+  Button{
+    position: absolute;
+    top: 4.5rem;
+    left: 2.6rem;
   }
 }

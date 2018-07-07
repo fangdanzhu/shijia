@@ -84,7 +84,8 @@
     }
     //info页面
     .info {
-        background: url('../../static/images/person_info_bg.png') no-repeat #f6f5f5;
+        background: url('../../static/images/person_info_bg.png') no-repeat #fbfcfc;
+;
         width: 100%;
         height: 100%;
         background-size: 100%;
@@ -129,6 +130,10 @@
                 background: #fff;
                 margin-left: 2.8rem;
             }
+        }
+        .portraitPic{
+                     img{width: 100%;
+                         height: 100%;}
         }
         .ant-upload.ant-upload-select-picture-card {
             border: none!important;
@@ -187,4 +192,55 @@
     background: #fbf9f9;
     height: 100%;
     width: 100%;
+    overflow: hidden;
+    h3{text-align: center;
+       line-height: 1rem;
+       font-size: .3rem;
+       background: #fff;
+       font-weight: bold;}
+    .empty-collection{  background: url(../images/person_mycol.gif) no-repeat center 30%;
+                        height: 100%; 
+                       background-size:30% ;
+                       font-size: .3rem;
+                       line-height:2.5rem;
+                       text-align: center;}
+    .collection{
+        
+        display: flex;
+        padding: .2rem;
+        box-sizing: border-box;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: scroll;
+        height: calc(100% - 2rem);
+       
+        
+        dl{
+           background: #fff;
+           width:48%;
+           height: 4.5rem;
+           padding: .2rem;
+           box-sizing: border-box;
+           overflow: hidden;
+           dt{height: 55%;
+               img{width: 100%;
+                  height: 100%;}
+           }
+           dd{line-height: .5rem;
+               h4{font-weight: bold;
+                    padding-top: .4rem;}
+               p{color: #000;
+                margin: 0;
+                text-align: left;
+                width: 100%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                 overflow: hidden; }
+               span{color: red;
+                    font-weight: bold;}
+           }
+       
+    }
+    }
+  
 }

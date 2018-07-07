@@ -46,12 +46,14 @@ class ShopcartPay extends React.Component {
     //去支付
     toPay = async () => {
         let {paymentList} = this.props;
+        if(!paymentList[0])return;
         let {id, category} = paymentList[0];
         console.log(id, category);
+        this.props.history.replace('/shopcart/payed');
+        console.log(1);
         let result= await toPaying({
             id, category
         });
-        console.log(result);
     };
 
     render() {
@@ -130,11 +132,10 @@ class ShopcartPay extends React.Component {
                 </div>
                 <div className="end clearfix">
                     <Button type="success" onClick={this.toPay}>微信支付</Button>
-                    <Button type="info">支付宝</Button>
+                    <Button type="info" onClick={this.toPay}>支付宝</Button>
                 </div>
             </div>
         </section>
     }
 }
-export default connect(state => ({...state.shopcart}), action.shopcart)(ShopcartPay)
-
+export default connect(state=>({...state.shopcart}),action.shopcart)(ShopcartPay)
