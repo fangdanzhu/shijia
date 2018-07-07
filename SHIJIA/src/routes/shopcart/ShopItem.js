@@ -2,10 +2,10 @@ import React from 'react'
 import {Checkbox} from 'antd'
 import PropTypes from 'prop-types'
 import {remveGoodsInfo,queryGoodsInfo} from '../../api/shopcart'
+import {withRouter} from 'react-router-dom'
 
 
-
-export default class ShopItem extends React.Component{
+ class ShopItem extends React.Component{
 	constructor(props,context){
 		super(props,context)
 		this.state={
@@ -26,7 +26,6 @@ export default class ShopItem extends React.Component{
 			this.props.fn(this.props.item.id)
 		}
 		
-		
 	}
 //	=>复选框
 	checked=(ev)=>{
@@ -38,20 +37,30 @@ export default class ShopItem extends React.Component{
 	}
 
 	}
+	clickHandle=(ev)=>{
+		
+			let {id,category} = this.props.item;
+			this.props.history.push({
+				   pathname: '/detail',
+                   search: `?ID=${id}&category=${category}`
+			})
+		
+	}
 	render(){
-		let {id,name,pic,dec,price,type,checkState} = this.props.item
+		let {id,name,pic,dec,price,type,checkState,category} = this.props.item
 		let {isEdit} = this.props;
 		return <li className="shopItem">
-							<dl>
-								<dd className='check'><Checkbox onChange={this.checked}  checked={checkState?true:false} /></dd>
-								<dt>
+					<dl>
+						<dd className='check'><Checkbox onChange={this.checked}  checked={checkState?true:false} /></dd>
+								<dt  onClick={this.clickHandle}>
 								<img src={pic} />
 								</dt>
-								<dd>
+								<dd  onClick={this.clickHandle}>
 									<h4>{name}</h4>
 									<p className={isEdit?'edit':''}>{dec}</p>
 									<span>价格:￥{price}</span>
 								</dd>
+							
 								{isEdit?<dd><button onClick={this.removeShopInfo}>删除</button></dd>:null}
 								</dl>
 		      </li>
@@ -60,3 +69,4 @@ export default class ShopItem extends React.Component{
 }
 
 
+export default withRouter(ShopItem)

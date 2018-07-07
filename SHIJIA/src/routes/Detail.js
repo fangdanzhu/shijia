@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Icon} from 'antd'
 import {Link, withRouter} from 'react-router-dom'
 import Qs from 'qs'
-import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin} from '../api/detail'
+import{queryDetail, queryShopCart, addShopCart, removeShopCart, isLogin,queryCollect,addCollect} from '../api/detail'
 import action from '../store/action/index'
 
 class Detail extends React.Component {
@@ -49,13 +49,22 @@ class Detail extends React.Component {
     }
 
 //收藏
-    collect = () => {
+     collect = async () => {
         let {isCollect} = this.state;
         isCollect = !isCollect;
         this.setState({
             isCollect
-        })
+        });
+        let {id,category}=this.state.data;
+       console.log(isCollect);
+       if(!isCollect){
+       let result=  await addCollect({
+             courseId:id,
+             category:category
+         });
+        }
     };
+
     handleCart = async () => {
         let {isShopcart, data, isLogining} = this.state;
         if (!isLogining) {

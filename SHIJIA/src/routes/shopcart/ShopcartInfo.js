@@ -51,7 +51,7 @@ class ShopcartInfo extends React.Component{
 	
 	//全选和非全选
   	componentWillUpdate(){
-  			//			=>计算价格	
+  			//	=>计算价格	
       this.computedPrice = ()=>{
         	let price = 0;
 					this.state.goodsList.forEach(item=>{
@@ -103,19 +103,30 @@ class ShopcartInfo extends React.Component{
      	}
   	}
   //去结算	
-  	payment=()=>{
+  	payment= async ()=>{
 				let {goodsList} =this.state;
 				let result = goodsList.some(item=>(item.checkState))
 				if(!result){
 					alert('请至少选中一个商品')
 					return ;
 				}
-				
+			
 				// 发送支付数据并跳转支付
 				let {payment} = this.props;
 				let shopList = goodsList.filter(item=>(item.checkState))
-			  payment(shopList);
-			  this.props.history.push('/shopcart/pay')
+			    payment(shopList);
+			   
+			    goodsList.forEach( async item=>{
+			    	if(item.checkState){
+			    		let {id,category} = item;
+				        let res = 	await remveGoodsInfo({id,category })
+				        if(res.code===0){
+							this.props.history.push('/shopcart/pay')			
+				        }
+				    }
+			    	
+			    })
+			  
 		
 	 }
   	

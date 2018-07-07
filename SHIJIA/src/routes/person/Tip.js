@@ -24,7 +24,9 @@ import {Link,Switch,Route} from 'react-router-dom'
 					    <NavLink to="/person/register">注册</NavLink>
 					  </div>
 					 </div>
-					 <ul className="info-item">
+					 <ul className="info-item" onClick={()=>{
+					 	this.props.history.push('/person/login')
+					 }}>
 					 	<li><Icon type="solution" /><span>我的订单</span></li>
 					 	<li><Icon type="star-o" /><span>我的收藏</span></li>
 					 	<li><Icon type="red-envelope" /><span>我的钱包</span></li>

@@ -68,8 +68,10 @@ function beforeUpload(file) {
 
 	render(){
 		if(!this.props.personInfo) return ''; 
-		let {userName,phone} = this.props.personInfo;
+	
 		
+		let {userName,phone,photoUrl} = this.props.personInfo;
+			console.log(this.props.personInfo)
 		const uploadButton = (
 			<div>
 				<Icon type={this.state.loading ? 'loading' : 'plus'} />
@@ -77,13 +79,9 @@ function beforeUpload(file) {
 			</div>
         );
         const imageUrl = this.state.imageUrl;
-
-		
 		return <section className="info">
-
 					<div className="content">
-					
-						 <Upload
+					    {photoUrl?<p><img src={photoUrl} className="portraitPic" /></p>: <Upload
 							name="avatar"
 							listType="picture-card"
 							className="avatar-uploader"
@@ -92,8 +90,9 @@ function beforeUpload(file) {
 							beforeUpload={beforeUpload}
 							onChange={this.handleChange}
 						>
-                            {imageUrl ? <img src={imageUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
-						</Upload>
+                            {imageUrl ? <img src={photoUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
+						</Upload>}
+						
 					    
 				
 					  <span>昵称:{userName}</span>

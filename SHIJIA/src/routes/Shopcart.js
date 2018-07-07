@@ -28,7 +28,7 @@ export default class Shopcart extends React.Component{
 			return <div className="notLogin">
 					<h3>购物车</h3>
 					<Link to='/person/login'>
-						<Alert message="您还未登陆，点击跳转登陆！" type="error"/>
+						<span>您还未登陆，点击跳转登陆！</span>
 					</Link>
 					<NavBottom />
 		     	</div>

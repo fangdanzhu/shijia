@@ -35,6 +35,7 @@ render(<Provider store={store}>
                 <Route path='/person' component={Person}/>
                 <Route path='/publish' component={Publish}/>
                 <Route path='/hotsale' component={Hotsale}/>
+                <Route path='/shopcart' component={Shopcart}/>
                 <Route path="/detail" component={Detail}/>
             </Switch>
         </HashRouter>
