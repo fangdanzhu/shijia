@@ -123,7 +123,6 @@ class ShopcartInfo extends React.Component{
 			    	removeList.push({courseID:id,category})
 			    })
 			    console.log(removeList)
-			    console.log(goodsList)
 			    let  res = await remveGoodsInfo(removeList)
 				this.props.history.push('/shopcart/pay')			
 				
@@ -132,7 +131,6 @@ class ShopcartInfo extends React.Component{
   	
 	render(){
 		let {goodsList,isEdit,all} = this.state;
-		console.log(goodsList)
 		if(!goodsList || !goodsList.length){
 		return  <div className="shopItem_empty">
 							<h3>购物车</h3>
