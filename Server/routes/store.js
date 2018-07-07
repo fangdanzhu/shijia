@@ -31,16 +31,19 @@ route.post('/add', (req, res) => {
 route.post('/remove', (req, res) => {
     let personID = req.session.personID,
         {removeList=[]} = req.body;
-    courseID = parseFloat(courseID);
-
+    console.log(removeList);
     if (personID) {
-        req.storeDATA = req.storeDATA.filter(item => {
+        let newDATA=[];
+        req.storeDATA.forEach(item => {
             removeList.forEach(cur=>{
-
-                return !(parseFloat(item.courseID) === cur.courseID && parseFloat(item.personID) === personID && cur.category === item.category);
+                if( parseFloat(item.courseID) !== cur.courseID && parseFloat(item.personID) === personID && cur.category !== item.category){
+                    console.log(2);
+                    newDATA.push(item);
+                }
             })
         });
-        writeFile(STORE_PATH, req.storeDATA).then(() => {
+        console.log("aaaaa"+newDATA.length);
+        writeFile(STORE_PATH, newDATA).then(() => {
             res.send({code: 0, msg: 'OK!'});
         }).catch(() => {
             res.send({code: 1, msg: 'NO!'});
@@ -61,7 +64,6 @@ route.get('/info', (req, res) => {
     let state = parseFloat(req.query.state) || 0,
         personID = req.session.personID,
         storeList = [];
-    console.log(state, personID);
     if (personID) {
         //=>登录状态下是从JSON文件中获取：在STORE.JSON中找到所有personID和登录用户相同的(服务器从SESSION中可以获取用户ID的)
         req.storeDATA.forEach(item => {

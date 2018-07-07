@@ -18,7 +18,6 @@ route.get('/tuijian',(req,res)=>{
         let data =[];
 
         data.push(req.courseDATAF[0].data[6],req.courseDATAF[0].data[3],req.courseDATAF[0].data[4],req.courseDATAF[1].data[5]);
-    console.log(data);
 
     res.send({
         code: 0,
