@@ -119,14 +119,15 @@ class ShopcartInfo extends React.Component{
 			    goodsList.forEach( async item=>{
 			    	if(item.checkState){
 			    		let {id,category} = item;
-				        let res = 	await remveGoodsInfo({id,category })
-				        if(res.code===0){
-							this.props.history.push('/shopcart/pay')			
-				        }
+				        let res = await remveGoodsInfo({
+								courseID:id,
+								category
+								} )
 				    }
-			    	
-			    })
-			  
+			     })
+			    
+				this.props.history.push('/shopcart/pay')			
+				
 		
 	 }
   	

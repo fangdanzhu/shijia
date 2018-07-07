@@ -40,6 +40,10 @@ class Info extends React.Component {
     async componentDidMount() {
         let {personInfo, queryInfo} = this.props;
         !personInfo ? await queryInfo() : null
+        	let {userName,phone,photoUrl} = this.props.personInfo;
+		this.setState({
+			imageUrl:photoUrl
+		})
     }
 
     exit = async (ev) => {
@@ -52,6 +56,10 @@ class Info extends React.Component {
         }
 
     }
+    
+    	
+	
+    
     //处理头像
     handleChange = (info) => {
         if (info.file.status === 'uploading') {
@@ -69,20 +77,18 @@ class Info extends React.Component {
 
 	render(){
 		if(!this.props.personInfo) return ''; 
-	
-		
-		let {userName,phone,photoUrl} = this.props.personInfo;
-			console.log(this.props.personInfo)
+			let {userName,phone} = this.props.personInfo;
+
 		const uploadButton = (
 			<div>
 				<Icon type={this.state.loading ? 'loading' : 'plus'} />
-				<div className="ant-upload-text">选则头像</div>
+				<div className="ant-upload-text"></div>
 			</div>
         );
-        const imageUrl = this.state.imageUrl;
+        let {imageUrl} = this.state;
 		return <section className="info">
 					<div className="content">
-					    {photoUrl?<p><img src={photoUrl} className="portraitPic" /></p>: <Upload
+					   <Upload
 							name="avatar"
 							listType="picture-card"
 							className="avatar-uploader"
@@ -91,8 +97,8 @@ class Info extends React.Component {
 							beforeUpload={beforeUpload}
 							onChange={this.handleChange}
 						>
-                            {imageUrl ? <img src={photoUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
-						</Upload>}
+                            {imageUrl ? <img src={imageUrl} alt="avatar" style={{width:'1rem',height:'1rem'}} /> : uploadButton}
+						</Upload>
 						
 					    
 				
