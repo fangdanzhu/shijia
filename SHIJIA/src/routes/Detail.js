@@ -87,8 +87,7 @@ class Detail extends React.Component {
        }else{
 
            let result=  await removeCollect({
-               courseId:id,
-               category:category
+               id
            });
            if(parseFloat(result.code)===0){
                this.setState({

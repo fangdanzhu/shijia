@@ -44,6 +44,6 @@ export function addCollect(data) {
     return axios.post('/store/addClo',data)
 }
 //移除收藏
-export  function removeCollect(data) {
-    return axios.post('/store/removeClo',data)
+export  function removeCollect(id) {
+    return axios.post('/store/removeClo',id)
 }

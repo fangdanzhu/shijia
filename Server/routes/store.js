@@ -248,7 +248,8 @@ route.post('/addClo', (req, res) => {
 route.post('/removeClo',(req,res)=>{
    let userId =req.session.personID,
        {id}=req.body;
-   //拿到对应用户的收藏
+    console.log(req.body);
+    //拿到对应用户的收藏
    let newData=req.collectionDATA.find(item=>{
        return item.userId===parseFloat(userId);
    });
